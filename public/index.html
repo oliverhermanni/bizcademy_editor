@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="editorApp">
 <head>
     <title>bizcademy Editor</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">
@@ -16,7 +17,6 @@
     <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
     <script src="js/advanced.js"></script>
-    <script src="js/wysihtml5-0.3.0.min.js"></script>
 </head>
 <body >
 <div class="container">
@@ -40,12 +40,14 @@
                 <li><a href="#">Log out</a></li>
             </ul>
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-10" ng-controller="mainController" ng-init="initialize();">
             <h1>Course Name</h1>
 
             <div class="col-lg-9">
                 <div class="main_drag">
-
+                    <h2 ng-repeat="info in infos">
+                        {{ info.title }}
+                    </h2>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -55,34 +57,6 @@
                     </a>
                     <a href="#" class="list-group-item active">
                         <h4 class="list-group-item-heading">Chapter 1
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button>
-                            </div>
-                        </h4>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">Chapter 2
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button>
-                            </div>
-                        </h4>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">Chapter 3
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button>
-                            </div>
-                        </h4>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">Chapter 4
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button>
-                            </div>
                         </h4>
                     </a>
                 </div>
@@ -127,18 +101,10 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.js"></script>
-<script src="js/jquery-ui-1.10.3.custom.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.js"></script>
-<script src="js/helpers.js"></script>
-<script src="js/editor.js"></script>
-
-<script>
-    var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
-        toolbar:      "wysihtml5-toolbar", // id of toolbar element
-        parserRules:  wysihtml5ParserRules // defined in parser rules set
-    });
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+<script src="js/editor/editor.js"></script>
 
 </body>
 </html>
