@@ -34,8 +34,8 @@
           </div>
           <div ng-view></div>
         </div>
-        <div class="col-md-3" id="nav_chapter">
-          <div class="row" id="nav_header">
+        <div class="col-md-3 course-nav-container">
+          <div class="row course-nav-header">
             <div class="col-md-6">
               <i class="fa fa-list"></i> 2 / 10
             </div>
@@ -46,39 +46,52 @@
             </div>
           </div>
           <div class="row">
-            <ul class="list-group">
-              <li class="list-group-item">Course title</li>
+            <h2 class="course-title">Es gibt im Moment in diese Mannschaft, oh, einige Spieler vergessen ihnen Profi was sie sind</h2>
+            <ul class="list-group course-nav">
               <li class="list-group-item">
-                <i class="fa fa-dot-circle-o fa-green fa-lg"></i> 
+                <span class="fa-stack done">
+                  <i class="fa fa-circle-o fa-stack-1x"></i>
+                  <i class="fa fa-circle fa-stack-1x"></i>
+                </span>
                 <a href="#/chapterOverview/1">Cras justo odio</a>
-                <i class="fa fa-ellipsis-v fa-2x pull-right"></i>
+                <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
               </li>
               <li class="list-group-item">
-                <i class="fa fa-dot-circle-o fa-green fa-lg"></i>
-                  <a href="#/chapterOverview/2">Cras justo odio</a>
-                <i class="fa fa-ellipsis-v fa-2x pull-right"></i>
+                <span class="fa-stack done">
+                  <i class="fa fa-circle-o fa-stack-1x"></i>
+                  <i class="fa fa-circle fa-stack-1x"></i>
+                </span>
+                <a href="#/chapterOverview/2">Cras justo odio</a>
+                <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
               </li>
               <li class="list-group-item">
-                <i class="fa fa-dot-circle-o fa-green fa-lg"></i>
-                  <a href="#/chapterOverview/3">Cras justo odio</a>
-                <i class="fa fa-ellipsis-v fa-2x pull-right"></i>
+                <span class="fa-stack current">
+                  <i class="fa fa-circle-o fa-stack-1x"></i>
+                  <i class="fa fa-circle fa-stack-1x"></i>
+                </span>
+                <a href="#/chapterOverview/3">Cras justo odio</a>
+                <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle "></i>
               </li>
               <li class="list-group-item">
-                <i class="fa fa-dot-circle-o fa-green fa-lg"></i>
-                  <a href="#/chapterOverview/4">Cras justo odio</a>
-                <i class="fa fa-ellipsis-v fa-2x pull-right"></i>
+                <span class="fa-stack">
+                  <i class="fa fa-circle-o fa-stack-1x"></i>
+                  <i class="fa fa-circle fa-stack-1x"></i>
+                </span>
+                <a href="#/chapterOverview/4">Cras justo odio</a>
+                <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
               </li>
               <li class="list-group-item">
-                <i class="fa fa-dot-circle-o fa-green fa-lg"></i>
-                  <a href="#/chapterOverview/5">Cras justo odio</a>
-                <i class="fa fa-ellipsis-v fa-2x pull-right"></i>
+                <span class="fa-stack">
+                  <i class="fa fa-circle-o fa-stack-1x"></i>
+                  <i class="fa fa-circle fa-stack-1x"></i>
+                </span>
+                <a href="#/chapterOverview/5">Cras justo odio</a>
+                <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
               </li>
             </ul>
-            <div class="btn-container">
-              <button class="btn btn-default">
-                <i class="fa fa-plus"></i> Add new chapter to your course
-              </div>
-            </span>
+            <button class="btn btn-link btn-block btn-default">
+              <i class="fa fa-plus"></i> Add new chapter
+            </button>
           </div>
         </div>
       </div>
