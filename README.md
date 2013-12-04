@@ -15,25 +15,21 @@ Running the App
 ---------------
 
 1. Install all required node modules first with:
-
-```npm install```
+    ```npm install```
 
 2. Than run the nodeJS Server with:
-
-```node server.js```
+    ```node server.js```
 
 3. You should get the following output:
-```connect.multipart() will be removed in connect 3.0
-
-visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
-
-connect.limit() will be removed in connect 3.0
-
-App listening on port 8080```
+    ``` 
+        connect.multipart() will be removed in connect 3.0
+        visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+        connect.limit() will be removed in connect 3.0
+        App listening on port 8080
+    ```
 
 4. Now go to your browser and visit:
-
-```http://localhost:8080/```
+    ```http://localhost:8080/```
     
 Structure
 ---------
