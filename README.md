@@ -9,16 +9,16 @@ Install Node.js with Homebrew
 3. Install the command line tools. This may require you to log in or create a free Apple developer account
 4. Visit http://mxcl.github.io/homebrew/ and follow the instructions for installing homebrew
 5. If everything works fine install nodejs with:
-    ```brew install node```
+    ``` brew install node ```
 
 Running the App
 ---------------
 
 1. Install all required node modules first with:
-    ```npm install```
+    ``` npm install ```
 
 2. Than run the nodeJS Server with:
-    ```node server.js```
+    ``` node server.js ```
 
 3. You should get the following output:
     ``` 
@@ -29,7 +29,7 @@ Running the App
     ```
 
 4. Now go to your browser and visit:
-    ```http://localhost:8080/```
+    ``` http://localhost:8080/ ```
     
 Structure
 ---------
