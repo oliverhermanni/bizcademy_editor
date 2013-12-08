@@ -24,12 +24,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9" id="main">
-          <div class="row">
-            <div class="col-md-6"><i class="fa fa-bars"></i> <a href="/">Zurück zur Übersicht</a></div>
-            <div class="col-md-6">
-              <span class="pull-right">
-                All changes has been saved. <i class="fa fa-spinner fa-spin"></i>
-              </span>
+          <div class="content-head">
+            <a href="/" class="btn btn-default btn-link toggle-usermenu pull-left"><i class="fa fa-bars"></i></a>
+            <a href="/" class="btn btn-link btn-default pull-left"><i class="fa fa-angle-left"></i> Zurück zur Übersicht</a>
+            <div class="working-status pull-right">
+              <span>All changes has been saved.</span>
+              <i class="fa fa-spinner fa-spin"></i>
             </div>
           </div>
           <div ng-view></div>
