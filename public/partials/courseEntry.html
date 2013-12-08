@@ -26,6 +26,16 @@
 <div class="row">
     <div class="col-md-12">
         <h3>Chapter Overview <small>(0 chapters)</small></h3>
+        <ul class="list-group course-nav">
+            <li class="list-group-item" ng-repeat="chapter in chapters">
+                                <span class="fa-stack done">
+                                    <i class="fa fa-circle-o fa-stack-1x"></i>
+                                    <i class="fa fa-circle fa-stack-1x"></i>
+                                </span>
+                <a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+                <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
+            </li>
+        </ul>
     </div>
 </div>
 <div class="row">
