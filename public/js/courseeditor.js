@@ -12,6 +12,9 @@ var courseEditorConfig = function($routeProvider) {
             controller: 'ChapterAddController',
             templateUrl: 'partials/chapterEditor.html'
         })
+        .when('/deletechapter/:chapterId', {
+            controller: 'ChapterDeleteController'
+         })
         .otherwise({
             redirectTo:'/'
         });
