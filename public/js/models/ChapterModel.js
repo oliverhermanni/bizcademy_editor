@@ -27,6 +27,21 @@ CourseEditor.service('ChapterModel', function() {
         }
         course.chapters.push(chapter);
         window.localStorage.setItem(courseId, JSON.stringify(course));
+    };
+
+    this.deleteChapter = function(courseId, chapterId) {
+        var course = JSON.parse(window.localStorage.getItem(courseId));
+        console.log('test');
+
+        if (!course || !course.chapters) {
+            return;
+        }
+        for (var i=0; i < course.chapters.length; i++) {
+            if (course.chapters[i].id === chapterId) {
+                course.chapters.splice(i, 1);
+                window.localStorage.setItem(courseId, JSON.stringify(course));
+            }
+        }
     }
 
 });
