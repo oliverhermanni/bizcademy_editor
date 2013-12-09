@@ -15,18 +15,23 @@
     </div>
 </div>
 
-<h3>Chapter Overview <small>(0 chapters)</small></h3>
-<ul class="list-group course-nav">
-    <li class="list-group-item" ng-repeat="chapter in chapters">
-                        <span class="fa-stack done">
-                            <i class="fa fa-circle-o fa-stack-1x"></i>
-                            <i class="fa fa-circle fa-stack-1x"></i>
-                        </span>
-        <a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
-        <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
-    </li>
-</ul>
-<p class="course-overview-preview">
+<h3>Chapter Overview <small>({{chapters.length}} chapters)</small></h3>
+<div class="chapters">
+  <div class="chapter" ng-repeat="chapter in chapters">
+    <div class="chapter-header">
+      <a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+      <p>{{chapter.content}}</p>
+    </div>
+    <ul class="list-group chapter-steps">
+      <li class="list-group-item chapter-step" ng-repeat="n in [1,2,3,4,5]">
+        <i class="icon icon-radio-checked step-status"></i>
+        <a class="step-title" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+        <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>        
+      </li>
+    </ul>
+  </div>
+</div>
+<p class="course-overview-preview" ng-hide="chapters.length">
   <a href="#/addchapter" class="btn btn-warning btn-lg">
     <i class="fa fa-lg fa-book"></i>
     Create your first chapter

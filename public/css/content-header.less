@@ -7,10 +7,15 @@
 .content-head {
   .clearfix;
   padding: @xl-space 0;
+  a {
+    color: @gray-light;
+    &:hover {
+      text-decoration: none;
+      color: @gray-dark;
+    }
+  }
 }
-.toggle-usermenu {
-  color: @gray-light;
-}
+
 .toggle-usermenu,
 .toggle-course-navigation {
   .icon-lg-correction;
