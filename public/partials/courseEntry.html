@@ -24,6 +24,7 @@
                         </span>
         <a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
         <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
+        <a href ng-click="onDelete(chapter.id)" class="pull-right"><i class="fa fa-trash-o fa-lg"></i></a>
     </li>
 </ul>
 <p class="course-overview-preview">
