@@ -1,23 +1,25 @@
-var courseEditor = angular.module('courseEditor', ['ngRoute']);
+var courseEditorConfig = function($routeProvider) {
+    $routeProvider
+        .when('/', {
+            controller: 'CoursesController',
+            templateUrl: 'partials/courseEntry.html'
+        })
+        .when('/chapter/:chapterId', {
+            controller: 'ChaptersController',
+            templateUrl: 'partials/chapterOverview.html'
+        })
+        .when('/addchapter', {
+            controller: 'ChapterAddController',
+            templateUrl: 'partials/chapterEditor.html'
+        })
+        .otherwise({
+            redirectTo:'/'
+        });
+};
 
-courseEditor.config(function($routeProvider) {
-		$routeProvider
-			.when('/', {
-				controller: 'courseOverview',
-				templateUrl: 'partials/courseEntry.html'
-			})
-            .when('/chapterOverview/:chapterId', {
-                controller: 'chapterOverview',
-                templateUrl: 'partials/chapterOverview.html'
-            })
-			.otherwise({
-				redirectTo:'/'
-		});
-	})
-	.controller('courseOverview', function($scope) {
-    })
-    .controller('chapterOverview', function($scope, $routeParams) {
-        $scope.courseId = $routeParams.chapterId;
+
+var CourseEditor = angular.module('CourseEditor', ['ngRoute'])
+    .config(courseEditorConfig)
+    .run(function($rootScope, ChapterModel) {
+        $rootScope.courseId = "999";
     });
-
-	
