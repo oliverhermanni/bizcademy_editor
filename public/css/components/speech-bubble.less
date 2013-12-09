@@ -1,0 +1,59 @@
+.speech-bubble {
+  .clearfix;
+  position: relative;
+  margin-bottom: @xl-space;
+  .bubble {
+    .pull-left;
+    position: relative;
+    background: @brand-secondary;
+    min-height: @xl-space * 3;
+    color: #fff;
+    margin-left: @xl-space;
+    padding: @l-space;
+    padding-left: 3em;
+    z-index: 2;
+    font-style: italic;
+    font-weight: 300;
+    &:before {
+      font-family: 'FontAwesome';
+      content: @fa-var-quote-left;
+      position: absolute;
+      top: @m-space;
+      left: @xl-space;
+      font-size: 1em;
+    }
+    &:after {
+      right: 100%;
+      top: @l-space;
+      border: solid transparent;
+      border-right-color: @brand-secondary;
+      border-width: @m-space;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+  .avatar {
+    .img-circle;
+    .pull-left;
+  	height: 60px;
+    width: 60px;
+    display: block;
+  }
+  &.right-handed {
+    .avatar, .bubble {
+      .pull-right;
+    }
+    .bubble {
+      margin-left: 0;
+      margin-right: @xl-space;
+      &:after {
+        left: 100%;
+        border-right-color: transparent;
+        border-left-color: @brand-secondary;
+      }
+    }
+  }
+}
