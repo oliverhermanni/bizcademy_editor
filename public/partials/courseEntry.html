@@ -18,14 +18,21 @@
 <h3>Chapter Overview <small>({{chapters.length}} chapters)</small></h3>
 <div class="chapters">
   <div class="chapter" ng-repeat="chapter in chapters">
-    <div class="chapter-header">
-      <a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
-      <p>{{chapter.content}}</p>
+    <div class="well chapter-header">
+      <a href="/" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
+      <div class="chapter-count">
+        {{$index+1}}
+      </div>
+      <div class="chapter-details">
+        <h4 class="chapter-title"><a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
+        <p>{{chapter.content}}</p>        
+      </div>
     </div>
     <ul class="list-group chapter-steps">
       <li class="list-group-item chapter-step" ng-repeat="n in [1,2,3,4,5]">
-        <i class="icon icon-radio-checked step-status"></i>
-        <a class="step-title" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+        <i class="step-status pull-left"></i>
+        <a class="step-title col-md-10" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+        <a href="/" class="step-remove"><i class="icon icon-remove"></i></a>
         <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>        
       </li>
     </ul>
