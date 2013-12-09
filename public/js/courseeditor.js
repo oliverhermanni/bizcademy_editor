@@ -13,7 +13,8 @@ var courseEditorConfig = function($routeProvider) {
             templateUrl: 'partials/chapterEditor.html'
         })
         .when('/deletechapter/:chapterId', {
-            controller: 'ChapterDeleteController'
+            controller: 'ChapterDeleteController',
+            templateUrl: 'partials/courseEntry.html'
          })
         .otherwise({
             redirectTo:'/'
