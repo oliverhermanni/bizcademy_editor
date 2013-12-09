@@ -149,6 +149,38 @@ body {
     font-weight: bold;
   }
 }
+.chapter-insights {
+  .clearfix;
+  .insight-wrapper {
+    .clearfix;
+    padding-right: @xl-space;
+    margin-right: @l-space;
+    border-right: 1px solid @gray-lightest;
+    .icon, .count {
+      margin-right: @m-space;
+      color: @brand-secondary;
+    }
+    .icon {
+      font-size: 2.25em;
+      line-height: 1.3em;
+    }
+    .count {
+      font-size: 1.25em;
+      line-height: 2.25em;
+    }
+    .type {
+      font-style: italic;
+      color: @basic-grey;
+      line-height: 3em;
+    }
+    &:last-child {
+      border-right: 0px;
+    }
+  }
+}
+.chapter {
+  margin-bottom: @xl-space * 2;
+}
 .chapter-header {
   .clearfix;
   position: relative;
@@ -166,6 +198,7 @@ body {
   }
   p {
     color: @gray-light;
+    margin-bottom: @xl-space;
   }
   .chapter-count {
     font-family: @font-family-decorative;
@@ -215,7 +248,7 @@ body {
   &:hover {
     background: #f6f6f6;
     .step-remove {
-      right: @font-size-middle * 2;
+      right: @font-size-middle * 2.375;
       opacity: 1;
     }
   }
@@ -227,6 +260,8 @@ body {
     position: absolute;
     right: 0;
     opacity: 0;
+    width: @font-size-base * 3;
+    text-align: center;
   }
   i.step-status {
     .icon;
