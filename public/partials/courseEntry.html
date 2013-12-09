@@ -30,8 +30,9 @@
     </div>
     <ul class="list-group chapter-steps">
       <li class="list-group-item chapter-step" ng-repeat="n in [1,2,3,4,5]">
-        <i class="icon icon-radio-checked step-status"></i>
-        <a class="step-title" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+        <i class="step-status pull-left"></i>
+        <a class="step-title col-md-10" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+        <a href="/" class="step-remove"><i class="icon icon-remove"></i></a>
         <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
       </li>
     </ul>
