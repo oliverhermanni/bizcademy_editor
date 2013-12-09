@@ -8,6 +8,10 @@ var courseEditorConfig = function($routeProvider) {
             controller: 'ChaptersController',
             templateUrl: 'partials/chapterOverview.html'
         })
+        .when('/addchapter', {
+            controller: 'ChapterAddController',
+            templateUrl: 'partials/chapterEditor.html'
+        })
         .otherwise({
             redirectTo:'/'
         });
@@ -17,6 +21,6 @@ var courseEditorConfig = function($routeProvider) {
 var CourseEditor = angular.module('CourseEditor', ['ngRoute'])
     .config(courseEditorConfig)
     .run(function($rootScope, ChapterModel) {
-        chapters = ChapterModel.getChapters();
-        $rootScope.chapters = chapters;
+        $rootScope.courseId = "999";
+        $rootScope.chapters = ChapterModel.getChapters($rootScope.courseId);
     });
