@@ -1,5 +1,11 @@
 CourseEditor.controller('ChaptersController',
     function ($scope, $location, $routeParams, ChapterModel) {
+      $scope.chapter = ChapterModel.getChapter($scope.chapterId);
+    }
+);
+
+CourseEditor.controller('ChaptersController',
+    function ($scope, $location, $routeParams, ChapterModel) {
       $scope.chapters = ChapterModel.getChapters($scope.courseId);
     }
 );

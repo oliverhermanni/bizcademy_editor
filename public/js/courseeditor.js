@@ -6,7 +6,7 @@ var courseEditorConfig = function($routeProvider) {
         })
         .when('/chapter/:chapterId', {
             controller: 'ChaptersController',
-            templateUrl: 'partials/chapterOverview.html'
+            templateUrl: 'partials/chapterShow.html'
         })
         .when('/addchapter', {
             controller: 'ChapterAddController',

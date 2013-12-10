@@ -44,83 +44,21 @@ body {
   line-height: 2.5em;
 }
 
-.course-nav-container {
-	background: @gray-dark;
-	color: white;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  .btn-default.btn-link {
-    .transition(.3s);
-    color: @clouds;
-    &:hover {
-      text-decoration: none;
-      color: @silver;
-    }
-  }
-  .course-title {
-    .one-line-text;
-    background: @wet-asphalt;
-    margin-top: 0px;
-    margin-bottom: 1px;
-    font-size: 1.25em;
-    padding: 10px 15px;
-  }
-	.list-group {
-		border-radius: 0;
-
-    .list-group-item {
-      background: @midnight-blue;
-      border: 0;
-      border-bottom: 1px solid @wet-asphalt;
-      border-radius: 0;
-      margin-bottom: 0;
-      line-height: 1.75em;
-      padding-right: 0;
-      > a {
-        color: @clouds;
-      }
-      .item-drag-handle {
-        color: rgba(255,255,255,.3);
-        width: 20px;
-        text-align: right;
-        padding: 0 5px;
-      }
-      .fa-stack {
-        width: 1em;
-        margin-right: 5px;
-        > .fa-circle {
-          font-size: .44em;
-          display: none;
-        }
-        &.done > .fa-circle {
-          color: @turquoise;
-          display: block;
-        }
-        &.current > .fa-circle {
-          color: inherit;
-          display: block;
-        }
-      }
-    }
-  }
-}
-
 .well {
   background: white;
   border-radius: 0;
   border: none;
   .box-shadow(0 2px 0 #E3E3E3);
-  padding: @l-space;
+  padding: @xl-space;
   > h2 {
     margin: 0 0 @l-space;
   }
+  .course-description {
+    color: @gray-light;
+    margin-bottom: 0;
+  }
 }
 
-.course-description {
-  color: @gray-light;
-}
 .course-overview-preview {
   background: transparent url("../img/course/course_overview.png") no-repeat top center;
   background-size: 100% auto;
@@ -251,6 +189,11 @@ body {
     width: @font-size-base * 3;
     text-align: center;
   }
+  .step-title {
+    .one-line-text;
+    color: @wet-asphalt;
+    line-height: @font-size-base * 2;
+  }
   i.step-status {
     .icon;
     font-size: @font-size-large;
@@ -261,11 +204,6 @@ body {
     &:before {
       content: "\e439";
     }
-  }
-  .step-title {
-    .one-line-text;
-    color: @wet-asphalt;
-    line-height: @font-size-base * 2;
   }
   &.done > i.step-status:before {
     content: "\e438";
