@@ -1,15 +1,6 @@
 CourseEditor.service('ChapterModel', function() {
-    this.getChapter = function($chapterId) {
-        var chapter = JSON.parse(window.localStorage.getItem(chapterId));
 
-        if (!chapter) {
-            return []
-        } else {
-            return chapter;
-        }
-    };
-
-    this.getChapters = function($courseId) {
+    this.getChapters = function(courseId) {
 
         var course = JSON.parse(window.localStorage.getItem(courseId));
 
