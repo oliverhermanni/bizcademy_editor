@@ -1,7 +1,7 @@
 CourseEditor.service('ChapterModel', function() {
-    this.getChapters = function($courseId) {
+    this.getChapters = function(courseId) {
 
-        var course = JSON.parse(window.localStorage.getItem($courseId));
+        var course = JSON.parse(window.localStorage.getItem(courseId));
 
         if (!course) {
             return []
@@ -9,6 +9,23 @@ CourseEditor.service('ChapterModel', function() {
             return course.chapters;
         }
     };
+
+    this.getSingleChapter = function (courseId, chapterId) {
+        var course = JSON.parse(window.localStorage.getItem(courseId));
+
+        if (!course) {
+            return []
+        }
+
+        for (var i = 0; i < course.chapters.length; i++) {
+            if (course.chapters[i].id === chapterId) {
+                return course.chapters[i];
+            }
+        }
+
+
+        return chapter;
+    }
 
     this.addChapter = function(courseId, chapterTitle, chapterContent) {
         var chapter = {
@@ -40,6 +57,7 @@ CourseEditor.service('ChapterModel', function() {
             if (course.chapters[i].id === chapterId) {
                 course.chapters.splice(i, 1);
                 window.localStorage.setItem(courseId, JSON.stringify(course));
+                break;
             }
         }
     }
