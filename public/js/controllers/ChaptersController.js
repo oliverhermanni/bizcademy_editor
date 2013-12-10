@@ -7,13 +7,15 @@ CourseEditor.controller('ChaptersController',
 CourseEditor.controller('ChapterAddController',
   function ($scope, $location, $routeParams, ChapterModel) {
 
+    $scope.currentTask = "Add";
+
     $scope.cancel = function () {
       $location.path('/');
     }
 
     $scope.createChapter = function () {
 
-      ChapterModel.addChapter($scope.courseId, $scope.chapter.title, $scope.chapter.content);
+      ChapterModel.addChapter($scope.courseId, $scope.chapter.title, $scope.chapter.summary);
       $location.path('/');
     }
   }
