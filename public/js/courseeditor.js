@@ -2,19 +2,19 @@ var courseEditorConfig = function($routeProvider) {
     $routeProvider
         .when('/', {
             controller: 'CoursesController',
-            templateUrl: 'partials/courseEntry.html'
+            templateUrl: 'js/views/course/index.html'
         })
         .when('/chapter/:chapterId', {
             controller: 'ChaptersController',
-            templateUrl: 'partials/chapterShow.html'
+            templateUrl: 'js/views/chapter/show.html'
         })
         .when('/addchapter', {
             controller: 'ChapterAddController',
-            templateUrl: 'partials/chapterEditor.html'
+            templateUrl: 'js/views/chapter/edit.html'
         })
         .when('/deletechapter/:chapterId', {
             controller: 'ChapterDeleteController',
-            templateUrl: 'partials/courseEntry.html'
+            templateUrl: 'js/views/course/index.html'
          })
         .otherwise({
             redirectTo:'/'
