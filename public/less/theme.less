@@ -96,7 +96,7 @@ body {
   }
 }
 
-.course-description {
+.description {
   color: @gray-light;
 }
 .course-overview-preview {
@@ -117,6 +117,16 @@ body {
 
 .chapter-insights {
   .clearfix;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid @gray-lightest;
+  padding: 10px 20px 10px @font-size-middle * 4 + @l-space;
+  background: #f9f9f9;
+  .btn.btn-success {
+    margin-top: 6px;
+  }
   .insight-wrapper {
     .clearfix;
     padding-right: @xl-space;
@@ -124,15 +134,25 @@ body {
     border-right: 1px solid @gray-lightest;
     .icon, .count {
       margin-right: @m-space;
-      color: @brand-secondary;
+      color: @gray;
     }
     .icon {
       font-size: 2.25em;
       line-height: 1.3em;
+      &.icon-graduation {
+        color: @brand-primary;
+      }
+      &.icon-medal {
+        color: @turquoise;
+      }
+      &.icon-readers {
+        color: @brand-secondary;
+      }
     }
     .count {
       font-size: 1.25em;
       line-height: 2.25em;
+      font-weight: 300;
     }
     .type {
       font-style: italic;
@@ -152,7 +172,6 @@ body {
   position: relative;
   margin-bottom: 2px;
   h4.chapter-title {
-    margin-top: 0;
     width: 95%;
     > a {
       color: @brand-secondary;
@@ -182,6 +201,9 @@ body {
   }
   .chapter-details {
     padding-left: @font-size-middle * 4;
+    p.description {
+      margin-bottom: 5em;
+    }
   }
   .chapter-remove {
     .transition(.3s);
