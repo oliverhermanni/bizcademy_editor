@@ -24,6 +24,6 @@ var courseEditorConfig = function($routeProvider) {
 
 var CourseEditor = angular.module('CourseEditor', ['ngRoute'])
     .config(courseEditorConfig)
-    .run(function($rootScope, ChapterModel) {
+    .run(function($rootScope) {
         $rootScope.courseId = "999";
     });
