@@ -25,10 +25,11 @@ CourseEditor.service('ChapterModel', function () {
     }
   }
 
-  this.addChapter = function (courseId, chapterTitle, chapterSummary) {
+  this.addChapter = function (courseId, chapter) {
     var chapter = {
-      title: chapterTitle,
-      summary: chapterSummary,
+      title: chapter.title,
+      summary: chapter.summary,
+      advice: chapter.advice,
       id: Math.random().toString(36).substring(7)
     }
 
