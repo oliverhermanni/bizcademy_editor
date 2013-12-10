@@ -17,3 +17,5 @@ npm-debug.log
 node_modules
 .idea
 public/css
+public/less/bootstrap/*.css
+public/less/components/*.css
