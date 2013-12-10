@@ -14,7 +14,7 @@ var courseEditorConfig = function($routeProvider) {
         })
         .when('/deletechapter/:chapterId', {
             controller: 'ChapterDeleteController',
-            templateUrl: 'js/views/course/index.html'
+            templateUrl: 'js/views/course/show.html'
          })
         .otherwise({
             redirectTo:'/'
