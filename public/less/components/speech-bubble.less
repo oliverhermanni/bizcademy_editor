@@ -3,9 +3,11 @@
   position: relative;
   margin-bottom: @xl-space;
   .bubble {
+    .box-shadow(0 2px 0 @old-blue);
     .pull-left;
+    border-radius: @border-radius-base;
     position: relative;
-    background: @brand-secondary;
+    background: @light-old-blue;
     min-height: @xl-space * 3;
     color: #fff;
     margin-left: @xl-space;
@@ -26,7 +28,7 @@
       right: 100%;
       top: @l-space;
       border: solid transparent;
-      border-right-color: @brand-secondary;
+      border-right-color: @light-old-blue;
       border-width: @m-space;
       content: " ";
       height: 0;
@@ -52,7 +54,7 @@
       &:after {
         left: 100%;
         border-right-color: transparent;
-        border-left-color: @brand-secondary;
+        border-left-color: @light-old-blue;
       }
     }
   }
