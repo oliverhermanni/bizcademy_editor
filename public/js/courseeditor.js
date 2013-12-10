@@ -2,7 +2,7 @@ var courseEditorConfig = function($routeProvider) {
     $routeProvider
         .when('/', {
             controller: 'CoursesController',
-            templateUrl: 'js/views/course/index.html'
+            templateUrl: 'js/views/course/show.html'
         })
         .when('/chapter/:chapterId', {
             controller: 'ChaptersController',
