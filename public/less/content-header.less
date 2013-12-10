@@ -1,31 +1,63 @@
-.icon-lg-correction {
-  font-size: 2em;
-  line-height: 1em;
-  position: relative;
-  top: -4px;
-}
 .content-head {
   .clearfix;
   padding: @xl-space 0;
   a {
-    color: @gray-light;
+    color: @wet-asphalt;
     &:hover {
+      color: @midnight-blue;
       text-decoration: none;
-      color: @gray-dark;
     }
   }
 }
-
+a.toggle-usermenu {
+  color: @gray-light;
+  &:hover {
+    color: @gray-dark;
+  }  
+}
 .toggle-usermenu,
 .toggle-course-navigation {
-  .icon-lg-correction;
-}
-.total-point-count > i.fa {
-  .icon-lg-correction;
-  float: left;
-  margin-right: @m-space;
+  font-size: 1.75em;
+  line-height: 1em;
 }
 .working-status {
   color: @silver;
-  line-height: 2.5em;
+}
+.back-to-overview,
+.working-status,
+.course-step-count,
+.total-point-count {
+  line-height: 2.7em;  
+}
+.course-step-count {
+  display: inline-block;
+  color: @clouds;
+  .current {
+  }
+  .total {
+  }
+}
+
+.total-point-count {
+  .clearfix;
+  margin-right: @l-space;
+  .fa {
+    color: @gray-darker;
+    float: left;
+    font-size: 1.75em;
+    line-height: 1.55em;
+    margin-right: @m-space;
+  }
+  span {
+    font-weight: 300;
+    float: left;
+  }
+}
+.total-point-count,
+.toggle-course-navigation {
+  .transition(.25s);
+  color: @clouds;
+  &:hover {
+    color: @silver;
+  }
 }

@@ -6,7 +6,9 @@ body {
   position: relative;
 }
 
-  
+#content {
+  position: relative;
+}
 .chapter-counter {
 	border: 2px solid #000;
 	border-radius: 30px;
@@ -32,6 +34,15 @@ body {
 		border: none;
 	}
 }
+.user-progress {
+  background: @gray-dark;
+  padding: 0;
+}
+.progress-wrapper {
+  .clearfix;
+  padding: @xl-space 0;
+  line-height: 2.5em;
+}
 
 .course-nav-container {
 	background: @gray-dark;
@@ -47,11 +58,6 @@ body {
       text-decoration: none;
       color: @silver;
     }
-  }
-  .course-nav-header {
-    .clearfix;
-    padding: @line-height-computed 0;
-    line-height: 2.5em;
   }
   .course-title {
     .one-line-text;
@@ -131,24 +137,6 @@ body {
   text-align: right;
 }
 
-.course-step-count {
-  line-height: 1.5em;
-  display: inline-block;
-  padding: 0.5em 0;
-  .current {
-  }
-  .total {
-  }
-}
-
-.total-point-count {
-  .fa {
-    color: @gray-darker;
-  }
-  span {
-    font-weight: bold;
-  }
-}
 .chapter-insights {
   .clearfix;
   .insight-wrapper {

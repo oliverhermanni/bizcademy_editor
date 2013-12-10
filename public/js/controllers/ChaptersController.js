@@ -1,6 +1,6 @@
 CourseEditor.controller('ChaptersController',
     function ($scope, $location, $routeParams, ChapterModel) {
-
+      $scope.chapters = ChapterModel.getChapters($scope.courseId);
     }
 );
 

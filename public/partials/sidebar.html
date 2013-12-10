@@ -1,0 +1,14 @@
+<h2 class="course-title">Es gibt im Moment in diese Mannschaft, oh, einige Spieler vergessen ihnen Profi was sie sind</h2>
+<ul class="list-group course-nav">
+    <li class="list-group-item" ng-repeat="chapter in chapters">
+        <span class="fa-stack done">
+            <i class="fa fa-circle-o fa-stack-1x"></i>
+            <i class="fa fa-circle fa-stack-1x"></i>
+        </span>
+        <a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+        <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
+    </li>
+</ul>
+<a class="btn btn-link btn-block btn-default" href="#/addchapter">
+    <i class="fa fa-plus"></i> Add new chapter
+</a>

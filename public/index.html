@@ -24,53 +24,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-9" id="main">
-          <div class="content-head">
-            <a href="/" class="btn btn-default btn-link toggle-usermenu pull-left">
-              <i class="fa fa-bars"></i></a>
-            <a href="/" class="btn btn-link btn-default pull-left back-to-overview"><i class="fa fa-angle-left"></i> Zurück zur Übersicht</a>
-            <div class="working-status pull-right">
-              <span>All changes has been saved.</span>
-              <i class="fa fa-spinner fa-spin"></i>
-            </div>
-          </div>
-          <div ng-view></div>
-        </div>
-        <div class="col-md-3 course-nav-container">
-          <div class="row">
-            <div class="course-nav-header">
-              <a href="/" class="btn btn-link btn-default toggle-course-navigation pull-left">
-                <i class="fa fa-list-ul"></i>
-              </a>
-              <span class="course-step-count pull-left">
-                <span class="current">2</span>
-                <span class="total">/ 10</span>
-              </span>
-      
-              <a href="/" class="btn btn-default btn-link pull-right total-point-count">
-                <i class="fa fa-rocket"></i>
-                <span>1337</span>
-              </a>
-            </div>
-          </div>
-          <div class="row">
-              <h2 class="course-title">Es gibt im Moment in diese Mannschaft, oh, einige Spieler vergessen ihnen Profi was sie sind</h2>
-              <ul class="list-group course-nav">
-                  <li class="list-group-item" ng-repeat="chapter in chapters">
-                      <span class="fa-stack done">
-                          <i class="fa fa-circle-o fa-stack-1x"></i>
-                          <i class="fa fa-circle fa-stack-1x"></i>
-                      </span>
-                      <a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
-                      <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
-                  </li>
-              </ul>
-              <a class="btn btn-link btn-block btn-default" href="#/addchapter">
-                  <i class="fa fa-plus"></i> Add new chapter
-              </a>
-          </div>
-        </div>
+      <div class="row" id="header">
+        <div class="header" ng-include src="'partials/header.html'"></div>
+      </div>
+      <div class="row" id="content">
+        <div ng-view></div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
