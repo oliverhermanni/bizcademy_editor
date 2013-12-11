@@ -6,13 +6,8 @@ CourseEditor.controller('ChaptersController',
       $scope.chapter = ChapterModel.getChapterById($scope.courseId, $routeParams.chapterId);
     }
 
-    $scope.showChapter = function(chapterId) {
-      $scope.chapter = ChapterModel.getChapterById($scope.courseId, chapterId);
-    }
-
     $scope.onDelete = function(chapterId) {
       var confirmDelete = confirm('Are you sure, you want to delete this chapter?');
-      alert(chapterId);
 
       if (confirmDelete) {
         $location.path('deletechapter/' + chapterId)
