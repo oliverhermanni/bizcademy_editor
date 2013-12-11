@@ -11,16 +11,14 @@ CourseEditor.service('CourseModel', function () {
     return courses.myCourses;
   };
 
-  this.getCourseById = function (courseId, chapterId) {
-    var course = JSON.parse(window.localStorage.getItem("courses"));
+  this.getCourseById = function (courseId) {
+    var courses = JSON.parse(window.localStorage.getItem("courses"));
 
-
-
-    if (!course) {
-      return []
+    for (var i = 0; i < courses.myCourses.length; i++) {
+      if (courses.myCourses[i].id === courseId) {
+        return courses.myCourses[i];
+      }
     }
-
-    return course;
   }
 
   this.addCourse = function (courseData) {
