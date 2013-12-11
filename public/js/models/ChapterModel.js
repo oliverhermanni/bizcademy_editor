@@ -49,7 +49,7 @@ CourseEditor.service('ChapterModel', function (CourseModel) {
   };
 
   this.deleteChapter = function (courseId, chapterId) {
-    var course = JSON.parse(window.localStorage.getItem(courseId));
+    var course = CourseModel.getCourseById(courseId)
 
     if (!course || !course.chapters) {
       return;
@@ -57,7 +57,7 @@ CourseEditor.service('ChapterModel', function (CourseModel) {
     for (var i = 0; i < course.chapters.length; i++) {
       if (course.chapters[i].id === chapterId) {
         course.chapters.splice(i, 1);
-        window.localStorage.setItem(courseId, JSON.stringify(course));
+       CourseModel.saveCourse(course.id, course);
         break;
       }
     }
