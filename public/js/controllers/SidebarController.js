@@ -1,5 +1,5 @@
 CourseEditor.controller('SidebarController',
-  function ($scope, $location, $routeParams, ChapterModel) {
-    $scope.chapters = ChapterModel.getChapters($scope.courseId);
+  function ($scope, $location, $routeParams, CourseModel) {
+    $scope.course = CourseModel.getCourseById($routeParams.courseId);
   }
 );
