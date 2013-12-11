@@ -13,39 +13,11 @@
       {{ chapter.advice }}
     </div>
   </div>
-  <h3>Answers</h3>
-
-  <!-- Button trigger modal -->
-  <button class="btn btn-secondary" data-toggle="modal" data-target="#type-chooser">
-    Launch type chooser
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="typeChooserLabel">Choose the type for the next Step:</h4>
-        </div>
-        <div class="modal-body">
-          <a href="" class="btn-choose text-type">
-            <i class="icon icon-bubble2"></i>
-            <span class="type-label">Text Type</span>
-            <span class="type-hint">e.g. text or instructions</span>
-          </a>
-          <a href="" class="btn-choose game-type">
-            <i class="icon icon-gamepad"></i>
-            <span class="type-label">Game Type</span>
-            <span class="type-hint">e.g. quiz or interaction</span>
-          </a>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-  
+  <h3>Quiz-Module</h3>
+    
   <div class="chapter-actions">
-    <a href="#">Create another chapter</a> or <a class="btn btn-primary">Create new step <i class="fa fa-angle-right"></i></a>  
+    <a href="/" class="btn btn-link btn-default pull-left"><i class="fa fa-angle-left"></i> Back</a>
+    <a href="#">Create another chapter</a> or <a class="btn btn-primary" data-toggle="modal" data-target="#type-chooser">Create new step <i class="fa fa-angle-right"></i></a>  
   </div>  
 </div>
 <div class="col-md-3 course-nav-container">
@@ -54,3 +26,26 @@
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="typeChooserLabel">Choose the type for the next Step:</h4>
+      </div>
+      <div class="modal-body">
+        <a href="" class="btn-choose text-type">
+          <i class="icon icon-bubble2"></i>
+          <span class="type-label">Text Type</span>
+          <span class="type-hint">e.g. text or instructions</span>
+        </a>
+        <a href="" class="btn-choose game-type">
+          <i class="icon icon-gamepad"></i>
+          <span class="type-label">Game Type</span>
+          <span class="type-hint">e.g. quiz or interaction</span>
+        </a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
