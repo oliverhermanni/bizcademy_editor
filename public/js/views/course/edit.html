@@ -1,0 +1,34 @@
+<div class="col-md-9">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>{{ currentTask }} course</h2>
+      <form name="addcourse" role="form">
+        <div class="form-group">
+          <label for="courseTitle">Title</label>
+          <input type="text" class="form-control" id="courseTitle" placeholder="Title" ng-model="course.title">
+        </div>
+        <div class="form-group">
+          <label for="courseSummary">Summary</label>
+          <textarea id="courseSummary" class="form-control" placeholder="Summary"
+                    ng-model="course.summary"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="courseAdvice">Advice for user</label>
+          <textarea id="courseAdvice" class="form-control" placeholder="Advice"
+                    ng-model="course.advice"></textarea>
+        </div>
+        <div class="form-group">
+          <button ng-click="cancel()" class="btn btn-danger">Cancel</button>
+          <button ng-click="createCourse()" ng-disabled="!course.summary" class="btn btn-primary">Create course
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 course-nav-container">
+  <div class="row">
+    <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+  </div>
+</div>
+
