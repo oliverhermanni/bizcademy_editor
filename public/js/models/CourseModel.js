@@ -21,6 +21,8 @@ CourseEditor.service('CourseModel', function () {
     }
   }
 
+
+
   this.addCourse = function (courseData) {
 
     var courses = JSON.parse(window.localStorage.getItem("courses"));
@@ -38,10 +40,26 @@ CourseEditor.service('CourseModel', function () {
       advice: courseData.advice
     }
 
-
     courses.myCourses.push(course);
 
     window.localStorage.setItem("courses", JSON.stringify(courses));
   };
+
+  this.saveCourse = function (courseId, courseData) {
+    var courses = JSON.parse(window.localStorage.getItem("courses"));
+
+    for (var i = 0; i < courses.myCourses.length; i++) {
+      if (courses.myCourses[i].id === courseId) {
+        courses.myCourses[i] = {
+          id: courseData.id,
+          title: courseData.title,
+          summary: courseData.summary,
+          advice: courseData.advice,
+          chapters: courseData.chapters
+        };
+        window.localStorage.setItem("courses", JSON.stringify(courses));
+      }
+    }
+  }
 
 });
