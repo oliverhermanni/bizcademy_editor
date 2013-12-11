@@ -1,6 +1,10 @@
 CourseEditor.controller('CoursesController',
   function ($scope, $location, $routeParams, CourseModel) {
     $scope.courses = CourseModel.getCourses();
+
+    if ($routeParams.courseId) {
+      $scope.course = CourseModel.getCourseById($routeParams.courseId);
+    }
   }
 );
 
