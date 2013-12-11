@@ -23,22 +23,20 @@ CourseEditor.controller('ChapterAddController',
     $scope.currentTask = "Add";
 
     $scope.cancel = function () {
-      $location.path('/');
+      $location.path('/course/' + $routeParams.courseId);
     }
 
     $scope.createChapter = function () {
 
       ChapterModel.addChapter($routeParams.courseId, $scope.chapter);
-      $location.path('/');
+      $location.path('/course/' + $routeParams.courseId);
     }
   }
 );
 
 CourseEditor.controller('ChapterDeleteController',
   function ($scope, $location, $routeParams, ChapterModel) {
-    var chapterId = $routeParams.chapterId;
-
-    ChapterModel.deleteChapter($scope.courseId, chapterId);
-    $location.path('/');
+    ChapterModel.deleteChapter($routeParams.courseId, $routeParams.chapterId);
+    $location.path('/course/' + $routeParams.courseId);
   }
 );
