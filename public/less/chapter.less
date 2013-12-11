@@ -1,0 +1,113 @@
+.chapter {
+  margin-bottom: @xl-space * 2;
+}
+.chapter-actions {
+  text-align: right;
+}
+.chapter-header {
+  .clearfix;
+  position: relative;
+  margin-bottom: 2px;
+  h4.chapter-title {
+    width: 95%;
+    > a {
+      color: @brand-secondary;
+      font-size: @font-size-large;
+      &:hover {
+        color: @midnight-blue;
+      }
+    }
+  }
+  p {
+    color: @gray-light;
+    margin-bottom: @xl-space;
+  }
+  .chapter-count {
+    font-family: @font-family-decorative;
+    border-radius: 50%;
+    border: 2px solid @gray;
+    color: @gray;
+    width: @font-size-middle * 3;
+    height: @font-size-middle * 3;
+    position: absolute;
+    left: @l-space;
+    top: @l-space;
+    text-align: center;
+    line-height: @font-size-middle * 2.5;
+    font-size: @font-size-middle * 2;
+    font-weight: 300;
+  }
+  .chapter-details {
+    padding-left: @font-size-middle * 4;
+    p.description {
+      margin-bottom: 5em;
+    }
+  }
+  .chapter-remove {
+    .transition(.3s);
+    position: absolute;
+    top: @l-space;
+    right: 0;
+    width: @font-size-middle * 2;
+    height: @font-size-middle * 2;
+    color: @basic-grey;
+    opacity: 0;
+    font-size: @font-size-middle;
+    &:hover {
+      color: @gray;
+    }
+  }
+  &:hover .chapter-remove {
+    right: @s-space;
+    opacity: 1;
+  }
+}
+.chapter-insights {
+  .clearfix;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid @gray-lightest;
+  padding: 10px 20px 10px @font-size-middle * 4 + @l-space;
+  background: #f9f9f9;
+  .btn.btn-success {
+    margin-top: 6px;
+  }
+  .insight-wrapper {
+    .clearfix;
+    padding-right: @xl-space;
+    margin-right: @l-space;
+    border-right: 1px solid @gray-lightest;
+    .icon, .count {
+      margin-right: @m-space;
+      color: @gray;
+    }
+    .icon {
+      font-size: 2.25em;
+      line-height: 1.3em;
+      &.icon-graduation {
+        // color: @brand-primary;
+      }
+      &.icon-medal {
+        // color: @turquoise;
+      }
+      &.icon-readers {
+        // color: @brand-secondary;
+      }
+    }
+    .count {
+      font-size: 1.25em;
+      line-height: 2.25em;
+      font-weight: 300;
+    }
+    .type {
+      color: @basic-grey;
+      line-height: 3em;
+      font-weight: 300;
+    }
+    &:last-child {
+      border-right: 0px;
+    }
+  }
+}

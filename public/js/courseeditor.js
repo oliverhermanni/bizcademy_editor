@@ -16,6 +16,10 @@ var courseEditorConfig = function($routeProvider) {
             controller: 'ChapterDeleteController',
             templateUrl: 'js/views/course/show.html'
          })
+         .when('/quiz', {
+             controller: 'QuizController',
+             templateUrl: 'js/views/quiz/show.html'
+         })
         .otherwise({
             redirectTo:'/'
         });

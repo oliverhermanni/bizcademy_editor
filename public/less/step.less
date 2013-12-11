@@ -1,0 +1,62 @@
+.chapter-step {
+  .clearfix;
+  .transition(.2s);
+  position: relative;
+  background: @clouds;
+  border: 0;
+  border-bottom: 1px solid @gray-lighter;
+  margin-bottom: 0;
+  padding-right: 0;
+  &:hover {
+    background: #f6f6f6;
+    .step-remove {
+      right: @font-size-middle * 2.375;
+      opacity: 1;
+    }
+  }
+  .step-remove {
+    .transition(.3s);
+    font-size: @font-size-middle;
+    color: @brand-danger;
+    line-height: @font-size-base * 2;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    width: @font-size-base * 3;
+    text-align: center;
+  }
+  i.step-status {
+    .icon;
+    font-size: @font-size-large;
+    position: relative;
+    color: @gray-light;
+    margin-right: @s-space;
+    line-height: @font-size-base * 2;
+    &:before {
+      content: "\e439";
+    }
+  }
+  .step-title {
+    .one-line-text;
+    color: @wet-asphalt;
+    line-height: @font-size-base * 2;
+  }
+  &.done > i.step-status:before {
+    content: "\e438";
+    color: @emerald;
+  }
+  &.current > i.step-status:before {
+    content: "\e438";
+    color: @gray-dark;
+  }
+  .item-drag-handle {
+    color: @silver;
+    position: relative;
+    top: 2px;
+    width: @font-size-base * 2;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

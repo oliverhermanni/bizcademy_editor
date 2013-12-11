@@ -1,33 +1,19 @@
 <div class="col-md-9">
   <div class="well">
-    <h2>{{ chapter.title }}</h2>
+    <h2>{{ quiz.title }}</h2>
 
     <p class="description">
-      {{ chapter.content }}
+      {{ quiz.summary }}
     </p>
   </div>
   <div class="speech-bubble right-handed">
     <img src="img/dirtydieter.jpg" class="avatar">
 
     <div class="bubble col-md-6">
-      Any advice for your Any advice for your Any advice for your Any advice for your Any advice for your course...
+      {{ chapter.advice }}
     </div>
   </div>
   <h3>Chapter settings</h3>
-
-  <div class="settings-control">
-    <div class="onoffswitch pull-left">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-      <label class="onoffswitch-label" for="myonoffswitch">
-        <div class="onoffswitch-inner"></div>
-        <div class="onoffswitch-switch"></div>
-      </label>
-    </div>
-    <div class="switch-text pull-left">
-      Draftmode
-      <span class="hint">(Not visible on editorial check)</span>
-    </div>
-  </div>
 
   <h3>Select achievement for this chapter</h3>
 
