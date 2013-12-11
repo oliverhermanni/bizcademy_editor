@@ -21,3 +21,51 @@ body {
   opacity: .9;
   filter: alpha(opacity=90);
 }
+.answer {
+  .clearfix;
+  position: relative;
+  margin-bottom: @s-space;
+  .answer-remove {
+    .transition(.15s);
+    position: absolute;
+    top: 0;
+    right: -1em;
+    width: 3em;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+    color: @brand-danger;
+    opacity: 0;
+    font-size: @font-size-base;
+    &:hover {
+      color: @pomegranate;
+    }
+  }
+  &:hover .answer-remove {
+    right: 0;
+    opacity: 1;
+  }
+}  
+.add-answer {
+  .clearfix;
+  .transition(.15s);
+  color: @gray;
+  display: block;
+  margin-bottom: 4em;
+  .icon {
+    float: left;
+    color: @gray;
+    font-size: 2em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    display: inline-block;
+    text-align: center;
+    margin-right: @xl-space + @s-space;
+  }
+  span {
+    float: left;
+    line-height: 3em;
+    display: inline-block;
+  }
+}
