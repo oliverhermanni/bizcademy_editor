@@ -1,6 +1,6 @@
-<h2 class="course-title">Es gibt im Moment in diese Mannschaft, oh, einige Spieler vergessen ihnen Profi was sie sind</h2>
+<h2 class="course-title">{{course.title}}</h2>
 <ul class="list-group chapters" ng-controller="SidebarController">
-    <li class="list-group-item chapter" ng-repeat="chapter in chapters">
+    <li class="list-group-item chapter" ng-repeat="chapter in course.chapters">
         <i class="chapter-status pull-left"></i>        
         <a class="chapter-title pull-left" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
         <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
