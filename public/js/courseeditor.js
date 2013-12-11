@@ -12,17 +12,17 @@ var courseEditorConfig = function($routeProvider) {
         controller: 'CoursesController',
         templateUrl: 'js/views/course/show.html'
       })
-      .when('/chapter/:chapterId', {
-        controller: 'ChaptersController',
-        templateUrl: 'js/views/chapter/show.html'
-      })
-      .when('/addchapter', {
+      .when('/course/:courseId/chapter/add', {
         controller: 'ChapterAddController',
         templateUrl: 'js/views/chapter/edit.html'
       })
-      .when('/deletechapter/:chapterId', {
+      .when('/course/:courseId/chapter/delete/:chapterId', {
         controller: 'ChapterDeleteController',
         templateUrl: 'js/views/course/show.html'
+      })
+      .when('/course/:courseId/chapter/:chapterId', {
+        controller: 'ChaptersController',
+        templateUrl: 'js/views/chapter/show.html'
       })
       .when('/quiz', {
         controller: 'QuizController',
