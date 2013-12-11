@@ -1,0 +1,63 @@
+#type-chooser {
+  h4.modal-title {
+    font-family: @font-family-decorative;
+    font-weight: 300;
+    font-size: @font-size-h3;
+  }
+  .modal-header {
+    padding: @xl-space @xl-space 0;
+    border-bottom: none;
+    .close {
+      margin-top: 0;
+      line-height: 1.5em;
+    }
+  }
+  .modal-body {
+    .clearfix;
+  }
+  .btn-choose {
+    .lh-transition(.2s);
+    border-radius: @border-radius-base;
+    font-family: @font-family-decorative;
+    width: 50%;
+    padding: 2em 0;
+    min-height: 170px;
+    color: @gray-lightest;
+    text-align: center;
+    .icon {
+      font-size: 6em;
+    }
+    &.text-type {
+      background: @wet-asphalt;
+      width: 49%;
+      float: left;
+      .type-hint {
+        color: @midnight-blue;
+      }
+      &:hover {
+        background: @midnight-blue;
+      }
+    }
+    &.game-type {
+      background: @emerald;
+      width: 49%;
+      float: right;
+      .type-hint {
+        color: @nephritis;
+      }
+      &:hover {
+        background: @nephritis;
+      }
+    }
+    .type-hint {
+      font-size: 1em;
+      display: block;
+    }
+    .type-label {
+      font-size: 2em;
+      font-weight: 300;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+}
