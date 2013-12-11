@@ -1,10 +1,9 @@
-CourseEditor.service('ChapterModel', function () {
+CourseEditor.service('ChapterModel', function (CourseModel) {
 
   this.getChapters = function (courseId) {
+    var course = CourseModel.getCourseById(courseId);
 
-    var course = JSON.parse(window.localStorage.getItem(courseId));
-
-    if (!course) {
+    if (!course || !course.chapters) {
       return []
     } else {
       return course.chapters;
@@ -12,9 +11,9 @@ CourseEditor.service('ChapterModel', function () {
   };
 
   this.getChapterById = function (courseId, chapterId) {
-    var course = JSON.parse(window.localStorage.getItem(courseId));
+    var course = CourseModel.getCourseById(courseId)
 
-    if (!course) {
+    if (!course || !course.chapters) {
       return []
     }
 
@@ -26,28 +25,31 @@ CourseEditor.service('ChapterModel', function () {
   }
 
   this.addChapter = function (courseId, chapter) {
+
     var chapter = {
+      id: Math.random().toString(36).substring(7),
       title: chapter.title,
       summary: chapter.summary,
-      advice: chapter.advice,
-      id: Math.random().toString(36).substring(7)
+      advice: chapter.advice
     }
 
-    var course = JSON.parse(window.localStorage.getItem(courseId));
+    var course = CourseModel.getCourseById(courseId)
 
-    if (!course) {
+    if (!course.chapters) {
       course = {
-        id: courseId,
+        id: course.id,
+        title: course.title,
+        summary: course.summary,
+        advice: course.advice,
         chapters: []
       }
     }
     course.chapters.push(chapter);
-    window.localStorage.setItem(courseId, JSON.stringify(course));
+    CourseModel.saveCourse(course.id, course);
   };
 
   this.deleteChapter = function (courseId, chapterId) {
     var course = JSON.parse(window.localStorage.getItem(courseId));
-    console.log('test');
 
     if (!course || !course.chapters) {
       return;
