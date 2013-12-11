@@ -21,7 +21,7 @@
           {{$index+1}}
         </div>
         <div class="chapter-details">
-          <h4 class="chapter-title"><a href="#/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
+          <h4 class="chapter-title"><a href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
           <p class="description">{{chapter.summary}}</p>
           <div class="chapter-insights">
             <div class="insight-wrapper pull-left">
@@ -54,7 +54,7 @@
     </div>
   </div>
   <p class="course-overview-preview" ng-controller="ChaptersController" ng-hide="chapters.length">
-    <a href="#/addchapter" class="btn btn-warning btn-lg">
+    <a href="#/course/{{course.id}}/chapter/add" class="btn btn-warning btn-lg">
       <i class="fa fa-lg fa-book"></i>
       Create your first chapter
     </a>
