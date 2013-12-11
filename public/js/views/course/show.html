@@ -15,11 +15,11 @@
       </div>
   </div>
 
-  <h3>Chapter Overview <small>({{chapters.length}} chapters)</small></h3>
-  <div class="chapters">
+  <h3 ng-controller="ChaptersController">Chapter Overview <small>({{chapters.length}} chapters)</small></h3>
+  <div class="chapters" ng-controller="ChaptersController">
     <div class="chapter" ng-repeat="chapter in chapters">
       <div class="well chapter-header">
-        <a href ng-click="onDelete(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
+        <a href  ng-click="onDelete(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
         <div class="chapter-count">
           {{$index+1}}
         </div>
@@ -56,7 +56,7 @@
       </ul>
     </div>
   </div>
-  <p class="course-overview-preview" ng-hide="chapters.length">
+  <p class="course-overview-preview" ng-controller="ChaptersController" ng-hide="chapters.length">
     <a href="#/addchapter" class="btn btn-warning btn-lg">
       <i class="fa fa-lg fa-book"></i>
       Create your first chapter
