@@ -1,16 +1,16 @@
 CourseEditor.controller('ChaptersController',
   function ($scope, $location, $routeParams, ChapterModel) {
-    $scope.chapters = ChapterModel.getChapters($scope.courseId);
+    $scope.chapters = ChapterModel.getChapters($routeParams.courseId);
 
     if ($routeParams.chapterId) {
-      $scope.chapter = ChapterModel.getChapterById($scope.courseId, $routeParams.chapterId);
+      $scope.chapter = ChapterModel.getChapterById($routeParams.courseId, $routeParams.chapterId);
     }
 
     $scope.onDelete = function(chapterId) {
       var confirmDelete = confirm('Are you sure, you want to delete this chapter?');
 
       if (confirmDelete) {
-        $location.path('deletechapter/' + chapterId)
+        $location.path('/course/' + $routeParams.courseId + '/chapter/delete/' + chapterId)
       }
     }
 
@@ -28,7 +28,7 @@ CourseEditor.controller('ChapterAddController',
 
     $scope.createChapter = function () {
 
-      ChapterModel.addChapter($scope.courseId, $scope.chapter);
+      ChapterModel.addChapter($routeParams.courseId, $scope.chapter);
       $location.path('/');
     }
   }
