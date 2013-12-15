@@ -60,3 +60,39 @@
     }
   }
 }
+
+.hint-wrapper {
+  .clearfix;
+  position: relative;
+  border: 2px solid @gray-lighter;
+  border-left: 3em solid @gray-lighter;
+  min-height: 3em;
+  margin-bottom: @s-space;
+  .hint-counter {
+    font-weight: 400;
+    position: absolute;
+    top: 0;
+    left: -1.5em;
+    background: @gray-lighter;
+    color: @gray-light;
+    font-size: 2em;
+    width: 1.5em;
+    text-align: center;
+    float: left;
+  }
+  .hint-text {
+    margin-left: @s-space;
+    padding: @m-space @xl-space;
+    line-height: 1.5em;
+    float: left;
+    color: @gray-light;
+  }
+  &.filled {
+    border-color: #b6cbe2;
+    background: #b6cbe2;
+    .hint-counter, .hint-text {
+      color: @wet-asphalt;
+      background: #b6cbe2;
+    }
+  }
+}

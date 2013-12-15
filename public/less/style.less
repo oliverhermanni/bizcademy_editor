@@ -27,3 +27,31 @@
 @import "type-chooser";
 @import "course-navigation";
 @import "theme";
+
+
+@media (min-width: @screen-sm-min) {
+}
+
+@media (min-width: @screen-md-min) {
+  .course-progress-wrapper {
+    background: @gray-dark;
+    padding: 0;
+    .total-point-count, .toggle-course-navigation, .course-step-count {
+      color: @clouds;
+      &:hover {
+        color: @silver;
+      }
+    }
+  }
+  .course-nav-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  
+}

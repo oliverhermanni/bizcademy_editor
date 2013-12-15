@@ -31,11 +31,7 @@ a.toggle-usermenu {
 }
 .course-step-count {
   display: inline-block;
-  color: @clouds;
-  .current {
-  }
-  .total {
-  }
+  color: @text-color;
 }
 
 .total-point-count {
@@ -56,15 +52,12 @@ a.toggle-usermenu {
 .total-point-count,
 .toggle-course-navigation {
   .transition(.25s);
-  color: @clouds;
-  &:hover {
-    color: @silver;
-  }
+  color: @text-color;
 }
 
 .course-progress-wrapper {
-  background: @gray-dark;
-  padding: 0;
+  padding: 0 @l-space;
+  background: transparent;
   .course-progress {
     .clearfix;
     padding: @xl-space 0;

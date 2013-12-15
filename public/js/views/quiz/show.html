@@ -32,21 +32,43 @@
     <div class="checkbox-label">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
     <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
   </div>
-  <a href="#" class="add-answer">
+  <a href="javascript:;" class="add-answer">
     <i class="icon icon-enter-alt"></i>
     <span>Add new Quiz-Answer</span>
   </a>
+
+  <h3> Hints <span class="hint">(we recommend to fill out all 3 hints)</span></h3>
+
+  <div class="hint-wrapper filled">
+    <div class="hint-counter">1</div>
+    <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+  </div>
+  <div class="hint-wrapper filled">
+    <div class="hint-counter">2</div>
+    <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</div>
+  </div>
+  <div class="hint-wrapper">
+    <div class="hint-counter">3</div>
+    <div class="hint-text">Add new Hint here</div>
+  </div>
+
   
   <div class="chapter-actions">
     <a href="/" class="btn btn-link btn-default pull-left"><i class="fa fa-angle-left"></i> Back</a>
     <a href="#">Create another chapter</a> or <a class="btn btn-primary" data-toggle="modal" data-target="#type-chooser">Create new step <i class="fa fa-angle-right"></i></a>  
-  </div>  
+  </div>
+  
+  
+  
 </div>
 <div class="col-md-3 course-nav-container">
   <div class="row">
     <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
   </div>
 </div>
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">

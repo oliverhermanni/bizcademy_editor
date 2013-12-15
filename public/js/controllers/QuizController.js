@@ -1,4 +1,4 @@
 CourseEditor.controller('QuizController',
-    function ($scope, $location, $routeParams) {
-    }
+  function ($scope, $location, $routeParams) {
+  }
 );
