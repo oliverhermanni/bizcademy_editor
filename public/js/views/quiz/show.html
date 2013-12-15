@@ -13,7 +13,39 @@
       {{ chapter.advice }}
     </div>
   </div>
-  <h3>Quiz-Module</h3>
+  <h3 class="headline-with-dropdown">
+    <span class="pull-left">Quiz-Module</span>
+    <div class="btn-group select select-block pull-right">
+      <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+        <i class="icon icon-brush"></i>
+        Choose your theme
+        <span class="caret"></span>
+      </button>
+    
+      <span class="dropdown-arrow"></span>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="#">
+            <i class="icon icon-list2"></i>
+            Klassisch
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon icon-grid2"></i>
+            Memory
+          </a>
+        </li>
+        <li class="selected">
+          <a href="#">
+            <i class="icon icon-stopwatch"></i>
+            Jack-Attack
+          </a>
+        </li>
+      </ul>
+    </div>  
+  </h3>
+  
   <div class="answer custom-checkbox">
     <input id="checkbox" class="hidden" type="checkbox" value=""></input>
     <label class="" for="checkbox"></label>
