@@ -1,0 +1,95 @@
+.owl-wrapper-outer {
+  height: 170px;
+}
+.achievement {
+  .box-shadow(0 2px 0 @gray-lighter);
+  border: 5px solid white;
+  background: @brand-secondary;
+  border-radius: @border-radius-base;
+  text-align: center;
+  width: 90%;
+  height: 150px;
+  margin: @m-space 5%;
+  background-size: 50% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  &.current {
+    outline: 5px solid @brand-secondary;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.achievements-wrapper {
+  position: relative;
+  a.prev-item,
+  a.next-item {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    font-size: 2em;
+    height: 170px;
+    display: table;
+    color: @gray-light;
+    background: @clouds;
+    &:before {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &:hover {
+      color: @gray;
+      cursor: pointer;
+    }
+  }
+  a.prev-item {
+    left: 0;
+    // .lh-background-image(linear-gradient(to left, transparent 0%,@clouds 70%));
+    border-right: 1px solid @basic-grey;
+    box-shadow: 2px 0 0px rgba(0,0,0,.1);
+  }
+  a.next-item {
+    right: 0;
+    // .lh-background-image(linear-gradient(to right, transparent 0%,@clouds 70%));
+    border-left: 1px solid @basic-grey;
+    box-shadow: -2px 0 0px rgba(0,0,0,.1);
+  }
+}
+.circle-no1 {
+  background-color: #d4872f;
+  background-image: url(../../img/achievements/circle-no1.svg);
+}
+.no1-badge {
+  background-color: #bb5327;
+  background-image: url(../../img/achievements/no1-badge.svg);
+}
+.ranking {
+  background-color: #9d6f43;
+  background-image: url(../../img/achievements/ranking.svg);
+}
+.star-badge {
+  background-color: #508694;
+  background-image: url(../../img/achievements/star-badge.svg);
+}
+.star-cup-hand {
+  background-color: #297770;
+  background-image: url(../../img/achievements/star-cup-hand.svg);
+}
+.star-cup2 {
+  background-color: #c9b64c;
+  background-image: url(../../img/achievements/star-cup2.svg);
+  background-size: 35% auto;
+}
+.star-shield {
+  background-color: #687ba0;
+  background-image: url(../../img/achievements/star-shield.svg);
+}
+.crone {
+  background-color: #4899c3;
+  background-image: url(../../img/achievements/crone.svg);
+}
+.circle-star-medal {
+  background-color: #809778;  
+  background-image: url(../../img/achievements/circle-star-medal.svg);
+  background-size: 35% auto;
+}
