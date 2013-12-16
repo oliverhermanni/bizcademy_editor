@@ -34,7 +34,7 @@
   <p>here comes the achievements</p>
 
   <div class="chapter-actions">
-    <a href="#">Create another chapter</a> or <a class="btn btn-primary">Create new step <i class="fa fa-angle-right"></i></a>  
+    <a href="#">Create another chapter</a> or <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create new step <i class="fa fa-angle-right"></i></a>
   </div>  
 </div>
 <div class="col-md-3 course-nav-container">
@@ -43,3 +43,22 @@
   </div>
 </div>
 
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Choose type for next step</h4>
+      </div>
+      <div class="modal-body">
+        <p ng-controller="GametypeController">
+          <a href class="btn btn-primary" ng-click="createModule('text')">Text</a>
+          <a href class="btn btn-primary" ng-click="createModule('quiz')">Quiz</a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
