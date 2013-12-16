@@ -14,7 +14,8 @@
   background-position: center center;
   background-repeat: no-repeat;
   &.current {
-    outline: 5px solid @brand-secondary;
+    outline: @s-space solid @belize-hole;
+    outline-offset: @s-space;
   }
   &:hover {
     cursor: pointer;
@@ -92,4 +93,14 @@
   background-color: #809778;  
   background-image: url(../../img/achievements/circle-star-medal.svg);
   background-size: 35% auto;
+}
+.achievement-settings {
+  .form-group {
+    margin-top: @l-space;
+  }
+  label {
+    font-weight: 300;
+    color: rgba(255,255,255,.3);
+    letter-spacing: 1px;
+  }
 }
