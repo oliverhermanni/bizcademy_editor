@@ -1,127 +1,132 @@
-<div class="col-md-9">
-  <div class="well">
-    <h2>{{ quiz.title }}</h2>
+<div class="container">
+  <div class="row" id="content">
 
-    <p class="description">
-      {{ quiz.summary }}
-    </p>
-  </div>
-  <div class="speech-bubble right-handed">
-    <img src="img/dirtydieter.jpg" class="avatar">
+    <div class="col-md-9">
+      <div class="well">
+        <h2>{{ quiz.title }}</h2>
 
-    <div class="bubble col-md-6">
-      {{ chapter.advice }}
-    </div>
-  </div>
-  <h3 class="headline-with-dropdown">
-    <span class="pull-left">Quiz-Module</span>
-    <div class="btn-group select select-block pull-right">
-      <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
-        <i class="icon icon-brush"></i>
-        Choose your theme
-        <span class="caret"></span>
-      </button>
+        <p class="description">
+          {{ quiz.summary }}
+        </p>
+      </div>
+      <div class="speech-bubble right-handed">
+        <img src="img/dirtydieter.jpg" class="avatar">
+
+        <div class="bubble col-md-6">
+          {{ chapter.advice }}
+        </div>
+      </div>
+      <h3 class="headline-with-dropdown">
+        <span class="pull-left">Quiz-Module</span>
+        <div class="btn-group select select-block pull-right">
+          <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+            <i class="icon icon-brush"></i>
+            Choose your theme
+            <span class="caret"></span>
+          </button>
     
-      <span class="dropdown-arrow"></span>
-      <ul class="dropdown-menu" role="menu">
-        <li>
-          <a href="#">
-            <i class="icon icon-list2"></i>
-            Klassisch
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="icon icon-grid2"></i>
-            Memory
-          </a>
-        </li>
-        <li class="selected">
-          <a href="#">
-            <i class="icon icon-stopwatch"></i>
-            Jack-Attack
-          </a>
-        </li>
-      </ul>
-    </div>  
-  </h3>
+          <span class="dropdown-arrow"></span>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-list2"></i>
+                Klassisch
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-grid2"></i>
+                Memory
+              </a>
+            </li>
+            <li class="selected">
+              <a href="#">
+                <i class="icon icon-stopwatch"></i>
+                Jack-Attack
+              </a>
+            </li>
+          </ul>
+        </div>  
+      </h3>
   
-  <div class="answer custom-checkbox-control">
-    <input id="checkbox" class="hidden" type="checkbox" value=""></input>
-    <label class="custom-checkbox" for="checkbox"></label>
-    <div class="checkbox-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
-    <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-  </div>
-  <div class="answer custom-checkbox-control">
-    <input id="checkbox" class="hidden" type="checkbox" value=""></input>
-    <label class="custom-checkbox" for="checkbox"></label>
-    <div class="checkbox-label">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-    <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-  </div>
-  <div class="answer custom-checkbox-control">
-    <input id="checkbox" class="hidden" type="checkbox" value=""></input>
-    <label class="custom-checkbox" for="checkbox"></label>
-    <div class="checkbox-label">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
-    <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-  </div>
-  <a href="javascript:;" class="add-answer">
-    <i class="icon icon-enter-alt"></i>
-    <span>Add new Quiz-Answer</span>
-  </a>
-
-  <h3> Hints <span class="hint">(we recommend to fill out all 3 hints)</span></h3>
-
-  <div class="hint-wrapper filled">
-    <div class="hint-counter">1</div>
-    <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-  </div>
-  <div class="hint-wrapper filled">
-    <div class="hint-counter">2</div>
-    <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</div>
-  </div>
-  <div class="hint-wrapper">
-    <div class="hint-counter">3</div>
-    <div class="hint-text">Add new Hint here</div>
-  </div>
-
-  
-  <div class="chapter-actions">
-    <a href="/" class="btn btn-link btn-default pull-left"><i class="fa fa-angle-left"></i> Back</a>
-    <a href="#">Create another chapter</a> or <a class="btn btn-primary" data-toggle="modal" data-target="#type-chooser">Create new step <i class="fa fa-angle-right"></i></a>  
-  </div>
-  
-  
-  
-</div>
-<div class="col-md-3 course-nav-container">
-  <div class="row">
-    <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
-  </div>
-</div>
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="typeChooserLabel">Choose the type for the next Step:</h4>
+      <div class="answer custom-checkbox-control">
+        <input id="checkbox" class="hidden" type="checkbox" value=""></input>
+        <label class="custom-checkbox" for="checkbox"></label>
+        <div class="checkbox-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+        <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
       </div>
-      <div class="modal-body">
-        <a href="" class="btn-choose text-type">
-          <i class="icon icon-bubble2"></i>
-          <span class="type-label">Text Type</span>
-          <span class="type-hint">e.g. text or instructions</span>
-        </a>
-        <a href="" class="btn-choose game-type">
-          <i class="icon icon-gamepad"></i>
-          <span class="type-label">Game Type</span>
-          <span class="type-hint">e.g. quiz or interaction</span>
-        </a>
+      <div class="answer custom-checkbox-control">
+        <input id="checkbox" class="hidden" type="checkbox" value=""></input>
+        <label class="custom-checkbox" for="checkbox"></label>
+        <div class="checkbox-label">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+        <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+      <div class="answer custom-checkbox-control">
+        <input id="checkbox" class="hidden" type="checkbox" value=""></input>
+        <label class="custom-checkbox" for="checkbox"></label>
+        <div class="checkbox-label">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+        <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
+      </div>
+      <a href="javascript:;" class="add-answer">
+        <i class="icon icon-enter-alt"></i>
+        <span>Add new Quiz-Answer</span>
+      </a>
+
+      <h3> Hints <span class="hint">(we recommend to fill out all 3 hints)</span></h3>
+
+      <div class="hint-wrapper filled">
+        <div class="hint-counter">1</div>
+        <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+      </div>
+      <div class="hint-wrapper filled">
+        <div class="hint-counter">2</div>
+        <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</div>
+      </div>
+      <div class="hint-wrapper">
+        <div class="hint-counter">3</div>
+        <div class="hint-text">Add new Hint here</div>
+      </div>
+
+  
+      <div class="chapter-actions">
+        <a href="/" class="btn btn-link btn-default pull-left"><i class="fa fa-angle-left"></i> Back</a>
+        <a href="#">Create another chapter</a> or <a class="btn btn-primary" data-toggle="modal" data-target="#type-chooser">Create new step <i class="fa fa-angle-right"></i></a>  
+      </div>
+  
+  
+  
+    </div>
+    <div class="col-md-3 course-nav-container">
+      <div class="row">
+        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="typeChooserLabel">Choose the type for the next Step:</h4>
+          </div>
+          <div class="modal-body">
+            <a href="" class="btn-choose text-type">
+              <i class="icon icon-bubble2"></i>
+              <span class="type-label">Text Type</span>
+              <span class="type-hint">e.g. text or instructions</span>
+            </a>
+            <a href="" class="btn-choose game-type">
+              <i class="icon icon-gamepad"></i>
+              <span class="type-label">Game Type</span>
+              <span class="type-hint">e.g. quiz or interaction</span>
+            </a>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div>
+</div>

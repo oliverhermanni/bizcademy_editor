@@ -1,70 +1,75 @@
-<div class="col-md-9">
-  <div class="well">
-    <h2>{{course.title}}</h2>
-    <p class="description">
-      {{course.summary}}
-    </p>
-  </div>
-  <div class="speech-bubble right-handed">
-    <img src="img/bbfoto.jpg" class="avatar">
-    <div class="bubble col-md-6">
-      {{course.advice}}
-    </div>
-  </div>
-
-  <h3 ng-controller="ChaptersController">Chapter Overview <small>({{chapters.length}} chapters)</small></h3>
-  <div class="chapters" ng-controller="ChaptersController">
-    <div class="chapter" ng-repeat="chapter in chapters">
-      <div class="well chapter-header">
-        <a href  ng-click="onDelete(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
-        <div class="chapter-count">
-          {{$index+1}}
-        </div>
-        <div class="chapter-details">
-          <h4 class="chapter-title"><a href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
-          <p class="description">{{chapter.summary}}</p>
-          <div class="chapter-insights">
-            <div class="insight-wrapper pull-left">
-              <i class="icon icon-graduation pull-left"></i>
-              <span class="count pull-left">3600</span>
-              <span class="type pull-left">total points</span>
-            </div>
-            <div class="insight-wrapper pull-left">
-              <i class="icon icon-medal pull-left"></i>
-              <span class="count pull-left">4</span>
-              <span class="type pull-left">achievements</span>
-            </div>
-            <div class="insight-wrapper pull-left">
-              <i class="icon icon-reading pull-left"></i>
-              <span class="count pull-left">43</span>
-              <span class="type pull-left">readers</span>
-            </div>
-            <a href="#" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Start Chapter</a>
-          </div>
+<div class="container">
+  <div class="row" id="content">
+    <div class="col-md-9">
+      <div class="well">
+        <h2>{{course.title}}</h2>
+        <p class="description">
+          {{course.summary}}
+        </p>
+      </div>
+      <div class="speech-bubble right-handed">
+        <img src="img/bbfoto.jpg" class="avatar">
+        <div class="bubble col-md-6">
+          {{course.advice}}
         </div>
       </div>
-      <ul class="list-group chapter-steps">
-        <li class="list-group-item chapter-step" ng-repeat="n in [1,2,3,4,5]">
-          <i class="step-status pull-left"></i>
-          <a class="step-title col-md-10" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
-          <a href="/" class="step-remove"><i class="icon icon-remove"></i></a>
-          <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
-        </li>
-      </ul>
+
+      <h3 ng-controller="ChaptersController">Chapter Overview <small>({{chapters.length}} chapters)</small></h3>
+      <div class="chapters" ng-controller="ChaptersController">
+        <div class="chapter" ng-repeat="chapter in chapters">
+          <div class="well chapter-header">
+            <a href  ng-click="onDelete(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
+            <div class="chapter-count">
+              {{$index+1}}
+            </div>
+            <div class="chapter-details">
+              <h4 class="chapter-title"><a href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
+              <p class="description">{{chapter.summary}}</p>
+              <div class="chapter-insights">
+                <div class="insight-wrapper pull-left">
+                  <i class="icon icon-graduation pull-left"></i>
+                  <span class="count pull-left">3600</span>
+                  <span class="type pull-left">total points</span>
+                </div>
+                <div class="insight-wrapper pull-left">
+                  <i class="icon icon-medal pull-left"></i>
+                  <span class="count pull-left">4</span>
+                  <span class="type pull-left">achievements</span>
+                </div>
+                <div class="insight-wrapper pull-left">
+                  <i class="icon icon-reading pull-left"></i>
+                  <span class="count pull-left">43</span>
+                  <span class="type pull-left">readers</span>
+                </div>
+                <a href="#" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Start Chapter</a>
+              </div>
+            </div>
+          </div>
+          <ul class="list-group chapter-steps">
+            <li class="list-group-item chapter-step" ng-repeat="n in [1,2,3,4,5]">
+              <i class="step-status pull-left"></i>
+              <a class="step-title col-md-10" href="#/chapter/{{chapter.id}}">{{chapter.title}}</a>
+              <a href="/" class="step-remove"><i class="icon icon-remove"></i></a>
+              <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="course-overview-preview" ng-controller="ChaptersController" ng-hide="chapters.length">
+        <a href="#/course/{{course.id}}/chapter/add" class="btn btn-primary btn-lg">
+          <i class="fa fa-lg fa-book"></i>
+          Create your first chapter
+        </a>
+      </p>
+    </div>
+    <div class="col-md-3 course-nav-container">
+      <div class="row">
+        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+      </div>
     </div>
   </div>
-  <p class="course-overview-preview" ng-controller="ChaptersController" ng-hide="chapters.length">
-    <a href="#/course/{{course.id}}/chapter/add" class="btn btn-primary btn-lg">
-      <i class="fa fa-lg fa-book"></i>
-      Create your first chapter
-    </a>
-  </p>
 </div>
-<div class="col-md-3 course-nav-container">
-  <div class="row">
-    <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
-  </div>
-</div>
+
 
 
 
