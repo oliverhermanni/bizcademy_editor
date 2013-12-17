@@ -1,19 +1,39 @@
 .btn {
-  .transition(.15s);
-  border: 1px solid transparent;
+  .transition(.1s);
+  border: 0px;
+  position: relative;
+  font-weight: 300;
   &:hover {
+    border: 0px;
+    top: 2px;
     text-decoration: none;
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.15);
+  }
+  &:hover, &:active, &:focus {
+    outline: 0;    
   }
 }
 .btn-primary {
-  border-bottom: 2px solid darken(@brand-primary, 12%);
+  box-shadow: 0 2px 0 darken(@brand-primary, 12%);
   &:hover {
-    border-color: darken(@brand-primary, 8%);
+    background: @brand-primary;
+  }
+}
+.btn-inverse {
+  color: @gray-lightest;
+  background: @gray-dark;
+  box-shadow: 0 2px 0 @gray-darker;
+  &:hover {
+    color: @gray-lightest;    
   }
 }
 .btn-success {
-  border-bottom: 2px solid darken(@brand-success, 8%);
+  background: @brand-success;
+  box-shadow: 0 2px 0 darken(@brand-success, 8%);
   &:hover {
-    border-color: darken(@brand-success, 8%);
+    background: @brand-success;    
   }
 }
