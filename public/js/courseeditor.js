@@ -1,6 +1,10 @@
 var courseEditorConfig = function($routeProvider) {
     $routeProvider
       .when('/', {
+        controller: 'HomeController',
+        templateUrl: 'js/views/home/index.html'
+      })
+      .when('/courses', {
         controller: 'CoursesController',
         templateUrl: 'js/views/course/index.html'
       })
