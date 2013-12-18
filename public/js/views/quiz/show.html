@@ -2,11 +2,17 @@
   <div class="row" id="content">
 
     <div class="col-md-9">
+      <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+      </ol>
       <div class="well">
         <h2>{{ quiz.title }}</h2>
 
         <p class="description">
           {{ quiz.summary }}
+          <button data-toggle="pointUp">point up test</button>
         </p>
       </div>
       <div class="speech-bubble right-handed">
