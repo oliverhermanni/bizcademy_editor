@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <h3 ng-controller="ChaptersController">Chapter Overview <small>({{chapters.length}} chapters)</small></h3>
+      <h3 ng-controller="ChaptersController">Kapitelübersicht <small>({{chapters.length}} Kapitel)</small></h3>
       <div class="chapters" ng-controller="ChaptersController">
         <div class="chapter" ng-repeat="chapter in chapters">
           <div class="well chapter-header">
@@ -29,19 +29,19 @@
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-graduation pull-left"></i>
                   <span class="count pull-left">3600</span>
-                  <span class="type pull-left">total points</span>
+                  <span class="type pull-left">Punkte gesamt</span>
                 </div>
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-medal pull-left"></i>
                   <span class="count pull-left">4</span>
-                  <span class="type pull-left">achievements</span>
+                  <span class="type pull-left">Achievements</span>
                 </div>
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-reading pull-left"></i>
                   <span class="count pull-left">43</span>
-                  <span class="type pull-left">readers</span>
+                  <span class="type pull-left">Leser</span>
                 </div>
-                <a href="#" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Start Chapter</a>
+                <a href="#" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Kapitel starten</a>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@
       <p class="course-overview-preview" ng-controller="ChaptersController" ng-hide="chapters.length">
         <a href="#/course/{{course.id}}/chapter/add" class="btn btn-primary btn-lg">
           <i class="fa fa-lg fa-book"></i>
-          Create your first chapter
+          Das erste Kapitel erstellen
         </a>
       </p>
     </div>
