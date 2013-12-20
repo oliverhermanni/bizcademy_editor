@@ -14,6 +14,17 @@ CourseEditor.controller('ChaptersController',
       }
     }
 
+    $scope.createModule = function(moduleType) {
+      switch(moduleType) {
+        case 'text':
+          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/text/add');
+          break;
+        case 'quiz':
+          break;
+      }
+    }
+
+
     $scope.$on('$viewContentLoaded', function(){
       var owl = $("#achievements");
  
