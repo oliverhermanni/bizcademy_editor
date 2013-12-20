@@ -1,5 +1,5 @@
 CourseEditor.controller('CoursesController',
-  function ($scope, $location, $routeParams, CourseModel) {
+  function ($scope, $location, $routeParams, CourseModel, ChapterModel) {
     $scope.courses = CourseModel.getCourses();
 
     if ($routeParams.courseId) {
