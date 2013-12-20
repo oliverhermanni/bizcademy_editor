@@ -20,6 +20,10 @@ var courseEditorConfig = function($routeProvider) {
         controller: 'ChapterAddController',
         templateUrl: 'js/views/chapter/edit.html'
       })
+      .when('/course/:courseId/chapter/:chapterId/module/text/add', {
+        controller: 'TextModuleAddController',
+        templateUrl: '/js/views/modules/text/edit.html'
+      })
       .when('/course/:courseId/chapter/delete/:chapterId', {
         controller: 'ChapterDeleteController',
         templateUrl: 'js/views/course/show.html'
