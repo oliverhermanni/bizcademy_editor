@@ -1,86 +1,90 @@
-<div class="col-md-9">
-  <div class="well">
-    <h2>{{ chapter.title }}</h2>
+<div class="container">
+  <div class="row" id="content">
+    <div class="col-md-9">
+      <div class="well">
+        <h2>{{ chapter.title }}</h2>
 
-    <p class="description">
-      {{ chapter.summary }}
-    </p>
-  </div>
-  <div class="speech-bubble right-handed">
-    <img src="img/dirtydieter.jpg" class="avatar">
+        <p class="description">
+          {{ chapter.summary }}
+        </p>
+      </div>
+      <div class="speech-bubble right-handed">
+        <img src="img/dirtydieter.jpg" class="avatar">
 
-    <div class="bubble col-md-6">
-      {{chapter.advice}}
-    </div>
-  </div>
-  <h3>Kapitel-Einstellungen</h3>
+        <div class="bubble col-md-6">
+          {{chapter.advice}}
+        </div>
+      </div>
+      <h3>Kapitel-Einstellungen</h3>
 
-  <div class="settings-control">
-    <div class="onoffswitch pull-left">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-      <label class="onoffswitch-label" for="myonoffswitch">
-        <div class="onoffswitch-inner"></div>
-        <div class="onoffswitch-switch"></div>
-      </label>
-    </div>
-    <div class="switch-text pull-left">
-      Bearbeitungsmodus
-      <span class="hint">(Not visible on editorial check)</span>
-    </div>
-  </div>
+      <div class="settings-control">
+        <div class="onoffswitch pull-left">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <div class="onoffswitch-inner"></div>
+            <div class="onoffswitch-switch"></div>
+          </label>
+        </div>
+        <div class="switch-text pull-left">
+          Entwurfsmodus
+          <span class="hint">(Not visible on editorial check)</span>
+        </div>
+      </div>
 
-  <h3>Wählen Sie ein Achievement für dieses Kapitel</h3>
+      <h3>Wählen Sie ein Achievement für dieses Kapitel</h3>
 
-      <section class="chapter-achievements">
-        <h3>Achievement für dieses Kapitel</h3>
-        <h4 class="substep-head"><span class="count">1.</span>Wählen Sie den Achievement-Typ</h4>
-        <div class="achievements-wrapper">
-          <a class="icon icon-arrow-left prev-item"></a>
-          <div id="achievements" class="owl-carousel">
-            <div class="achievement circle-no1"></div>
-            <div class="achievement circle-star-medal"></div>
-            <div class="achievement crone"></div>
-            <div class="achievement no1-badge"></div>
-            <div class="achievement ranking"></div>
-            <div class="achievement star-badge"></div>
-            <div class="achievement star-cup-hand"></div>
-            <div class="achievement star-cup2"></div>
-            <div class="achievement star-shield"></div>
-          </div>
-          <a class="icon icon-arrow-right next-item"></a>
-        </div>    
-
-        <h4 class="substep-head"><span class="count">2.</span>Namen und Punkte für das Achievement</h4>
-        <div class="well inverse achievement-settings">
-          <form class="form-horizontal" role="form">
-            <div class="row">
-              <div class="form-group col-md-7">
-                <label for="inputEmail3" class="col-sm-5 control-label">Name des Achievements</label>
-                <div class="col-sm-7">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="e.g. fastest answer badge">
-                </div>
+          <section class="chapter-achievements">
+            <h3>Achievement für dieses Kapitel</h3>
+            <h4 class="substep-head"><span class="count">1.</span>Wählen Sie den Achievement-Typ</h4>
+            <div class="achievements-wrapper">
+              <a class="icon icon-arrow-left prev-item"></a>
+              <div id="achievements" class="owl-carousel">
+                <div class="achievement circle-no1"></div>
+                <div class="achievement circle-star-medal"></div>
+                <div class="achievement crone"></div>
+                <div class="achievement no1-badge"></div>
+                <div class="achievement ranking"></div>
+                <div class="achievement star-badge"></div>
+                <div class="achievement star-cup-hand"></div>
+                <div class="achievement star-cup2"></div>
+                <div class="achievement star-shield"></div>
               </div>
-              <div class="form-group col-md-5">
-                <label for="inputPassword3" class="col-sm-6 control-label">Punkte</label>
-                <div class="col-sm-6">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="e.g. 300">
-                </div>
-              </div>          
+              <a class="icon icon-arrow-right next-item"></a>
             </div>
-          </form>
+
+            <h4 class="substep-head"><span class="count">2.</span>Namen und Punkte für das Achievement</h4>
+            <div class="well inverse achievement-settings">
+              <form class="form-horizontal" role="form">
+                <div class="row">
+                  <div class="form-group col-md-7">
+                    <label for="inputEmail3" class="col-sm-5 control-label">Name des Achievements</label>
+                    <div class="col-sm-7">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="e.g. fastest answer badge">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputPassword3" class="col-sm-6 control-label">Punkte</label>
+                    <div class="col-sm-6">
+                      <input type="password" class="form-control" id="inputPassword3" placeholder="e.g. 300">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </section>
+
+          <div class="chapter-actions">
+            <a href="#">Neues Kapitel erstellen</a> or <a class="btn btn-primary">Weiteren Schritt hinzufügen<i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3 course-nav-container">
+          <div class="row">
+            <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+          </div>
         </div>
 
-      </section>
-
-      <div class="chapter-actions">
-        <a href="#">Neues Kapitel erstellen</a> or <a class="btn btn-primary">Weiteren Schritt hinzufügen<i class="fa fa-angle-right"></i></a>
-      </div>  
-    </div>
-    <div class="col-md-3 course-nav-container">
-      <div class="row">
-        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
       </div>
     </div>
-
   </div>
 </div>
