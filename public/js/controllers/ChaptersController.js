@@ -14,6 +14,7 @@ CourseEditor.controller('ChaptersController',
       }
     }
 
+    // TODO: put this in GameTypeController
     $scope.createModule = function(moduleType) {
       switch(moduleType) {
         case 'text':
