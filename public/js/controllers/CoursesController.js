@@ -11,7 +11,7 @@ CourseEditor.controller('CoursesController',
 CourseEditor.controller('CourseAddController',
   function ($scope, $location, $routeParams, CourseModel) {
 
-    $scope.currentTask = "Add";
+    $scope.currentTask = "hinzufügen";
 
     $scope.cancel = function () {
       $location.path('/');
