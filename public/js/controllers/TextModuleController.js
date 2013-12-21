@@ -6,10 +6,10 @@ CourseEditor.controller('TextModuleController',
 
 CourseEditor.controller('TextModuleAddController',
   function ($scope, $location, $routeParams, TextModuleModel) {
-    $scope.currentTask = "Add";
+    $scope.currentTask = "hinzufügen";
 
     $scope.cancel = function () {
-      $location.path('/course/' + $routeParams.courseId);
+      $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
     }
 
     $scope.createTextModule = function () {
