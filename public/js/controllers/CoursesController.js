@@ -1,5 +1,5 @@
 CourseEditor.controller('CoursesController',
-  function ($scope, $location, $routeParams, CourseModel) {
+  function ($scope, $location, $routeParams, CourseModel, ChapterModel) {
     $scope.courses = CourseModel.getCourses();
 
     if ($routeParams.courseId) {
@@ -11,7 +11,7 @@ CourseEditor.controller('CoursesController',
 CourseEditor.controller('CourseAddController',
   function ($scope, $location, $routeParams, CourseModel) {
 
-    $scope.currentTask = "Add";
+    $scope.currentTask = "hinzufügen";
 
     $scope.cancel = function () {
       $location.path('/');

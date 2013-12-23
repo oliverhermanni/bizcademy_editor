@@ -21,8 +21,6 @@ CourseEditor.service('CourseModel', function () {
     }
   }
 
-
-
   this.addCourse = function (courseData) {
 
     var courses = JSON.parse(window.localStorage.getItem("courses"));

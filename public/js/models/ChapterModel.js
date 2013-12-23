@@ -6,6 +6,22 @@ CourseEditor.service('ChapterModel', function (CourseModel) {
     if (!course || !course.chapters) {
       return []
     } else {
+
+      for(var m = 0; m < course.chapters.length; m++) {
+        var modules_list = JSON.parse(window.localStorage.getItem(course.chapters[m].id));
+
+        var ccm = course.chapters[m];
+
+        var ccl = {
+          id: ccm.id,
+          title: ccm.title,
+          summary: ccm.summary,
+          advice: ccm.advice,
+          modules: modules_list
+        }
+
+        course.chapters[m] = ccl;
+      }
       return course.chapters;
     }
   };
@@ -22,6 +38,12 @@ CourseEditor.service('ChapterModel', function (CourseModel) {
         return course.chapters[i];
       }
     }
+  }
+
+  this.getModulesByChapterId = function (chapterId) {
+    var modules = JSON.parse(window.localStorage.getItem(chapterId));
+
+    return modules;
   }
 
   this.addChapter = function (courseId, chapter) {

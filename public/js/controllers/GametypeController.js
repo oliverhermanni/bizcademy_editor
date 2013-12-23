@@ -4,7 +4,6 @@ CourseEditor.controller('GametypeController',
     $scope.createModule = function(moduleType) {
       switch(moduleType) {
         case 'text':
-          $('#myModal').modal('hide');
           $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/text/add');
           break;
         case 'quiz':

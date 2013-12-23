@@ -14,6 +14,18 @@ CourseEditor.controller('ChaptersController',
       }
     }
 
+    // TODO: put this in GameTypeController
+    $scope.createModule = function(moduleType) {
+      switch(moduleType) {
+        case 'text':
+          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/text/add');
+          break;
+        case 'quiz':
+          break;
+      }
+    }
+
+
     $scope.$on('$viewContentLoaded', function(){
       var owl = $("#achievements");
  
@@ -59,7 +71,7 @@ CourseEditor.controller('ChaptersController',
 CourseEditor.controller('ChapterAddController',
   function ($scope, $location, $routeParams, ChapterModel) {
 
-    $scope.currentTask = "Add";
+    $scope.currentTask = "hinzufügen";
 
     $scope.cancel = function () {
       $location.path('/course/' + $routeParams.courseId);
