@@ -2,74 +2,74 @@
   "use strict";
 
   var templates = {
-    "font-styles": "<li class='dropdown'>" +
-      "<a class='btn dropdown-toggle' data-toggle='dropdown' href='#'>" +
-      "<i class='icon-font'></i>&nbsp;<span class='current-font'>Normal text</span>&nbsp;<b class='caret'></b>" +
-      "</a>" +
-      "<ul class='dropdown-menu'>" +
-      "<li><a data-wysihtml5-command='formatBlock' data-wysihtml5-command-value='div'>Normal text</a></li>" +
-      "<li><a data-wysihtml5-command='formatBlock' data-wysihtml5-command-value='h1'>Heading 1</a></li>" +
-      "<li><a data-wysihtml5-command='formatBlock' data-wysihtml5-command-value='h2'>Heading 2</a></li>" +
-      "</ul>" +
-      "</li>",
-    "emphasis":    "<li>" +
-      "<div class='btn-group'>" +
-      "<a class='btn' data-wysihtml5-command='bold' title='CTRL+B'>Bold</a>" +
-      "<a class='btn' data-wysihtml5-command='italic' title='CTRL+I'>Italic</a>" +
-      "<a class='btn' data-wysihtml5-command='underline' title='CTRL+U'>Underline</a>" +
-      "</div>" +
-      "</li>",
-    "lists":       "<li>" +
-      "<div class='btn-group'>" +
-      "<a class='btn' data-wysihtml5-command='insertUnorderedList' title='Unordered List'><i class='icon-list'></i></a>" +
-      "<a class='btn' data-wysihtml5-command='insertOrderedList' title='Ordered List'><i class='icon-th-list'></i></a>" +
-      "<a class='btn' data-wysihtml5-command='Outdent' title='Outdent'><i class='icon-indent-right'></i></a>" +
-      "<a class='btn' data-wysihtml5-command='Indent' title='Indent'><i class='icon-indent-left'></i></a>" +
-      "</div>" +
-      "</li>",
-    "link":        "<li>" +
-      "<div class='bootstrap-wysihtml5-insert-link-modal modal hide fade'>" +
-      "<div class='modal-header'>" +
-      "<a class='close' data-dismiss='modal'>&times;</a>" +
-      "<h3>Insert Link</h3>" +
-      "</div>" +
-      "<div class='modal-body'>" +
-      "<input value='http://' class='bootstrap-wysihtml5-insert-link-url input-xlarge'>" +
-      "</div>" +
-      "<div class='modal-body'>" +
-      "<h5>Anchor Text</h5>" +
-      "<input value='' class='anchorText input-xlarge'>" +
-      "</div>" +
-      "<div class='modal-footer'>" +
-      "<a href='#' class='btn' data-dismiss='modal'>Cancel</a>" +
-      "<a href='#' class='btn btn-primary2' data-dismiss='modal'>Insert link</a>" +
-      "</div>" +
-      "</div>" +
-      "<a class='btn' data-wysihtml5-command='createLink' title='Link'><i class='icon-share'></i></a>" +
-      "</li>",
-    "image":       "<li>" +
-      "<div class='bootstrap-wysihtml5-insert-image-modal modal hide fade'>" +
-      "<div class='modal-header'>" +
-      "<a class='close' data-dismiss='modal'>&times;</a>" +
-      "<h3>Insert Image</h3>" +
-      "</div>" +
-      "<div class='modal-body'>" +
-      "<input value='http://' class='bootstrap-wysihtml5-insert-image-url input-xlarge'>" +
-      "</div>" +
-      "<div class='modal-footer'>" +
-      "<a href='#' class='btn' data-dismiss='modal'>Cancel</a>" +
-      "<a href='#' class='btn btn-primary' data-dismiss='modal'>Insert image</a>" +
-      "</div>" +
-      "</div>" +
-      "<a class='btn' data-wysihtml5-command='insertImage' title='Insert image'><i class='icon-picture'></i></a>" +
-      "</li>",
+    'font-styles': '<li class="dropdown">' +
+      '<button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href>' +
+      '<i class="icon-font"></i>&nbsp;<span class="current-font">Normal text</span>&nbsp;<b class="caret"></b>' +
+      '</button>' +
+      '<ul class="dropdown-menu">' +
+      '<li><a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="div">Normal text</a></li>' +
+      '<li><a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">Heading 1</a></li>' +
+      '<li><a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">Heading 2</a></li>' +
+      '</ul>' +
+      '</li>',
+    'emphasis':    '<li>' +
+      '<div class="btn-group">' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="bold" title="CTRL+B"><i class="fa fa-bold"></i></button>' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="italic" title="CTRL+I"><i class="fa fa-italic"></i></button>' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="underline" title="CTRL+U"><i class="fa fa-underline"></i></button>' +
+      '</div>' +
+      '</li>',
+    'lists':       '<li>' +
+      '<div class="btn-group">' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="insertUnorderedList" title="Unordered List"><i class="fa fa-list-ul"></i></button>' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="insertOrderedList" title="Ordered List"><i class="fa fa-list-ol"></i></button>' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="Indent" title="Indent"><i class="fa fa-indent"></i></button>' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="Outdent" title="Outdent"><i class="fa fa-outdent"></i></button>' +
+      '</div>' +
+      '</li>',
+    'link':        '<li>' +
+      '<div class="bootstrap-wysihtml5-insert-link-modal modal hide fade">' +
+      '<div class="modal-header">' +
+      '<a class="close" data-dismiss="modal">&times;</a>' +
+      '<h3>Insert Link</h3>' +
+      '</div>' +
+      '<div class="modal-body">' +
+      '<input value="http://" class="bootstrap-wysihtml5-insert-link-url input-xlarge">' +
+      '</div>' +
+      '<div class="modal-body">' +
+      '<h5>Anchor Text</h5>' +
+      '<input value="" class="anchorText input-xlarge">' +
+      '</div>' +
+      '<div class="modal-footer">' +
+      '<a href="#" class="btn" data-dismiss="modal">Cancel</a>' +
+      '<a href="#" class="btn btn-primary2" data-dismiss="modal">Insert link</a>' +
+      '</div>' +
+      '</div>' +
+      '<a class="btn" data-wysihtml5-command="createLink" title="Link"><i class="icon-share"></i></a>' +
+      '</li>',
+    'image':       '<li>' +
+      '<div class="bootstrap-wysihtml5-insert-image-modal modal hide fade">' +
+      '<div class="modal-header">' +
+      '<a class="close" data-dismiss="modal">&times;</a>' +
+      '<h3>Insert Image</h3>' +
+      '</div>' +
+      '<div class="modal-body">' +
+      '<input value="http://" class="bootstrap-wysihtml5-insert-image-url input-xlarge">' +
+      '</div>' +
+      '<div class="modal-footer">' +
+      '<a href="#" class="btn" data-dismiss="modal">Cancel</a>' +
+      '<a href="#" class="btn btn-primary" data-dismiss="modal">Insert image</a>' +
+      '</div>' +
+      '</div>' +
+      '<button class="btn btn-default btn-sm" data-wysihtml5-command="insertImage" title="Insert image"><i class="fa fa-picture-o"></i></btn>' +
+      '</li>',
 
-    "html":
-      "<li>" +
-        "<div class='btn-group'>" +
-        "<a class='btn' data-wysihtml5-action='change_view' title='Edit HTML'><i class='icon-pencil'></i></a>" +
-        "</div>" +
-        "</li>"
+    'html':
+      '<li>' +
+        '<div class="btn-group">' +
+        '<button class="btn btn-default btn-sm" data-wysihtml5-action="change_view" title="Edit HTML"><i class="fa fa-edit"></i></button>' +
+        '</div>' +
+        '</li>'
   };
 
   var defaultOptions = {
