@@ -25,6 +25,7 @@ CourseEditor.controller('ChaptersController',
           $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/text/add');
           break;
         case 'quiz':
+          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/quiz/add');
           break;
       }
     }
