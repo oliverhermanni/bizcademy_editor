@@ -25,6 +25,10 @@
         controller: 'TextModuleAddController',
         templateUrl: '/js/views/modules/text/edit.html'
       })
+      .when('/course/:courseId/chapter/:chapterId/module/quiz/add', {
+        controller: 'QuizModuleAddController',
+        templateUrl: '/js/views/modules/quiz/edit.html'
+      })
       .when('/course/:courseId/chapter/delete/:chapterId', {
         controller: 'ChapterDeleteController',
         templateUrl: 'js/views/course/show.html'
