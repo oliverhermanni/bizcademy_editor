@@ -1,9 +1,13 @@
 CourseEditor.controller('ChaptersController',
-  function ($scope, $location, $routeParams, ChapterModel) {
+  function ($scope, $location, $routeParams, ChapterModel, $sce) {
     $scope.chapters = ChapterModel.getChapters($routeParams.courseId);
 
     if ($routeParams.chapterId) {
       $scope.chapter = ChapterModel.getChapterById($routeParams.courseId, $routeParams.chapterId);
+    }
+
+    $scope.to_trusted = function()  {
+      return $sce.trustAsHtml($scope.chapter.summary);
     }
 
     $scope.onDelete = function(chapterId) {
@@ -24,11 +28,26 @@ CourseEditor.controller('ChaptersController',
           break;
       }
     }
+  }
+);
 
+CourseEditor.controller('ChapterAddController',
+  function ($scope, $location, $routeParams, ChapterModel) {
+
+    $scope.currentTask = "hinzufügen";
+
+    $scope.cancel = function () {
+      $location.path('/course/' + $routeParams.courseId);
+    }
+
+    $scope.createChapter = function () {
+      ChapterModel.addChapter($routeParams.courseId, $scope.chapter, editor.html());
+      $location.path('/course/' + $routeParams.courseId);
+    }
 
     $scope.$on('$viewContentLoaded', function(){
       var owl = $("#achievements");
- 
+
       owl.owlCarousel({
         items:              5,              // 10 items above 1200px browser width
         itemsDesktop:       [1200,5],       // 5 items between 1200px and 992px
@@ -63,25 +82,7 @@ CourseEditor.controller('ChaptersController',
 
       });
     });
-    
 
-  }
-);
-
-CourseEditor.controller('ChapterAddController',
-  function ($scope, $location, $routeParams, ChapterModel) {
-
-    $scope.currentTask = "hinzufügen";
-
-    $scope.cancel = function () {
-      $location.path('/course/' + $routeParams.courseId);
-    }
-
-    $scope.createChapter = function () {
-
-      ChapterModel.addChapter($routeParams.courseId, $scope.chapter);
-      $location.path('/course/' + $routeParams.courseId);
-    }
   }
 );
 
