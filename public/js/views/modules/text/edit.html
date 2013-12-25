@@ -13,11 +13,12 @@
             <div class="form-group">
               <label for="chapterSummary">Text</label>
               <ul id="richtexteditor-toolbar"></ul>
-              <textarea id="chapterSummary" class="form-control" placeholder="Text" ng-model="textmodule.text"></textarea>
+              <div rich-text-editor></div>
+              <!-- <textarea id="chapterSummary" class="form-control" placeholder="Text" ng-model="textmodule.text"></textarea> -->
             </div>
             <div class="form-group">
               <button ng-click="cancel()" class="btn btn-danger">Abbrechen</button>
-              <button ng-click="createTextModule()" ng-disabled="!textmodule.text" class="btn btn-primary">Text speichern
+              <button ng-click="createTextModule()" ng-disabled="!summary" class="btn btn-primary">Text speichern
               </button>
             </div>
           </form>
