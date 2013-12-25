@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row" id="content">
+
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Quizmodul</h2>
+          <form name="addChapter" role="form">
+            <div class="form-group">
+              <label for="chapterTitle">Überschrift</label>
+              <input type="text" class="form-control" id="chapterTitle" placeholder="Überschrift" ng-model="textmodule.title">
+            </div>
+            <div class="form-group">
+              <label for="chapterSummary">Text</label>
+              <ul id="richtexteditor-toolbar"></ul>
+              <div rich-text-editor></div>
+              <!-- <textarea id="chapterSummary" class="form-control" placeholder="Text" ng-model="textmodule.text"></textarea> -->
+            </div>
+            <div class="form-group">
+              <button ng-click="cancel()" class="btn btn-danger">Abbrechen</button>
+              <button ng-click="createTextModule()" ng-disabled="!summary" class="btn btn-primary">Quiz speichern
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 course-nav-container">
+      <div class="row">
+        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+      </div>
+    </div>
+  </div>
+</div>
