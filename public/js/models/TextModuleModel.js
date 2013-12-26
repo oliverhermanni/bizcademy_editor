@@ -11,7 +11,7 @@ CourseEditor.service('TextModuleModel', function() {
       type: 'text',
       title: moduleData.title,
       text: moduleData.text
-    }
+    };
 
     current_chapter.push(textModule);
 
