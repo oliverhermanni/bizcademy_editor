@@ -4,21 +4,71 @@
     <div class="col-md-9">
       <div class="row">
         <div class="col-md-12">
-          <h2>Quizmodul</h2>
+          <h2>Quizmodul {{currentTask}}</h2>
           <form name="addChapter" role="form">
             <div class="form-group">
               <label for="chapterTitle">Überschrift</label>
-              <input type="text" class="form-control" id="chapterTitle" placeholder="Überschrift" ng-model="textmodule.title">
+              <input type="text" class="form-control" id="chapterTitle" placeholder="Überschrift" ng-model="quizmodule.title">
             </div>
             <div class="form-group">
               <label for="chapterSummary">Text</label>
-              <ul id="richtexteditor-toolbar"></ul>
               <div rich-text-editor></div>
-              <!-- <textarea id="chapterSummary" class="form-control" placeholder="Text" ng-model="textmodule.text"></textarea> -->
             </div>
             <div class="form-group">
+              <label for="chapterAdvice">Zusätzlicher Rat für den Benutzer</label>
+              <textarea id="chapterAdvice" class="form-control" placeholder="Rat"
+                        ng-model="chapter.advice"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Quiz-Theme wählen</label>
+              <select class="form-control" ng-model="quizmodule.theme">
+                <option value="classic">Klassisch</option>
+                <option value="jackattack">Jack-Attack</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Antworten</label>
+              <div class="answer custom-checkbox-control">
+                <input id="checkbox1" class="hidden" type="checkbox" value=""></input>
+                <label class="custom-checkbox" for="checkbox"></label>
+                <div class="checkbox-label"><input type="text" class="form-control" id="chapterTitle" placeholder="Antwort #1" ng-model="quizmodule.answer1"></div>
+              </div>
+              <div class="answer custom-checkbox-control">
+                <input id="checkbox2" class="hidden" type="checkbox" value=""></input>
+                <label class="custom-checkbox" for="checkbox"></label>
+                <div class="checkbox-label"><input type="text" class="form-control" id="chapterTitle" placeholder="Antwort #2" ng-model="quizmodule.answer2"></div>
+              </div>
+              <div class="answer custom-checkbox-control">
+                <input id="checkbox3" class="hidden" type="checkbox" value=""></input>
+                <label class="custom-checkbox" for="checkbox"></label>
+                <div class="checkbox-label"><input type="text" class="form-control" id="chapterTitle" placeholder="Antwort #3" ng-model="quizmodule.answer3"></div>
+              </div>
+              <div class="answer custom-checkbox-control">
+                <input id="checkbox4" class="hidden" type="checkbox" value=""></input>
+                <label class="custom-checkbox" for="checkbox"></label>
+                <div class="checkbox-label"><input type="text" class="form-control" id="chapterTitle" placeholder="Antwort #4" ng-model="quizmodule.answer4"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Tipps (wir empfehlen alle Tipps auszuwählen</label>
+              <div class="hint-wrapper filled">
+                <div class="hint-counter">1</div>
+                <div class="hint-text"><input type="text" class="form-control" id="chapterTitle" placeholder="Tipp #1" ng-model="quizmodule.hint1"></div>
+              </div>
+              <div class="hint-wrapper filled">
+                <div class="hint-counter">2</div>
+                <div class="hint-text"><input type="text" class="form-control" id="chapterTitle" placeholder="Tipp #2" ng-model="quizmodule.hint2"></div>
+              </div>
+              <div class="hint-wrapper filled">
+                <div class="hint-counter">3</div>
+                <div class="hint-text"><input type="text" class="form-control" id="chapterTitle" placeholder="Tipp #3" ng-model="quizmodule.hint3"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
               <button ng-click="cancel()" class="btn btn-danger">Abbrechen</button>
-              <button ng-click="createTextModule()" ng-disabled="!summary" class="btn btn-primary">Quiz speichern
+              <button ng-click="createQuizModule()" class="btn btn-primary">Quiz speichern
               </button>
             </div>
           </form>
