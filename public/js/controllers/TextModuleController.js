@@ -13,7 +13,6 @@ CourseEditor.controller('TextModuleAddController',
     }
 
     $scope.createTextModule = function () {
-
       TextModuleModel.addTextModule($routeParams.chapterId, $scope.textmodule);
       $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
     }
