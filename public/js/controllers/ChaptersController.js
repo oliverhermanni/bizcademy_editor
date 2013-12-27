@@ -45,45 +45,6 @@ CourseEditor.controller('ChapterAddController',
       ChapterModel.addChapter($routeParams.courseId, $scope.chapter, editor.html());
       $location.path('/course/' + $routeParams.courseId);
     }
-
-    $scope.$on('$viewContentLoaded', function(){
-      var owl = $("#achievements");
-
-      owl.owlCarousel({
-        items:              5,              // 10 items above 1200px browser width
-        itemsDesktop:       [1200,5],       // 5 items between 1200px and 992px
-        itemsDesktopSmall:  [991,3],        // betweem 991px and 768px
-        itemsTablet:        [767,3],        // 3 items between 767 and 0
-        itemsMobile:        false,          // itemsMobile disabled - inherit from itemsTablet option
-        scrollPerPage:      false,
-        pagination:         false,
-        navigation:         false,
-        rewindNav:          false,
-        afterAction: function(el){
-          //remove class active
-          this.$owlItems.removeClass('active');
-
-          //add class active
-          this.$owlItems.eq(this.currentItem + 1).addClass('active');
-        }
-      });
-
-      $(".next-item").click(function(){
-        owl.trigger('owl.next');
-      })
-
-      $(".prev-item").click(function(){
-        owl.trigger('owl.prev');
-      })
-
-      $('.achievement').on('click', function(event){
-        var $this = $(this);
-        $('.achievement.current').removeClass('current');
-        $this.addClass('current');
-
-      });
-    });
-
   }
 );
 
