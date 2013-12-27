@@ -41,6 +41,8 @@ CourseEditor.service('CourseModel', function () {
     courses.myCourses.push(course);
 
     window.localStorage.setItem("courses", JSON.stringify(courses));
+
+    return course['id'];
   };
 
   this.saveCourse = function (courseId, courseData) {

@@ -18,8 +18,9 @@ CourseEditor.controller('CourseAddController',
     }
 
     $scope.createCourse = function () {
-      CourseModel.addCourse($scope.course);
-      $location.path('/');
+      var course_id = CourseModel.addCourse($scope.course);
+      alert(course_id);
+      $location.path('/course/' + course_id);
     }
   }
 );
