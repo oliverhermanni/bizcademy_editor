@@ -33,13 +33,13 @@ CourseEditor.controller('QuizModuleAddController',
         0: {
           answer: $scope.quizmodule.answer1
         },
-        0: {
+        1: {
           answer: $scope.quizmodule.answer2
         },
-        0: {
+        2: {
           answer: $scope.quizmodule.answer3
         },
-        0: {
+        3: {
           answer: $scope.quizmodule.answer4
         }
       };
@@ -49,13 +49,13 @@ CourseEditor.controller('QuizModuleAddController',
           hint: $scope.quizmodule.hint1
         },
         1: {
-          hint: $scope.quizmodule.hint1
+          hint: $scope.quizmodule.hint2
         },
         2: {
-          hint: $scope.quizmodule.hint1
+          hint: $scope.quizmodule.hint3
         },
         3: {
-          hint: $scope.quizmodule.hint1
+          hint: $scope.quizmodule.hint4
         }
       }
 
