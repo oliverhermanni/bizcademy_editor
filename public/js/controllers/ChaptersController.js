@@ -5,7 +5,6 @@ CourseEditor.controller('ChaptersController',
     if ($routeParams.chapterId) {
       $scope.chapter = ChapterModel.getChapterById($routeParams.courseId, $routeParams.chapterId);
     }
-
     $scope.to_trusted = function()  {
       return $sce.trustAsHtml($scope.chapter.summary);
     }
@@ -42,7 +41,7 @@ CourseEditor.controller('ChapterAddController',
     }
 
     $scope.createChapter = function () {
-      ChapterModel.addChapter($routeParams.courseId, $scope.chapter, editor.html());
+      ChapterModel.addChapter($routeParams.courseId, $scope.chapter, editor.getValue());
       $location.path('/course/' + $routeParams.courseId);
     }
   }
