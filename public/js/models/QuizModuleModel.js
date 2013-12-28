@@ -1,5 +1,5 @@
 CourseEditor.service('QuizModuleModel', function() {
-  this.addQuizModule = function(chapterId, moduleData, editorContent) {
+  this.addQuizModule = function(chapterId, moduleData, editorContent, answersData, hintsData) {
     var current_chapter = JSON.parse(window.localStorage.getItem(chapterId));
 
     if (!current_chapter) {
@@ -13,8 +13,8 @@ CourseEditor.service('QuizModuleModel', function() {
       text: editorContent,
       advice: moduleData.advice,
       theme: moduleData.theme,
-      answers: moduleData.answers,
-      hints: moduleData.hints
+      answers: answersData,
+      hints: hintsData
     }
 
     current_chapter.push(quizModule);
