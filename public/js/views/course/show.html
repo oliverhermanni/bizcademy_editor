@@ -3,7 +3,7 @@
     <div class="col-md-9">
       <div class="well">
         <h2>{{course.title}}</h2>
-        <p class="description">
+        <p class="description" ng-bind-html="to_trusted()">
           {{course.summary}}
         </p>
       </div>
