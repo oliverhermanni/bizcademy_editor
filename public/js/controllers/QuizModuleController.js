@@ -24,16 +24,20 @@ CourseEditor.controller('QuizModuleAddController',
 
       var answers = {
         0: {
-          answer: $scope.quizmodule.answer1
+          answer: $scope.quizmodule.answer1,
+          checked: $scope.quizmodule.checked1
         },
         1: {
-          answer: $scope.quizmodule.answer2
+          answer: $scope.quizmodule.answer2,
+          checked: $scope.quizmodule.checked2
         },
         2: {
-          answer: $scope.quizmodule.answer3
+          answer: $scope.quizmodule.answer3,
+          checked: $scope.quizmodule.checked3
         },
         3: {
-          answer: $scope.quizmodule.answer4
+          answer: $scope.quizmodule.answer4,
+          checked: $scope.quizmodule.checked4
         }
       };
 
