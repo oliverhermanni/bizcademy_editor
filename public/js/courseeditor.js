@@ -29,7 +29,7 @@
         controller: 'QuizModuleAddController',
         templateUrl: '/js/views/modules/quiz/edit.html'
       })
-      .when('/course/:courseId/chapter/:chapterId/module/quiz/:quizId', {
+      .when('/course/:courseId/chapter/:chapterId/module/:quizId', {
         controller: 'QuizModuleController',
         templateUrl: '/js/views/modules/quiz/show.html'
       })
