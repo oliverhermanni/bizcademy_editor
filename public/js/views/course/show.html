@@ -3,7 +3,7 @@
     <div class="col-md-9">
       <div class="well">
         <h2>{{course.title}}</h2>
-        <p class="description" ng-bind-html="to_trusted()">
+        <p class="description" ng-bind-html="to_trusted(course.summary)">
           {{course.summary}}
         </p>
       </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="chapter-details">
               <h4 class="chapter-title"><a href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
-              <p class="description">{{chapter.summary}}</p>
+              <p class="description" ng-bind-html="to_trusted(chapter.summary)">{{chapter.summary}}</p>
               <div class="chapter-insights">
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-graduation pull-left"></i>
