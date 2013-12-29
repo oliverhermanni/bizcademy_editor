@@ -11,9 +11,8 @@
               <input type="text" class="form-control" id="courseTitle" placeholder="Überschrift" ng-model="course.title">
             </div>
             <div class="form-group">
-              <label for="courseSummary">Zusammenfassung</label>
-              <textarea id="courseSummary" class="form-control" placeholder="Zusammenfassung"
-                        ng-model="course.summary"></textarea>
+              <label for="courseSummary">Text</label>
+              <div rich-text-editor></div>
             </div>
             <div class="form-group">
               <label for="courseAdvice">Zusätzlicher Rat für den Benutzer</label>
@@ -22,7 +21,7 @@
             </div>
             <div class="form-group">
               <button ng-click="cancel()" class="btn btn-danger">Abbrechen</button>
-              <button ng-click="createCourse()" ng-disabled="!course.summary" class="btn btn-primary">Kurs erstellen
+              <button ng-click="createCourse()" class="btn btn-primary">Kurs erstellen
               </button>
             </div>
           </form>
