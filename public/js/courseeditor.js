@@ -29,6 +29,10 @@
         controller: 'QuizModuleAddController',
         templateUrl: '/js/views/modules/quiz/edit.html'
       })
+      .when('/course/:courseId/chapter/:chapterId/module/quiz/:quizId', {
+        controller: 'QuizModuleController',
+        templateUrl: '/js/views/modules/quiz/show.html'
+      })
       .when('/course/:courseId/chapter/delete/:chapterId', {
         controller: 'ChapterDeleteController',
         templateUrl: 'js/views/course/show.html'
