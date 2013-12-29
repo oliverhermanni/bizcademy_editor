@@ -4,7 +4,7 @@
       <div class="well">
         <h2>{{ chapter.title }}</h2>
 
-            <p class="description" ng-model="description" ng-bind-html="to_trusted()">
+            <p class="description" ng-model="description" ng-bind-html="to_trusted(chapter.summary)">
               {{ chapter.summary }}
             </p>
           </div>
