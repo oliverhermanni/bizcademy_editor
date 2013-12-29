@@ -55,7 +55,13 @@ var CourseEditor = angular.module('CourseEditor', ['ngRoute', 'ngSanitize'],
   function($locationProvider) {
     $locationProvider.hashPrefix('');
   })
-  .config(courseEditorConfig);
+  .config(courseEditorConfig)
+  .run(function($rootScope, $sce) {
+    // TODO: make this a global function
+    $rootScope.to_trusted = function(textData)  {
+      return $sce.trustAsHtml(textData);
+    }
+  });
 
 CourseEditor.directive('richTextEditor', function( $log, $location ) {
   var directive = {
