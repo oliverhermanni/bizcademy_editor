@@ -5,9 +5,6 @@ CourseEditor.controller('ChaptersController',
     if ($routeParams.chapterId) {
       $scope.chapter = ChapterModel.getChapterById($routeParams.courseId, $routeParams.chapterId);
     }
-    $scope.to_trusted = function()  {
-      return $sce.trustAsHtml($scope.chapter.summary);
-    }
 
     $scope.onDelete = function(chapterId) {
       var confirmDelete = confirm('Are you sure, you want to delete this chapter?');
