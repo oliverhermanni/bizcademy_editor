@@ -1,15 +1,8 @@
 CourseEditor.controller('GametypeController',
-  function ($scope, $location, $routeParams) {
+  function ($scope, $location, $routeParams, GametypeModel) {
 
-    $scope.createModule = function(moduleType) {
-      switch(moduleType) {
-        case 'text':
-          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/text/add');
-          break;
-        case 'quiz':
-          break;
-      }
-    }
+    var moduleData = GametypeModel.getModelbyId($routeParams.courseId, $routeParams.chapterId, $routeParams.moduleId);
+    alert(moduleData);
   }
 );
 
