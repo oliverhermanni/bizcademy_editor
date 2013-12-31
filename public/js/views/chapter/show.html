@@ -27,7 +27,7 @@
             </div>
             <div class="switch-text pull-left">
               Bearbeitungsmodus
-              <span class="hint">(Not visible on editorial check)</span>
+              <span class="hint">(Ist beim Editorial-Check für bizcademy nicht sichtbar)</span>
             </div>
           </div>
 
@@ -44,26 +44,5 @@
     </div>
   </div>
 </div>
-
-    <div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="typeChooserLabel">Wählen Sie das Modul für den nächsten Schritt:</h4>
-          </div>
-          <div class="modal-body">
-            <a href class="btn-choose text-type" ng-click="createModule('text')" data-dismiss="modal">
-              <i class="icon icon-bubble2"></i>
-              <span class="type-label">Text</span>
-              <span class="type-hint">z.B. für Einführungen oder Erklärungen</span>
-            </a>
-            <a href class="btn-choose game-type" ng-click="createModule('quiz')" data-dismiss="modal">
-              <i class="icon icon-gamepad"></i>
-              <span class="type-label">Quiz</span>
-              <span class="type-hint">für Multiple Choice-Fragen</span>
-            </a>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+<div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true" ng-include src="'js/views/partials/type-chooser.html'">
+</div>

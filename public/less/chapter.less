@@ -51,8 +51,18 @@
   }
   .chapter-details {
     padding-left: @font-size-middle * 4;
-    p.description {
+    .description {
       margin-bottom: 5em;
+    }
+    span.label {
+      color: @gray;
+      font-weight: 600;
+      margin-right: @m-space;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .progress {
+      
     }
   }
   .chapter-remove {
@@ -91,14 +101,14 @@
     padding-right: @xl-space;
     margin-right: @l-space;
     border-right: 1px solid @gray-lightest;
-    .icon, .count {
+    .fa, .icon, .count {
       margin-right: @m-space;
       color: @gray;
     }
-    .icon {
+    .fa, .icon {
       font-size: 2.25em;
       line-height: 1.3em;
-      &.icon-graduation {
+      &.icon-rocket {
         // color: @brand-primary;
       }
       &.icon-medal {

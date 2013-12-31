@@ -15,14 +15,18 @@ CourseEditor.controller('CourseAddController',
 
     $scope.$on('$viewContentLoaded', function(){
       // detach navbar on scrollling downnnn
-      $(window).scroll(function () {
-        var barometer_pos = $(".activity-barometer").offset().top - $(window).scrollTop();
-        console.log(barometer_pos);
-        console.log($(".navbar").outerHeight(true));
+      $(window).on("resize scroll",function(e) {
+        var barometer = $(".activity-barometer"),
+            barometer_pos = barometer.offset().top - $(window).scrollTop(),
+            barometer_width = barometer.width(),
+            content_left_offset = $("#content").offset().left;
+
         if(barometer_pos <= $(".navbar").outerHeight(true)) {
-          $(".activity-barometer").addClass("detach");
+          barometer.addClass("detach");
+          barometer.css("left", content_left_offset - barometer_width);
         } else {
-          $(".activity-barometer").removeClass("detach");
+          barometer.removeClass("detach");
+          barometer.css("left", "");
         }
       });
     });

@@ -4,7 +4,7 @@
       <div class="bars">
       </div>
       <div class="status">
-        Gute!
+        Kaum!
         <small>Interaktion</small>
       </div>
     </div>
@@ -27,10 +27,9 @@
               <textarea id="courseAdvice" class="form-control" placeholder="Rat"
                         ng-model="course.advice"></textarea>
             </div>
-            <div class="form-group">
-              <button ng-click="cancel()" class="btn btn-danger">Abbrechen</button>
-              <button ng-click="createCourse()" class="btn btn-primary">Kurs erstellen
-              </button>
+            <div class="form-group form-actions">
+              <button ng-click="createCourse()" class="btn btn-primary pull-right">Kurs erstellen</button>
+              <button ng-click="cancel()" class="btn btn-link pull-right">Abbrechen</button>
             </div>
           </form>
         </div>

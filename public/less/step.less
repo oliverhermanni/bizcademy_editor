@@ -1,3 +1,7 @@
+.chapter-step,
+.list-group-item.chapter-step:first-child {
+  border-radius: 0;  
+}
 .chapter-step {
   .clearfix;
   .transition(.2s);
@@ -12,6 +16,23 @@
     .step-remove {
       right: @font-size-middle * 2.375;
       opacity: 1;
+    }
+  }
+  a.step-title:before {
+    font-family: 'bizcademy-icons';
+    margin-right: @m-space;
+    font-size: @font-size-base;    
+  }
+  &.text {
+    border-left: 3px solid @peter-river;
+    a.step-title:before {
+      content: "\e051";
+    }
+  }
+  &.quiz {
+    border-left: 3px solid @emerald;
+    a.step-title:before {
+      content: "\e169";
     }
   }
   .step-remove {

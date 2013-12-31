@@ -24,12 +24,20 @@
             </div>
             <div class="chapter-details">
               <h4 class="chapter-title"><a href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
-              <p class="description" ng-bind-html="to_trusted(chapter.summary)">{{chapter.summary}}</p>
+              <div class="description">
+                <p ng-bind-html="to_trusted(chapter.summary)">{{chapter.summary}}</p>
+                <span class="label pull-left">Gesamt-Fortschritt:</span>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+                    <span>2/10</span>
+                  </div>
+                </div>
+              </div>
               <div class="chapter-insights">
                 <div class="insight-wrapper pull-left">
-                  <i class="icon icon-graduation pull-left"></i>
+                  <i class="fa fa-rocket pull-left"></i>
                   <span class="count pull-left">3600</span>
-                  <span class="type pull-left">Punkte gesamt</span>
+                  <span class="type pull-left">Punkte</span>
                 </div>
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-medal pull-left"></i>
@@ -41,14 +49,14 @@
                   <span class="count pull-left">43</span>
                   <span class="type pull-left">Leser</span>
                 </div>
-                <a href="#" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Kapitel starten</a>
+                <a href="#/course/{{course.id}}/chapter/{{chapter.id}}" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Kapitel starten</a>
               </div>
             </div>
           </div>
           <ul class="list-group chapter-steps">
-            <li class="list-group-item chapter-step" ng-repeat="module in chapter.modules">
+            <li class="list-group-item chapter-step {{module.type}}" ng-repeat="module in chapter.modules">
               <i class="step-status pull-left"></i>
-              <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
+              <a class="step-title col-md-10" href="#/course/{{course.id}}/chater/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
               <a href="/" class="step-remove"><i class="icon icon-remove"></i></a>
               <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
             </li>

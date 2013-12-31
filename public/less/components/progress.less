@@ -1,0 +1,28 @@
+.progress {
+  height: @font-size-base;
+  background-color: @clouds;
+  box-shadow: none;
+  position: relative;
+  .progress-bar {
+    box-shadow: none;
+    line-height: @font-size-base;
+    span {
+      position: absolute;
+      font-size: @font-size-small;
+      top: 0;
+      right: @s-space;
+      color: rgba(0,0,0,.5);
+    }
+    span.label {
+      color: rgba(0,0,0,.2);
+      display: block;
+      font-size: @font-size-small;
+      margin-right: @m-space;
+      left: @s-space;
+      right: auto;
+      font-weight: 400;
+      top: 1px;
+      padding: 0;
+    }
+  }
+}
