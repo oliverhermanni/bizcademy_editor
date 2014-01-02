@@ -26,13 +26,13 @@
   &.text {
     border-left: 3px solid @peter-river;
     a.step-title:before {
-      content: "\e051";
+      content: "\e169";
     }
   }
   &.quiz {
     border-left: 3px solid @emerald;
     a.step-title:before {
-      content: "\e169";
+      content: "\e051";
     }
   }
   .step-remove {
@@ -85,8 +85,8 @@
 .hint-wrapper {
   .clearfix;
   position: relative;
-  border: 2px solid @gray-lighter;
-  border-left: 3em solid @gray-lighter;
+  border: 2px solid #b6cbe2;
+  border-left: 3em solid #b6cbe2;
   min-height: 3em;
   margin-bottom: @s-space;
   .hint-counter {
@@ -94,8 +94,10 @@
     position: absolute;
     top: 0;
     left: -1.5em;
-    background: @gray-lighter;
-    color: @gray-light;
+    // background: @gray-lighter;
+    // color: @gray-light;
+    color: @wet-asphalt;
+    background: #b6cbe2;
     font-size: 2em;
     width: 1.5em;
     text-align: center;
@@ -109,9 +111,8 @@
     color: @gray-light;
   }
   &.filled {
-    border-color: #b6cbe2;
     background: #b6cbe2;
-    .hint-counter, .hint-text {
+    .hint-text {
       color: @wet-asphalt;
       background: #b6cbe2;
     }

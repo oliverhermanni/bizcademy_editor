@@ -84,15 +84,27 @@ code {
   opacity: .9;
   filter: alpha(opacity=90);
 }
+.answer,
+.hint-text {
+  input.form-control {
+    border: 0;
+    padding: 0;
+    line-height: inherit;
+    font-size: inherit;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+  }
+}
 .answer {
   .clearfix;
   position: relative;
   margin-bottom: @s-space;
   .answer-remove {
     .transition(.15s);
-    position: absolute;
-    top: 0;
-    right: -1em;
+    // position: absolute;
+    // top: 0;
+    // right: -1em;
     width: 3em;
     height: 3em;
     line-height: 3em;
