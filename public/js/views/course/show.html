@@ -1,19 +1,16 @@
-<div class="container">
-  <div class="row" id="content">
-    <div class="col-md-9">
+<div id="content" class="container">
+  <div class="row">
+    <div class="col-md-12">
       <div class="well">
         <h2>{{course.title}}</h2>
         <p class="description" ng-bind-html="to_trusted(course.summary)">
           {{course.summary}}
         </p>
       </div>
-      <div class="speech-bubble right-handed">
-        <img src="img/bbfoto.jpg" class="avatar">
-        <div class="bubble col-md-6">
-          {{course.advice}}
-        </div>
-      </div>
-
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
       <h3 ng-controller="ChaptersController">Kapitelübersicht <small>({{chapters.length}} Kapitel insgesamt)</small></h3>
       <div class="chapters" ng-controller="ChaptersController">
         <div class="chapter" ng-repeat="chapter in chapters">
@@ -70,11 +67,27 @@
         </a>
       </p>
     </div>
-    <div class="col-md-3 course-nav-container">
+    <aside class="col-md-3">
       <div class="row">
-        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+        <div class="col-md-12">
+          <h3>Author</h3>
+          <div class="author-vita speech-bubble top">
+            <div class="author-head">
+              <img src="img/bbfoto.jpg" class="avatar avatar-lg">
+              <div class="author-name pull-left">
+                Gregor Swatek
+                <small>Webdesigner</small>
+              </div>
+            </div>
+            
+            <div class="bubble col-md-6">
+              <!-- {{course.advice}} -->
+              Ich konzipiere und gestalte Mobile- und Web-Anwendungen, dabei lege ich besonderen Wert auf Einfachheit und Flexibilität der Anwendung genauso wie auf eine intuitive und benutzerfreundliche Bedienung.
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </aside>
   </div>
 </div>
 
