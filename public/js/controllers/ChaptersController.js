@@ -6,7 +6,7 @@ CourseEditor.controller('ChaptersController',
       $scope.chapter = ChapterModel.getChapterById($routeParams.courseId, $routeParams.chapterId);
     }
 
-    $scope.onDelete = function(chapterId) {
+    $scope.deleteChapter = function(chapterId) {
       var confirmDelete = confirm('Are you sure, you want to delete this chapter?');
 
       if (confirmDelete) {
@@ -14,16 +14,16 @@ CourseEditor.controller('ChaptersController',
       }
     }
 
-    // TODO: put this in GameTypeController
-    $scope.createModule = function(moduleType) {
-      switch(moduleType) {
-        case 'text':
-          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/text/add');
-          break;
-        case 'quiz':
-          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/quiz/add');
-          break;
+    $scope.deleteModule = function(chapterId, moduleId) {
+      var confirmDelete = confirm('Are you sure, you want to delete this module?');
+      if (confirmDelete) {
+        $location.path('/course/' + $routeParams.courseId + '/chapter/' + chapterId + '/module/delete/' + moduleId);
       }
+    }
+
+    // TODO: put this in ModuleController
+    $scope.createModule = function(moduleType) {
+      $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId + '/module/' + moduleType+ '/add');
     }
   }
 );
