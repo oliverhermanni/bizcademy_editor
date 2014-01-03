@@ -8,7 +8,7 @@ CourseEditor.service('TextModuleModel', function() {
 
     var textModule = {
       id: Math.random().toString(36).substring(7),
-      type: 'text',
+      moduletype: 'text',
       title: moduleData.title,
       text: editor
     };
