@@ -69,6 +69,7 @@
                 </div>
               </div>
               <div class="chapter-insights">
+                <button class="btn btn-default btn-link btn-toggle-steps collapsed" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps"><i class="fa fa-bars"></i></button>
                 <div class="insight-wrapper pull-left">
                   <i class="fa fa-rocket pull-left"></i>
                   <span class="count pull-left">3600</span>
@@ -88,7 +89,7 @@
               </div>
             </div>
           </div>
-          <ul class="list-group chapter-steps">
+          <ul id="chapter-{{chapter.id}}-steps" class="list-group chapter-steps collapse">
             <li class="list-group-item chapter-step {{module.moduletype}}" ng-repeat="module in chapter.modules">
               <i class="step-status pull-left"></i>
               <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>

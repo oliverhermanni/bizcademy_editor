@@ -52,7 +52,7 @@
   .chapter-details {
     padding-left: @font-size-middle * 4;
     .description {
-      margin-bottom: 5em;
+      margin-bottom: 2em;
     }
     span.label {
       color: @gray;
@@ -86,15 +86,29 @@
 }
 .chapter-insights {
   .clearfix;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   border-top: 1px solid @gray-lightest;
   padding: 10px 20px 10px @font-size-middle * 4 + @l-space;
   background: #f9f9f9;
+  margin-bottom: @l-space * -1;
+  margin-left: -92px;
+  margin-right: @xl-space * -1;
   .btn.btn-success {
     margin-top: 6px;
+  }
+  .btn-toggle-steps {
+    .transition(.3s);
+    position: absolute;
+    left: 20px;
+    top: initial;
+    font-size: 21px;
+    color: @brand-primary;
+    &.collapsed {
+      color: @gray-light;
+      &:hover {
+        color: @gray;
+      }
+    }
   }
   .insight-wrapper {
     .clearfix;
