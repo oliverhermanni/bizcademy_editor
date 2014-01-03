@@ -1,8 +1,12 @@
 CourseEditor.controller('ModuleController',
   function ($scope, $location, $routeParams, ModuleModel) {
 
-    var moduleData = ModuleModel.getModelbyId($routeParams.courseId, $routeParams.chapterId, $routeParams.moduleId);
-    alert(moduleData);
+    var moduleData = ModuleModel.getModuleById($routeParams.courseId, $routeParams.chapterId, $routeParams.moduleId);
+
+    $scope.courseId = $routeParams.courseId;
+    $scope.moduleData = moduleData;
+    $scope.moduleView = moduleData.moduletype;
+
   }
 );
 
