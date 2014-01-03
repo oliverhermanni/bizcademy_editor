@@ -8,7 +8,7 @@ CourseEditor.service('QuizModuleModel', function() {
 
     var quizModule = {
       id: Math.random().toString(36).substring(7),
-      type: 'quiz',
+      moduletype: 'quiz',
       title: moduleData.title,
       text: editorContent,
       advice: moduleData.advice,
