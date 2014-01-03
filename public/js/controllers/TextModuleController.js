@@ -8,6 +8,8 @@ CourseEditor.controller('TextModuleAddController',
   function ($scope, $location, $routeParams, TextModuleModel) {
     $scope.currentTask = "hinzufügen";
 
+    $('body').removeClass('modal-open');
+
     $scope.cancel = function () {
       $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
     }

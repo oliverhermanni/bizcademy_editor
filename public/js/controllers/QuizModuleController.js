@@ -6,6 +6,8 @@ CourseEditor.controller('QuizModuleController',
 CourseEditor.controller('QuizModuleAddController',
   function ($scope, $location, $routeParams, QuizModuleModel) {
 
+    $('body').removeClass('modal-open');
+
     $scope.$on('$viewContentLoaded', function(){
       $(".custom-checkbox-control").click(function() {
         var checkbox = $(this).children('input:checkbox');
