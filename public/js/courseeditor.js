@@ -21,13 +21,13 @@
         controller: 'ChapterAddController',
         templateUrl: 'js/views/chapter/edit.html'
       })
+      .when('/course/:courseId/chapter/:chapterId/module/:moduleId', {
+        controller: 'ModuleController',
+        templateUrl: '/js/views/modules/show.html'
+      })
       .when('/course/:courseId/chapter/:chapterId/module/delete/:moduleId', {
         controller: 'ModuleDeleteController',
         templateUrl: 'js/views/course/show.html'
-      })
-      .when('/course/:courseId/chapter/:chapterId/module/:moduleId', {
-        controller: 'ModuleController',
-        templateUrl: '/js/views/modules/quiz/show.html'
       })
       .when('/course/:courseId/chapter/:chapterId/module/text/add', {
         controller: 'TextModuleAddController',
