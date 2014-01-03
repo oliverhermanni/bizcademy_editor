@@ -18,7 +18,7 @@
       <div class="chapters" ng-controller="ChaptersController">
         <div class="chapter" ng-repeat="chapter in chapters">
           <div class="well chapter-header">
-            <a href  ng-click="onDelete(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
+            <a href  ng-click="deleteChapter(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
             <div class="chapter-count">
               {{$index+1}}
             </div>
@@ -57,7 +57,7 @@
             <li class="list-group-item chapter-step {{module.type}}" ng-repeat="module in chapter.modules">
               <i class="step-status pull-left"></i>
               <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
-              <a href="/" class="step-remove"><i class="icon icon-remove"></i></a>
+              <a href ng-click="deleteModule(chapter.id, module.id)" class="step-remove"><i class="icon icon-remove"></i></a>
               <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
             </li>
           </ul>
