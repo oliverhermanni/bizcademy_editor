@@ -43,9 +43,35 @@
 
 
 @media (min-width: @screen-sm-min) {
+  .course-stats .stat-item {
+    width: 16.666666666666664%;
+    padding-left: inherit;
+    padding-right: inherit;
+    &.col-sm-3 {
+      width: 25%;
+    }
+  }
+  .course-stats .stat-item .stat-label {
+    .one-line-text;
+    width: 100%;
+  }
+  .course-overview h2, .course-overview p.description {
+    padding-left: 84px;
+  }
+  
 }
 
 @media (min-width: @screen-md-min) {
+  .course-stats .stat-item .stat-label {
+    float: right;
+    display: inline-block;
+    width: auto;
+  }
+  .course-stats .stat-item,
+  .course-stats .stat-item.col-sm-3 {
+    width: 100%;
+    padding: 0;
+  }
   .course-nav-container {
     position: absolute;
     top: 0;
