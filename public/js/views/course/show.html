@@ -1,11 +1,49 @@
 <div id="content" class="container">
-  <div class="row">
-    <div class="col-md-12">
+  <div class="row course-overview">
+    <div class="col-md-9">
       <div class="well">
+        <i class="icon icon-lamp course-icon hidden-xs"></i>
         <h2>{{course.title}}</h2>
         <p class="description" ng-bind-html="to_trusted(course.summary)">
           {{course.summary}}
-        </p>
+        </p>          
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="course-stats">
+        <div class="category pull-left">
+          <span class="main-cat">Online-Marketing</span>
+          <span class="sub-cat">
+            <i class="icon icon-enter-alt"></i>
+            SEO-Kampagne
+          </span>
+        </div>
+        <hr class="clearfix" />
+        <div class="stat-item col-sm-2">
+          <i class="icon icon-book"></i>
+          <span ng-controller="ChaptersController" class="stat-count">{{chapters.length}}</span>
+          <span class="stat-label">Kapitel</span>
+        </div>
+        <div class="stat-item col-sm-3">
+          <i class="icon icon-medal"></i>
+          <span class="stat-count">4</span>
+          <span class="stat-label">Achievements</span>
+        </div>
+        <div class="stat-item col-sm-2">
+          <i class="fa fa-rocket"></i>
+          <span class="stat-count">2600</span>
+          <span class="stat-label">Punkte</span>
+        </div>
+        <div class="stat-item col-sm-3">
+          <i class="icon icon-meter-medium"></i>
+          <span class="stat-count">65%</span>
+          <span class="stat-label">Interaktion</span>
+        </div>
+        <div class="stat-item col-sm-2">
+          <i class="icon icon-alarm"></i>
+          <span class="stat-count">2:30</span>
+          <span class="stat-label">Dauer</span>
+        </div>        
       </div>
     </div>
   </div>
@@ -75,8 +113,8 @@
             <div class="author-head">
               <img src="img/bbfoto.jpg" class="avatar avatar-lg">
               <div class="author-name pull-left">
-                Gregor Swatek
-                <small>Webdesigner</small>
+                Boris Becker
+                <small>Autoverkäufer</small>
               </div>
             </div>
             

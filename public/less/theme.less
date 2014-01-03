@@ -197,4 +197,80 @@ code {
     }
   }
 }
-
+.course-stats {
+  .clearfix;
+  .well;
+  .lh-background-image(linear-gradient(to bottom, @turquoise, @green-sea));
+  min-height: 64px;
+  hr {
+    border-top-color: @green-sea;
+    clear: both;
+  }
+  .stat-item {
+    .clearfix;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    .icon, .fa {
+      float: left;
+      font-size: @font-size-base;
+      line-height: 2.5em;
+      color: rgba(0,0,0,.3);
+      margin-right: @m-space;
+    }
+    .stat-count {
+      float: left;
+      color: white;
+      font-weight: 300;
+      font-family: @font-family-decorative;
+      font-size: @font-size-large;
+      line-height: 2em;
+    }
+    .stat-label {
+      .one-line-text;
+      float: right;
+      display: block;
+      font-size: @font-size-small;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.3);
+      line-height: 2.9em;
+    }
+  }
+  .category {
+    margin-bottom: 1em;
+    .main-cat {
+      color: white;
+      display: block;
+    }
+    .sub-cat {
+      color: rgba(255,255,255,.5);
+      font-weight: 300;
+      font-size: @font-size-small;
+    }
+  }
+}
+.course-overview {
+  position: relative;
+  margin-bottom: 2em;
+}
+.course-overview .well {
+  min-height: 340px;
+  margin-bottom: 0;
+  position: relative;
+  .course-icon {
+    // .lh-background-image(linear-gradient(to bottom, @turquoise, @green-sea));
+    background: @turquoise;
+    position: absolute;
+    top: @l-space;
+    left: @xl-space;
+    text-align: center;
+    margin: 0;
+    display: block;
+    color: white;
+    font-size: 32px;
+    line-height: 60px;
+    width: 64px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+}
