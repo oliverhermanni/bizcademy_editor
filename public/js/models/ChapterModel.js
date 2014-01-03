@@ -85,4 +85,8 @@ CourseEditor.service('ChapterModel', function (CourseModel) {
     }
   }
 
+  this.saveChapter = function (chapterId, chapterData) {
+    window.localStorage.setItem(chapterId, JSON.stringify(chapterData));
+  }
+
 });
