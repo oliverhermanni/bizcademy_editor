@@ -3,13 +3,13 @@
   position: relative;
   margin-bottom: @xl-space * 3;
   .bubble {
-    .box-shadow(0 2px 0 @old-blue);
+    .box-shadow(0 2px 0 @polar-sky);
     .pull-left;
     border-radius: @border-radius-base;
     position: relative;
-    background: @light-old-blue;
+    background: @polar-ice;
     min-height: @xl-space * 3;
-    color: #fff;
+    color: @light-old-blue;
     margin-left: @xl-space;
     padding: @l-space;
     padding-left: 3em;
@@ -23,12 +23,13 @@
       top: @m-space;
       left: @xl-space;
       font-size: 1em;
+      color: @light-old-blue;
     }
     &:after {
       right: 100%;
       top: @l-space;
       border: solid transparent;
-      border-right-color: @light-old-blue;
+      border-right-color: @polar-ice;
       border-width: @m-space;
       content: " ";
       height: 0;
@@ -54,7 +55,7 @@
       &:after {
         left: 100%;
         border-right-color: transparent;
-        border-left-color: @light-old-blue;
+        border-left-color: @polar-ice;
       }
     }
   }
