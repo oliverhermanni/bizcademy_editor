@@ -11,6 +11,7 @@
   border-bottom: 1px solid @gray-lighter;
   margin-bottom: 0;
   padding-right: 0;
+  padding-left: @xl-space;
   &:hover {
     background: #f6f6f6;
     .step-remove {
@@ -24,14 +25,14 @@
     font-size: @font-size-base;    
   }
   &.text {
-    border-left: 3px solid @peter-river;
-    a.step-title:before {
+    // border-left: 3px solid @peter-river;
+    .step-status:before {
       content: "\e169";
     }
   }
   &.quiz {
-    border-left: 3px solid @emerald;
-    a.step-title:before {
+    // border-left: 3px solid @emerald;
+    .step-status:before {
       content: "\e051";
     }
   }
@@ -48,27 +49,31 @@
   }
   i.step-status {
     .icon;
-    font-size: @font-size-large;
+    font-size: @font-size-base;
+    line-height: 2em;
+    width: 2em;
+    text-align: center;
     position: relative;
     color: @gray-light;
-    margin-right: @s-space;
+    background: @gray-lighter;
+    margin: 0 31px 0 11px;
+    border-radius: 50%;
     line-height: @font-size-base * 2;
-    &:before {
-      content: "\e439";
-    }
   }
+
   .step-title {
     .one-line-text;
     color: @wet-asphalt;
     line-height: @font-size-base * 2;
+    padding: 0;
   }
-  &.done > i.step-status:before {
-    content: "\e438";
-    color: @emerald;
+  &.done > i.step-status {
+    background: @emerald;
+    color: white;
   }
-  &.current > i.step-status:before {
-    content: "\e438";
-    color: @gray-dark;
+  &.current > i.step-status {
+    background: @gray;
+    color: white;
   }
   .item-drag-handle {
     color: @silver;
