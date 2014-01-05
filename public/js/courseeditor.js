@@ -36,6 +36,15 @@
         controller: 'QuizController',
         templateUrl: 'js/views/quiz/show.html'
       })
+      .when('/player/:view?/:courseId?/:chapterId?/:modulId?', {
+        controller: 'PlayerController',
+        templateUrl: function(params) {
+        	if(params.view === undefined) { 
+        		params.view = 'index';
+        	}
+        	return 'js/views/player/'+params.view+'.html';
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });

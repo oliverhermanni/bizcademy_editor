@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row" id="content">
+
+    <div class="col-md-12 ">
+      <h2>Meine Kurse Player</h2>
+      <div ng-repeat="course in courses">
+        <div class="well well-sm clearfix">
+          <h4><a href="#/player/course/{{course.id}}">{{course.title}}</a></h4>
+          <p>
+            {{course.summary}}
+          </p>
+          <a href="#/player/course/{{course.id}}" class="btn btn-primary pull-right">Weiter zur Kapitelübersicht &raquo;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
