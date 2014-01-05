@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row" id="content">
+    <div class="activity-barometer">
+      <div class="bars">
+      </div>
+      <div class="status">
+        Kaum!
+        <small>Interaktion</small>
+      </div>
+    </div>
 
     <div class="col-md-9">
       <div class="row">
@@ -11,19 +19,17 @@
               <input type="text" class="form-control" id="courseTitle" placeholder="Überschrift" ng-model="course.title">
             </div>
             <div class="form-group">
-              <label for="courseSummary">Zusammenfassung</label>
-              <textarea id="courseSummary" class="form-control" placeholder="Zusammenfassung"
-                        ng-model="course.summary"></textarea>
+              <label for="courseSummary">Text</label>
+              <div rich-text-editor></div>
             </div>
             <div class="form-group">
               <label for="courseAdvice">Zusätzlicher Rat für den Benutzer</label>
               <textarea id="courseAdvice" class="form-control" placeholder="Rat"
                         ng-model="course.advice"></textarea>
             </div>
-            <div class="form-group">
-              <button ng-click="cancel()" class="btn btn-danger">Abbrechen</button>
-              <button ng-click="createCourse()" ng-disabled="!course.summary" class="btn btn-primary">Kurs erstellen
-              </button>
+            <div class="form-group form-actions">
+              <button ng-click="createCourse()" class="btn btn-primary pull-right">Kurs erstellen</button>
+              <button ng-click="cancel()" class="btn btn-link pull-right">Abbrechen</button>
             </div>
           </form>
         </div>

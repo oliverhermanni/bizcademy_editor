@@ -1,31 +1,33 @@
 .course-nav-container {
   position: relative;
   margin: 0 15px;
-  background: @gray-dark;
   color: white;
   .btn-default.btn-link {
     .transition(.3s);
-    color: @clouds;
+    color: @concrete;
+    padding-left: @l-space;
+    padding-right: @l-space;
     &:hover {
       text-decoration: none;
-      color: @silver;
+      color: @asbestos;
     }
   }
   .course-title {
     .one-line-text;
-    background: @wet-asphalt;
+    background: @peter-river;
     margin-top: 0px;
-    margin-bottom: 1px;
+    margin-bottom: 0px;
     font-size: @font-size-middle;
     padding: 10px 15px;
+    min-height: 39px;
   }
 	.list-group {
 		border-radius: 0;
 
     .list-group-item {
-      background: @midnight-blue;
+      background: @belize-hole;
       border: 0;
-      border-bottom: 1px solid @wet-asphalt;
+      border-top: 1px solid rgba(0,0,0,.1);
       border-radius: 0;
       margin-bottom: 0;
       line-height: 1.75em;
@@ -33,6 +35,48 @@
       > a {
         color: @clouds;
       }
+    }
+  }
+}
+
+.course-navigation {
+  .chapter {
+    .clearfix;
+    i.chapter-status {
+      .icon;
+      font-size: 1em;
+      position: relative;
+      color: @clouds;
+      margin-right: @s-space;
+      line-height: @font-size-base * 2;
+      &:before {
+        content: "\e439";
+      }
+    }
+    &.done > i.chapter-status:before {
+      content: "\e438";
+      color: @emerald;
+    }
+    &.current > i.chapter-status:before {
+      content: "\e438";
+      color: white;
+    }
+    .item-drag-handle {
+      color: rgba(0,0,0,.1);
+      position: relative;
+      top: 2px;
+      width: @xl-space;
+      text-align: right;
+      padding: 0 @s-space;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .chapter-title {
+      .one-line-text;
+      width: 75%;
+      line-height: @font-size-base * 2;
+      font-weight: 300;
     }
   }
 }

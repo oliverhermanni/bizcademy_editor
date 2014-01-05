@@ -46,12 +46,12 @@ CourseEditor.service('ChapterModel', function (CourseModel) {
     return modules;
   }
 
-  this.addChapter = function (courseId, chapter) {
+  this.addChapter = function (courseId, chapter, editorContent) {
 
     var chapter = {
       id: Math.random().toString(36).substring(7),
       title: chapter.title,
-      summary: chapter.summary,
+      summary: editorContent,
       advice: chapter.advice
     }
 
@@ -83,6 +83,10 @@ CourseEditor.service('ChapterModel', function (CourseModel) {
         break;
       }
     }
+  }
+
+  this.saveChapter = function (chapterId, chapterData) {
+    window.localStorage.setItem(chapterId, JSON.stringify(chapterData));
   }
 
 });

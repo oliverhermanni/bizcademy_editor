@@ -1,35 +1,79 @@
-<div class="container">
-  <div class="row" id="content">
+<div id="content" class="container">
+  <div class="row course-overview">
     <div class="col-md-9">
       <div class="well">
+        <i class="icon icon-lamp course-icon hidden-xs"></i>
         <h2>{{course.title}}</h2>
-        <p class="description">
+        <p class="description" ng-bind-html="to_trusted(course.summary)">
           {{course.summary}}
-        </p>
+        </p>          
       </div>
-      <div class="speech-bubble right-handed">
-        <img src="img/bbfoto.jpg" class="avatar">
-        <div class="bubble col-md-6">
-          {{course.advice}}
+    </div>
+    <div class="col-md-3">
+      <div class="course-stats">
+        <div class="category pull-left">
+          <span class="main-cat">Online-Marketing</span>
+          <span class="sub-cat">
+            <i class="icon icon-enter-alt"></i>
+            SEO-Kampagne
+          </span>
         </div>
+        <hr class="clearfix" />
+        <div class="stat-item col-sm-2">
+          <i class="icon icon-book"></i>
+          <span ng-controller="ChaptersController" class="stat-count">{{chapters.length}}</span>
+          <span class="stat-label">Kapitel</span>
+        </div>
+        <div class="stat-item col-sm-3">
+          <i class="icon icon-medal"></i>
+          <span class="stat-count">4</span>
+          <span class="stat-label">Achievements</span>
+        </div>
+        <div class="stat-item col-sm-2">
+          <i class="fa fa-rocket"></i>
+          <span class="stat-count">2600</span>
+          <span class="stat-label">Punkte</span>
+        </div>
+        <div class="stat-item col-sm-3">
+          <i class="icon icon-meter-medium"></i>
+          <span class="stat-count">65%</span>
+          <span class="stat-label">Interaktion</span>
+        </div>
+        <div class="stat-item col-sm-2">
+          <i class="icon icon-alarm"></i>
+          <span class="stat-count">2:30</span>
+          <span class="stat-label">Dauer</span>
+        </div>        
       </div>
-
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
       <h3 ng-controller="ChaptersController">Kapitelübersicht <small>({{chapters.length}} Kapitel insgesamt)</small></h3>
       <div class="chapters" ng-controller="ChaptersController">
         <div class="chapter" ng-repeat="chapter in chapters">
           <div class="well chapter-header">
-            <a href  ng-click="onDelete(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
+            <a href  ng-click="deleteChapter(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
             <div class="chapter-count">
               {{$index+1}}
             </div>
             <div class="chapter-details">
               <h4 class="chapter-title"><a href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
-              <p class="description">{{chapter.summary}}</p>
+              <div class="description">
+                <p ng-bind-html="to_trusted(chapter.summary)">{{chapter.summary}}</p>
+                <span class="label pull-left">Gesamt-Fortschritt:</span>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+                    <span>2/10</span>
+                  </div>
+                </div>
+              </div>
               <div class="chapter-insights">
+                <button class="btn btn-default btn-link btn-toggle-steps collapsed" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps"><i class="fa fa-bars"></i></button>
                 <div class="insight-wrapper pull-left">
-                  <i class="icon icon-graduation pull-left"></i>
+                  <i class="fa fa-rocket pull-left"></i>
                   <span class="count pull-left">3600</span>
-                  <span class="type pull-left">Punkte gesamt</span>
+                  <span class="type pull-left">Punkte</span>
                 </div>
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-medal pull-left"></i>
@@ -41,15 +85,15 @@
                   <span class="count pull-left">43</span>
                   <span class="type pull-left">Leser</span>
                 </div>
-                <a href="#" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Kapitel starten</a>
+                <a href="#/course/{{course.id}}/chapter/{{chapter.id}}" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Kapitel starten</a>
               </div>
             </div>
           </div>
-          <ul class="list-group chapter-steps">
-            <li class="list-group-item chapter-step" ng-repeat="module in chapter.modules">
+          <ul id="chapter-{{chapter.id}}-steps" class="list-group chapter-steps collapse">
+            <li class="list-group-item chapter-step {{module.moduletype}}" ng-repeat="module in chapter.modules">
               <i class="step-status pull-left"></i>
-              <a class="step-title col-md-10" href="#/chapter/{{chapter.id}}">{{module.title}}</a>
-              <a href="/" class="step-remove"><i class="icon icon-remove"></i></a>
+              <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
+              <a href ng-click="deleteModule(chapter.id, module.id)" class="step-remove"><i class="icon icon-remove"></i></a>
               <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
             </li>
           </ul>
@@ -62,11 +106,27 @@
         </a>
       </p>
     </div>
-    <div class="col-md-3 course-nav-container">
+    <aside class="col-md-3">
       <div class="row">
-        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+        <div class="col-md-12">
+          <h3>Author</h3>
+          <div class="author-vita speech-bubble top">
+            <div class="author-head">
+              <img src="img/bbfoto.jpg" class="avatar avatar-lg">
+              <div class="author-name pull-left">
+                Boris Becker
+                <small>Autoverkäufer</small>
+              </div>
+            </div>
+            
+            <div class="bubble col-md-6">
+              <!-- {{course.advice}} -->
+              Ich konzipiere und gestalte Mobile- und Web-Anwendungen, dabei lege ich besonderen Wert auf Einfachheit und Flexibilität der Anwendung genauso wie auf eine intuitive und benutzerfreundliche Bedienung.
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </aside>
   </div>
 </div>
 

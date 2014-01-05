@@ -3,10 +3,10 @@
 
     <div class="col-md-12">
       <h2>Meine Kurse</h2>
-      <div ng-repeat="course in courses">
+      <div ng-repeat="course in courses" >
         <div class="well well-sm">
           <h4><a href="#/course/{{course.id}}">{{course.title}}</a></h4>
-          <p>
+          <p ng-bind-html="to_trusted(course.summary)">
             {{course.summary}}
           </p>
         </div>

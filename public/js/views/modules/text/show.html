@@ -1,0 +1,10 @@
+<div class="well">
+  <h2>{{ moduleData.title }}</h2>
+
+  <p class="description" ng-bind-html="to_trusted(moduleData.text)">
+    {{ moduleData.text }}
+  </p>
+</div>
+<div class="chapter-actions">
+  <a class="btn btn-primary" href="#/course/{{courseId}}">Zurück zum Kurs <i class="fa fa-angle-right"></i></a>
+</div>

@@ -1,0 +1,20 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title" id="typeChooserLabel">Wähle einen Modultypen aus:</h4>
+    </div>
+    <div class="modal-body">
+      <a href class="btn-choose text-type" ng-click="createModule('text')" data-dismiss="modal">
+        <i class="icon icon-bubble2"></i>
+        <span class="type-label">Text</span>
+        <span class="type-hint">für Einführungen oder Erklärungen</span>
+      </a>
+      <a href class="btn-choose game-type" ng-click="createModule('quiz')" data-dismiss="modal">
+        <i class="icon icon-gamepad"></i>
+        <span class="type-label">Quiz</span>
+        <span class="type-hint">für Multiple Choice-Fragen</span>
+      </a>
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

@@ -1,3 +1,7 @@
+.chapter-step,
+.list-group-item.chapter-step:first-child {
+  border-radius: 0;  
+}
 .chapter-step {
   .clearfix;
   .transition(.2s);
@@ -7,11 +11,29 @@
   border-bottom: 1px solid @gray-lighter;
   margin-bottom: 0;
   padding-right: 0;
+  padding-left: @xl-space;
   &:hover {
     background: #f6f6f6;
     .step-remove {
       right: @font-size-middle * 2.375;
       opacity: 1;
+    }
+  }
+  a.step-title:before {
+    font-family: 'bizcademy-icons';
+    margin-right: @m-space;
+    font-size: @font-size-base;    
+  }
+  &.text {
+    // border-left: 3px solid @peter-river;
+    .step-status:before {
+      content: "\e169";
+    }
+  }
+  &.quiz {
+    // border-left: 3px solid @emerald;
+    .step-status:before {
+      content: "\e051";
     }
   }
   .step-remove {
@@ -27,27 +49,31 @@
   }
   i.step-status {
     .icon;
-    font-size: @font-size-large;
+    font-size: @font-size-base;
+    line-height: 2em;
+    width: 2em;
+    text-align: center;
     position: relative;
     color: @gray-light;
-    margin-right: @s-space;
+    background: @gray-lighter;
+    margin: 0 31px 0 11px;
+    border-radius: 50%;
     line-height: @font-size-base * 2;
-    &:before {
-      content: "\e439";
-    }
   }
+
   .step-title {
     .one-line-text;
     color: @wet-asphalt;
     line-height: @font-size-base * 2;
+    padding: 0;
   }
-  &.done > i.step-status:before {
-    content: "\e438";
-    color: @emerald;
+  &.done > i.step-status {
+    background: @emerald;
+    color: white;
   }
-  &.current > i.step-status:before {
-    content: "\e438";
-    color: @gray-dark;
+  &.current > i.step-status {
+    background: @gray;
+    color: white;
   }
   .item-drag-handle {
     color: @silver;
@@ -64,8 +90,8 @@
 .hint-wrapper {
   .clearfix;
   position: relative;
-  border: 2px solid @gray-lighter;
-  border-left: 3em solid @gray-lighter;
+  border: 2px solid #b6cbe2;
+  border-left: 3em solid #b6cbe2;
   min-height: 3em;
   margin-bottom: @s-space;
   .hint-counter {
@@ -73,8 +99,10 @@
     position: absolute;
     top: 0;
     left: -1.5em;
-    background: @gray-lighter;
-    color: @gray-light;
+    // background: @gray-lighter;
+    // color: @gray-light;
+    color: @wet-asphalt;
+    background: #b6cbe2;
     font-size: 2em;
     width: 1.5em;
     text-align: center;
@@ -88,9 +116,8 @@
     color: @gray-light;
   }
   &.filled {
-    border-color: #b6cbe2;
     background: #b6cbe2;
-    .hint-counter, .hint-text {
+    .hint-text {
       color: @wet-asphalt;
       background: #b6cbe2;
     }

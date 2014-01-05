@@ -1,65 +1,48 @@
-<div class="col-md-9">
-  <div class="well">
-    <h2>{{ chapter.title }}</h2>
+<div class="container">
+  <div class="row" id="content">
+    <div class="col-md-9">
+      <div class="well">
+        <h2>{{ chapter.title }}</h2>
 
-        <p class="description">
-          {{ chapter.summary }}
-        </p>
-      </div>
-      <div class="speech-bubble right-handed">
-        <img src="img/dirtydieter.jpg" class="avatar">
+            <p class="description" ng-model="description" ng-bind-html="to_trusted(chapter.summary)">
+              {{ chapter.summary }}
+            </p>
+          </div>
+          <div class="speech-bubble right-handed">
+            <img src="img/dirtydieter.jpg" class="avatar avatar-md">
 
-        <div class="bubble col-md-6">
-          {{chapter.advice}}
+            <div class="bubble col-md-6">
+              {{chapter.advice}}
+            </div>
+          </div>
+          <h3>Kapitel-Einstellungen</h3>
+
+          <div class="settings-control">
+            <div class="onoffswitch pull-left">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+              <label class="onoffswitch-label" for="myonoffswitch">
+                <div class="onoffswitch-inner"></div>
+                <div class="onoffswitch-switch"></div>
+              </label>
+            </div>
+            <div class="switch-text pull-left">
+              Bearbeitungsmodus
+              <span class="hint">(Ist beim Editorial-Check für bizcademy nicht sichtbar)</span>
+            </div>
+          </div>
+
+          <div class="chapter-actions">
+            <a ng-controller="CoursesController" href="#/course/{{course.id}}/chapter/add">Neues Kapitel erstellen</a> oder <a class="btn btn-primary" data-toggle="modal" data-target="#type-chooser">Weiteren Schritt hinzufügen<i class="fa fa-angle-right"></i></a>
+          </div>
         </div>
-      </div>
-      <h3>Kapitel-Einstellungen</h3>
-
-      <div class="settings-control">
-        <div class="onoffswitch pull-left">
-          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-          <label class="onoffswitch-label" for="myonoffswitch">
-            <div class="onoffswitch-inner"></div>
-            <div class="onoffswitch-switch"></div>
-          </label>
+        <div class="col-md-3 course-nav-container">
+          <div class="row">
+            <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+          </div>
         </div>
-        <div class="switch-text pull-left">
-          Bearbeitungsmodus
-          <span class="hint">(Not visible on editorial check)</span>
-        </div>
-      </div>
-
-      <div class="chapter-actions">
-        <a href="#">Neues Kapitel erstellen</a> or <a class="btn btn-primary" data-toggle="modal" data-target="#type-chooser">Weiteren Schritt hinzufügen<i class="fa fa-angle-right"></i></a>
-      </div>
-    </div>
-    <div class="col-md-3 course-nav-container">
-      <div class="row">
-        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="typeChooserLabel">Wählen Sie das Modul für den nächsten Schritt:</h4>
-      </div>
-      <div class="modal-body">
-        <a href class="btn-choose text-type" ng-click="createModule('text')" data-dismiss="modal">
-          <i class="icon icon-bubble2"></i>
-          <span class="type-label">Text</span>
-          <span class="type-hint">z.B. für Einführungen oder Erklärungen</span>
-        </a>
-        <a href="" class="btn-choose game-type">
-          <i class="icon icon-gamepad"></i>
-          <span class="type-label">Quiz</span>
-          <span class="type-hint">für Multiple Choice-Fragen</span>
-        </a>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true" ng-include src="'js/views/partials/type-chooser.html'">
+</div>

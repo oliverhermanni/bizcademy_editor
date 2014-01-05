@@ -42,8 +42,8 @@
     width: @font-size-middle * 3;
     height: @font-size-middle * 3;
     position: absolute;
-    left: @l-space;
-    top: @l-space;
+    left: @xl-space;
+    top: @xl-space;
     text-align: center;
     line-height: @font-size-middle * 2.5;
     font-size: @font-size-middle * 2;
@@ -51,8 +51,18 @@
   }
   .chapter-details {
     padding-left: @font-size-middle * 4;
-    p.description {
-      margin-bottom: 5em;
+    .description {
+      margin-bottom: 2em;
+    }
+    span.label {
+      color: @gray;
+      font-weight: 600;
+      margin-right: @m-space;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .progress {
+      
     }
   }
   .chapter-remove {
@@ -76,29 +86,43 @@
 }
 .chapter-insights {
   .clearfix;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   border-top: 1px solid @gray-lightest;
   padding: 10px 20px 10px @font-size-middle * 4 + @l-space;
   background: #f9f9f9;
+  margin-bottom: @l-space * -1;
+  margin-left: -92px;
+  margin-right: @xl-space * -1;
   .btn.btn-success {
     margin-top: 6px;
+  }
+  .btn-toggle-steps {
+    .transition(.3s);
+    position: absolute;
+    left: 20px;
+    top: initial;
+    font-size: 21px;
+    color: @brand-primary;
+    &.collapsed {
+      color: @gray-light;
+      &:hover {
+        color: @gray;
+      }
+    }
   }
   .insight-wrapper {
     .clearfix;
     padding-right: @xl-space;
     margin-right: @l-space;
     border-right: 1px solid @gray-lightest;
-    .icon, .count {
+    .fa, .icon, .count {
       margin-right: @m-space;
       color: @gray;
     }
-    .icon {
+    .fa, .icon {
       font-size: 2.25em;
       line-height: 1.3em;
-      &.icon-graduation {
+      &.icon-rocket {
         // color: @brand-primary;
       }
       &.icon-medal {

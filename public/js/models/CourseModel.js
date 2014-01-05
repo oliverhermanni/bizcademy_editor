@@ -21,7 +21,7 @@ CourseEditor.service('CourseModel', function () {
     }
   }
 
-  this.addCourse = function (courseData) {
+  this.addCourse = function (courseData, editorData) {
 
     var courses = JSON.parse(window.localStorage.getItem("courses"));
 
@@ -34,13 +34,15 @@ CourseEditor.service('CourseModel', function () {
     var course = {
       id: Math.random().toString(36).substring(7),
       title: courseData.title,
-      summary: courseData.summary,
+      summary: editorData,
       advice: courseData.advice
     }
 
     courses.myCourses.push(course);
 
     window.localStorage.setItem("courses", JSON.stringify(courses));
+
+    return course['id'];
   };
 
   this.saveCourse = function (courseId, courseData) {

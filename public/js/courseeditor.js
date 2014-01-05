@@ -1,4 +1,5 @@
  var courseEditorConfig = function($routeProvider) {
+
     $routeProvider
       .when('/', {
         controller: 'HomeController',
@@ -20,9 +21,21 @@
         controller: 'ChapterAddController',
         templateUrl: 'js/views/chapter/edit.html'
       })
+      .when('/course/:courseId/chapter/:chapterId/module/:moduleId', {
+        controller: 'ModuleController',
+        templateUrl: '/js/views/modules/show.html'
+      })
+      .when('/course/:courseId/chapter/:chapterId/module/delete/:moduleId', {
+        controller: 'ModuleDeleteController',
+        templateUrl: 'js/views/course/show.html'
+      })
       .when('/course/:courseId/chapter/:chapterId/module/text/add', {
         controller: 'TextModuleAddController',
         templateUrl: '/js/views/modules/text/edit.html'
+      })
+      .when('/course/:courseId/chapter/:chapterId/module/quiz/add', {
+        controller: 'QuizModuleAddController',
+        templateUrl: '/js/views/modules/quiz/edit.html'
       })
       .when('/course/:courseId/chapter/delete/:chapterId', {
         controller: 'ChapterDeleteController',
@@ -51,16 +64,19 @@
 };
 
 
-var CourseEditor = angular.module('CourseEditor', ['ngRoute'],
+var CourseEditor = angular.module('CourseEditor', ['ngRoute', 'ngSanitize'],
   function($locationProvider) {
     $locationProvider.hashPrefix('');
   })
   .config(courseEditorConfig)
-  .run(function($rootScope) {
-});
+  .run(function($rootScope, $sce) {
+    // TODO: make this a global function
+    $rootScope.to_trusted = function(textData)  {
+      return $sce.trustAsHtml(textData);
+    }
+  });
 
 CourseEditor.directive('richTextEditor', function( $log, $location ) {
-
   var directive = {
     restrict : "A",
     replace : true,
@@ -68,34 +84,16 @@ CourseEditor.directive('richTextEditor', function( $log, $location ) {
     scope : {
 
     },
-    template : "<div><textarea id=\"richtexteditor-content\" style=\"height:300px;width:100%\"></textarea></div>",
+    template : '<div><textarea id="richtexteditor-content" style="height:300px;width:100%" ng-model="texteditor"></textarea></div>',
 
     link : function( $scope, $element, $attrs ) {
-      //$scope.editor = $('#richtexteditor-content').wysihtml5();
-
-
-
-      $scope.editor = new wysihtml5.Editor( "richtexteditor-content", {
-
-              toolbar : "richtexteditor-toolbar",
-              parserRules: wysihtml5ParserRules
-      });
-
+      $scope.editor = $('#richtexteditor-content').wysihtml5();
       $scope.$parent.$watch( $attrs.content, function( newValue, oldValue ) {
 
         $scope.editor.innerHTML = newValue;
         $scope.editor.composer.setValue( newValue );
       });
 
-      $scope.cancel = function() {
-        $scope.$parent.cancel();
-      }
-      /* $scope.save = function() {
-       var currentTemplateContent = $encryption.encodeHtml( $scope.editor.getValue() );
-       $scope.$parent.currentTemplate.content = currentTemplateContent;
-       $scope.$parent.save();
-       }
-       */
       $scope.isClean = function() {
         $scope.$parent.isClean();
       }

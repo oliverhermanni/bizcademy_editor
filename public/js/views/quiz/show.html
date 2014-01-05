@@ -16,7 +16,7 @@
         </p>
       </div>
       <div class="speech-bubble right-handed">
-        <img src="img/dirtydieter.jpg" class="avatar">
+        <img src="img/dirtydieter.jpg" class="avatar avatar-md">
 
         <div class="bubble col-md-6">
           {{ chapter.advice }}
@@ -56,6 +56,10 @@
       </h3>
       <div id="jack-attack" class="jack-attack-wrapper">
         <div class="cube-overlay"></div>
+        <div class="attack-question">
+          <span class="ja-label">Frage:</span>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
         <div class="cube-container">
           <div id="cube" class="panels-backface-invisible show-bottom">
             <div class="cube-site front">
@@ -121,11 +125,11 @@
 
       <h3> Tipps <span class="hint">(wir empfehlen alle 3 Tipps anzugeben)</span></h3>
 
-      <div class="hint-wrapper filled">
+      <div class="hint-wrapper">
         <div class="hint-counter">1</div>
         <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
       </div>
-      <div class="hint-wrapper filled">
+      <div class="hint-wrapper">
         <div class="hint-counter">2</div>
         <div class="hint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</div>
       </div>
@@ -153,27 +157,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="typeChooserLabel">Wählen Sie das Modul für den nächsten Schritt:</h4>
-          </div>
-          <div class="modal-body">
-            <a href="" class="btn-choose text-type">
-              <i class="icon icon-bubble2"></i>
-              <span class="type-label">Text</span>
-              <span class="type-hint">z.B. für Einführungen oder Erklärungen</span>
-            </a>
-            <a href="" class="btn-choose game-type">
-              <i class="icon icon-gamepad"></i>
-              <span class="type-label">Quiz</span>
-              <span class="type-hint">für Multiple Choice-Fragen</span>
-            </a>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    <div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true" ng-include src="'js/views/partials/type-chooser.html'">
+    </div>
   </div>
 </div>

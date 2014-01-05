@@ -3,13 +3,13 @@
   position: relative;
   margin-bottom: @xl-space * 3;
   .bubble {
-    .box-shadow(0 2px 0 @old-blue);
+    .box-shadow(0 2px 0 @polar-sky);
     .pull-left;
     border-radius: @border-radius-base;
     position: relative;
-    background: @light-old-blue;
+    background: @polar-ice;
     min-height: @xl-space * 3;
-    color: #fff;
+    color: @light-old-blue;
     margin-left: @xl-space;
     padding: @l-space;
     padding-left: 3em;
@@ -23,12 +23,13 @@
       top: @m-space;
       left: @xl-space;
       font-size: 1em;
+      color: @light-old-blue;
     }
     &:after {
       right: 100%;
       top: @l-space;
       border: solid transparent;
-      border-right-color: @light-old-blue;
+      border-right-color: @polar-ice;
       border-width: @m-space;
       content: " ";
       height: 0;
@@ -38,11 +39,7 @@
     }
   }
   .avatar {
-    .img-circle;
     .pull-left;
-  	height: 60px;
-    width: 60px;
-    display: block;
   }
   &.right-handed {
     .avatar, .bubble {
@@ -54,8 +51,63 @@
       &:after {
         left: 100%;
         border-right-color: transparent;
-        border-left-color: @light-old-blue;
+        border-left-color: @polar-ice;
       }
+    }
+  }
+}
+.avatar(@width: 60px, @height: 60px) {
+  .img-circle;
+	height: @height;
+  width: @width;
+  display: block;  
+}
+.avatar-md {
+  .avatar;
+}
+.avatar-lg {
+  .avatar(80px,80px);  
+}
+.speech-bubble.top {
+  .bubble {
+    clear: both;
+    margin-left: 0;
+    margin-top: @xl-space;
+    &:after {
+      left: @m-space * 3;
+      top: @xl-space * -1;
+      border: solid transparent;
+      border-bottom-color: @polar-ice;
+      border-width: @m-space;
+    }
+  }
+}
+.speech-bubble.author-vita {
+  .author-head {
+    .avatar {
+      margin-right: @m-space;
+    }
+    .author-name {
+      .one-line-text;
+      color: @wet-asphalt;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: @font-size-large;
+      width: 65%;
+      min-height: 80px;
+      padding: 14px 0;
+      small {
+        color: @basic-grey;
+        text-transform: none;
+        display: block;
+      }
+    }
+  }
+  .bubble {
+    width: 100%;
+    padding: @l-space;
+    &:before {
+      display: none;
     }
   }
 }

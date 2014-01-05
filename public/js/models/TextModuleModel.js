@@ -1,5 +1,5 @@
 CourseEditor.service('TextModuleModel', function() {
-  this.addTextModule = function(chapterId, moduleData) {
+  this.addTextModule = function(chapterId, moduleData, editor) {
     var current_chapter = JSON.parse(window.localStorage.getItem(chapterId));
 
     if (!current_chapter) {
@@ -8,10 +8,10 @@ CourseEditor.service('TextModuleModel', function() {
 
     var textModule = {
       id: Math.random().toString(36).substring(7),
-      type: 'text',
+      moduletype: 'text',
       title: moduleData.title,
-      text: moduleData.text
-    }
+      text: editor
+    };
 
     current_chapter.push(textModule);
 

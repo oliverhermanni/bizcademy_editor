@@ -1,3 +1,0 @@
-CourseEditor.service('GametypeModel', function() {
-
-});

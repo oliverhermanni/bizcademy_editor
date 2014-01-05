@@ -1,0 +1,79 @@
+.activity-barometer {
+  background: white;
+  box-shadow: 0 2px 0 darken(@gray-lightest, 12%);
+  border-radius: @border-radius-base;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  left: -80px;
+  width: 80px;
+  min-height: 80px;
+  &.detach {
+    position: fixed;
+    top: 73px;
+  }
+  .bars {
+    width: 70px;
+    height: 41px;
+    position: relative;
+    background: transparent url("../img/activity_barometer_bars.png") center center no-repeat;
+    margin: 5px 5px 10px;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 32px;
+      background: transparent url("../img/activity_barometer_hand.png") center center no-repeat;
+      width: 7px;
+      height: 36px;
+      -moz-transform-origin: 4px 32px;
+      -ms-transform-origin: 4px 32px;
+      -o-transform-origin: 4px 32px;
+      -webkit-transform-origin: 4px 32px;
+      transform-origin: 4px 32px;
+      -webkit-transform: rotate(-65deg);
+      -moz-transform: rotate(-65deg);
+      transform: rotate(-65deg);
+    }
+  }
+  &.good > .bars:after {
+    -webkit-animation: moveToGood .8s forwards;
+    -moz-animation: moveToGood .8s forwards;
+    animation: moveToGood .8s forwards;
+  }
+  &.bad > .bars:after {
+    -webkit-animation: moveToBad .8s forwards;
+    -moz-animation: moveToBad .8s forwards;
+    animation: moveToBad .8s forwards;    
+  }
+  &.average > .bars:after {
+    -webkit-animation: moveToAverage .8s forwards;
+    -moz-animation: moveToAverage .8s forwards;
+    animation: moveToAverage .8s forwards;        
+  }
+  .status {
+    font-family: @font-family-decorative;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 600;
+    text-align: center;
+    margin: 5px;
+    > small {
+      font-weight: 300;
+      font-size: 0.750em;
+      color: #999;
+    }
+  }
+}
+
+@-webkit-keyframes moveToGood { to { -webkit-transform: rotate(65deg); }}
+@-moz-keyframes moveToGood { to { -moz-transform: rotate(65deg); }}
+@keyframes moveToGood { to { transform: rotate(65deg); }}
+
+@-webkit-keyframes moveToBad { to { -webkit-transform: rotate(-65deg); }}
+@-moz-keyframes moveToBad { to { -moz-transform: rotate(-65deg); }}
+@keyframes moveToBad { to { transform: rotate(-65deg); }}
+
+@-webkit-keyframes moveToAverage { to { -webkit-transform: rotate(0deg); }}
+@-moz-keyframes moveToAverage { to { -moz-transform: rotate(0deg); }}
+@keyframes moveToAverage { to { transform: rotate(0deg); }}

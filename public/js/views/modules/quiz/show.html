@@ -1,0 +1,38 @@
+<div class="well">
+  <h2>{{ moduleData.title }}</h2>
+
+  <p class="description" ng-bind-html="to_trusted(moduleData.text)">
+    {{ moduleData.summary }}
+  </p>
+</div>
+<div class="speech-bubble right-handed">
+  <img src="img/dirtydieter.jpg" class="avatar avatar-md">
+
+  <div class="bubble col-md-6">
+    {{ moduleData.advice }}
+  </div>
+</div>
+<h3 class="headline-with-dropdown">
+  <span class="pull-left">Quiz-Module <small>{{moduleData.theme}}</small></span>
+</h3>
+  <div>
+    <div class="answer custom-checkbox-control" ng-repeat="answer in moduleData.answers">
+
+      <input id="checkbox" class="hidden" type="checkbox" value="" ng-model="answer.checked" ></input>
+      <label class="custom-checkbox" for="checkbox"></label>
+      <div class="checkbox-label">{{answer.answer}}</div>
+      <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
+    </div>
+  </div>
+
+<h3> Tipps <span class="hint">(wir empfehlen alle 3 Tipps anzugeben)</span></h3>
+<div ng-repeat="hint in moduleData.hints">
+  <div class="hint-wrapper filled">
+    <div class="hint-counter">{{$index+1}}</div>
+    <div class="hint-text">{{hint.hint}}</div>
+  </div>
+</div>
+
+<div class="chapter-actions">
+  <a class="btn btn-primary" href="#/course/{{courseId}}">Zurück zum Kurs <i class="fa fa-angle-right"></i></a>
+</div>
