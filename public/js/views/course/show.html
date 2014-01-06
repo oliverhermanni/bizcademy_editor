@@ -53,7 +53,7 @@
       <div class="chapters" ng-controller="ChaptersController">
         <div class="chapter" ng-repeat="chapter in chapters">
           <div class="well chapter-header">
-            <a href  ng-click="deleteChapter(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it"><i class="icon icon-remove"></i></a>
+            <a href  ng-click="deleteChapter(chapter.id)" class="chapter-remove" title="remove this chapter and all steps in it" ng-hide="player"><i class="icon icon-remove"></i></a>
             <div class="chapter-count">
               {{$index+1}}
             </div>
@@ -64,7 +64,7 @@
                 <span class="label pull-left">Gesamt-Fortschritt:</span>
                 <div class="progress">
                   <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
-                    <span>2/10</span>
+                    <span>1/{{chapter.modules.length}}</span>
                   </div>
                 </div>
               </div>
@@ -85,7 +85,8 @@
                   <span class="count pull-left">43</span>
                   <span class="type pull-left">Leser</span>
                 </div>
-                <a href="#/course/{{course.id}}/chapter/{{chapter.id}}" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Kapitel starten</a>
+                <a href="#/course/{{course.id}}/chapter/{{chapter.id}}" class="btn btn-success pull-right" ng-hide="player"><i class="icon icon-lamp2"></i> Kapitel starten</a>
+                <a href="#/player/chapter/{{course.id}}/{{chapter.id}}" class="btn btn-success pull-right" ng-show="player"><i class="icon icon-lamp2"></i> Kapitel starten</a>
               </div>
             </div>
           </div>

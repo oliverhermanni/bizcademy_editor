@@ -6,5 +6,8 @@
   </p>
 </div>
 <div class="chapter-actions">
-  <a class="btn btn-primary" href="#/course/{{courseId}}">Zurück zum Kurs <i class="fa fa-angle-right"></i></a>
+  <a class="btn btn-primary" href="#/course/{{courseId}}" ng-hide="player">Zurück zum Kurs <i class="fa fa-angle-right"></i></a>
+  <a class="btn btn-primary" href="#/player/course/{{courseId}}" ng-show="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
+  <a class="btn btn-primary" href="#/{{prevLink}}" ng-show="player"><i class="fa fa-angle-left"></i> Zurück</a>
+  <a class="btn btn-primary" href="#/{{nextLink}}" ng-show="player">Weiter <i class="fa fa-angle-right"></i></a>
 </div>
