@@ -54,8 +54,10 @@
         templateUrl: function(params) {
         	if(params.view === undefined) { 
         		params.view = 'index';
-        	}
-        	return 'js/views/player/'+params.view+'.html';
+        	} else if(params.view === 'quiz' || params.view === 'text') {
+						params.view = 'modules/'+ params.view +'/show';
+					} 
+					return 'js/views/player/'+ params.view +'.html';
         }
       })
       .otherwise({
