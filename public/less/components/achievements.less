@@ -1,28 +1,46 @@
 .owl-wrapper-outer {
   height: 170px;
 }
-.achievement {
-  .box-shadow(0 2px 0 @gray-lighter);
-  border: 5px solid white;
-  background: @brand-secondary;
-  border-radius: @border-radius-base;
-  text-align: center;
-  width: 90%;
-  height: 150px;
-  margin: @m-space 5%;
-  background-size: 50% auto;
+.achievement(@border-width: 5px, @border-radius: @border-radius-base) {
+  .box-shadow(0 2px 0 rgba(0,0,0,.2));
   background-position: center center;
   background-repeat: no-repeat;
-  &.current {
-    outline: @s-space solid @belize-hole;
-    outline-offset: @s-space;
-  }
-  &:hover {
-    cursor: pointer;
-  }
+  background-size: 50% auto;
+  border: @border-width solid white;
+  background: @brand-secondary;
+  border-radius: @border-radius;
+  text-align: center;  
 }
+
+.achievement {
+  .achievement;
+}
+.achievement-round {
+  .achievement(5px,50%);
+}
+.achievement-small {
+  width: @font-size-base * 3;
+  height: @font-size-base * 3;
+  border: 2px solid white;
+  background-size: 60% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 .achievements-wrapper {
   position: relative;
+  .achievement {
+    width: 90%;
+    height: 150px;
+    margin: @m-space 5%;
+    &.current {
+      outline: @s-space solid @belize-hole;
+      outline-offset: @s-space;
+    }
+    &:hover {
+      cursor: pointer;
+    }    
+  }
   a.prev-item,
   a.next-item {
     position: absolute;
