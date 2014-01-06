@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" id="content">
+
+    <div class="col-md-12 ">
+      <h2>{{chapter.title}}</h2>
+      <div class="well well-sm clearfix">
+      	<a href="#/player/{{modules.0.type}}/{{course.id}}/{{chapter.id}}/{{modules.0.id}}" class="btn btn-primary pull-right">Starte mit dem ersten Modul</a>
+      </div>
+      <div class="speech-bubble right-handed">
+        <img src="img/bbfoto.jpg" class="avatar">
+        <div class="bubble col-md-6 ng-binding">
+          {{chapter.advice}}
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

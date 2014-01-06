@@ -6,8 +6,11 @@
   </p>
 </div>
 <div class="chapter-actions">
-  <a class="btn btn-default btn-link pull-left" href="#/course/{{courseId}}"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
+  <a class="btn btn-default btn-link pull-left" href="#/course/{{courseId}}" ng-hide="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs </a>
+  <a class="btn btn-default btn-link pull-left" href="#/player/course/{{courseId}}" ng-show="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
+  
+  <a class="btn btn-primary pull-right" href="#/course/{{courseId}}" ng-hide="player">Nächster Schritt <i class="fa fa-angle-right"></i></a>
+  <a class="btn btn-primary" href="#/{{nextLink}}" ng-show="player">Weiter <i class="fa fa-angle-right"></i></a>
 
-  <a class="btn btn-primary pull-right" href="#/course/{{courseId}}">Nächster Schritt <i class="fa fa-angle-right"></i></a>
   <a class="btn btn-link pull-right" href="javascript:;" data-toggle="modal" data-target="#chapter-completed">Beenden</a>
 </div>

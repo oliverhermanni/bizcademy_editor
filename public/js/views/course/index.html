@@ -4,14 +4,15 @@
     <div class="col-md-12">
       <h2>Meine Kurse</h2>
       <div ng-repeat="course in courses" >
-        <div class="well well-sm">
+        <div class="well well-sm clearfix">
           <h4><a href="#/course/{{course.id}}">{{course.title}}</a></h4>
           <p ng-bind-html="to_trusted(course.summary)">
             {{course.summary}}
           </p>
+          <a href="#/player/course/{{course.id}}/{{chapters.0.id}}" class="btn btn-primary pull-right" ng-show="player">Starte den Kurs</a>
         </div>
       </div>
-      <a href="#/course/add" class="btn btn-primary btn-lg">
+      <a href="#/course/add" class="btn btn-primary btn-lg" ng-hide="player">
         <i class="fa fa-lg fa-book"></i>
         Neuen Kurs erstellen
       </a>

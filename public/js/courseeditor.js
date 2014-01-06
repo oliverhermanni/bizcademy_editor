@@ -49,6 +49,36 @@
         controller: 'QuizController',
         templateUrl: 'js/views/quiz/show.html'
       })
+      .when('/player/:view?/:courseId?/:chapterId?/:modulId?', {
+        controller: 'PlayerController',
+        templateUrl: function(params) {
+        	/* 
+					if(params.view === undefined) { 
+        		params.view = 'index';
+        	} else if(params.view === 'quiz' || params.view === 'text') {
+						params.view = 'modules/'+ params.view +'/show';
+					}
+					return 'js/views/course/index.html';
+					return 'js/views/player/'+ params.view +'.html';
+					*/
+					switch (params.view) {
+						case 'course': 
+							return 'js/views/course/show.html';
+							break;
+						case 'chapter':
+							return 'js/views/chapter/show.html';
+							break;
+						case 'text':
+							return 'js/views/modules/show.html';
+							break;
+						case 'quiz':
+							return 'js/views/modules/quiz/show.html';
+							break;
+						default: 
+							return 'js/views/course/index.html';
+					}
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
