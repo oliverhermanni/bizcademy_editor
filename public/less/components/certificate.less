@@ -1,13 +1,16 @@
+// 0 0 40px rgba(0, 0, 0, 0.06) inset
+
 .certificate {
+  .clearfix;
+  overflow: hidden;
   min-height: 100px;
   position: relative;
-  padding: 0;
-  border: 1px solid #efefef;
+  padding: 20px;
+  // border: 1px solid @gray-lighter;
+  border-radius: 2px;
   margin: 0;
   background: #fff;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+  // box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27);
   &:before, &:after {
     content: '';
     z-index: -1;
@@ -35,5 +38,61 @@
     -ms-transform: skew(15deg) rotate(6deg);
     -o-transform: skew(15deg) rotate(6deg);
     transform: skew(15deg) rotate(6deg);
+  }
+  .headline {
+    .h2;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+  }
+  p {
+    text-align: center;
+  }
+  .certificate-badge {
+    width: 105px;
+    height: 142px;
+  }
+  .certificate-date {
+    font-weight: 300;
+    font-size: @font-size-middle;
+    color: @basic-grey;
+    text-align: left;
+    position: absolute;
+    bottom: 30px;
+    span {
+      font-weight: 400;
+      display: block;
+    }
+  }
+}
+.course-participant {
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  font-size: @font-size-middle;
+  margin-bottom: @xl-space;
+  span {
+    font-weight: 400;
+    display: block;
+  }
+}
+.text-mock {
+  background: @gray-lighter;
+  border-radius: @font-size-base;
+  display: inline-block;
+  height: @font-size-base;
+  margin-right: 3%;
+  margin-bottom: @s-space;
+  &.text-mock-sm {
+    width: 10%
+  }
+  &.text-mock-md {
+    width: 20%
+  }
+  &.text-mock-lg {
+    width: 30%
+  }
+  &.text-mock-hg {
+    width: 50%
   }
 }
