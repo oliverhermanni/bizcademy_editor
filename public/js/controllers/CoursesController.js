@@ -39,7 +39,7 @@ CourseEditor.controller('CourseAddController',
     }
 
     $scope.createCourse = function () {
-      var course_id = CourseModel.addCourse($scope.course, editor.getValue());
+      var course_id = CourseModel.addCourse($scope.course,  $('.note-editable').html());
       $location.path('/course/' + course_id);
     }
   }
