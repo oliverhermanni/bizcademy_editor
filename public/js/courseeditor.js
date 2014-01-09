@@ -91,11 +91,16 @@ var CourseEditor = angular.module('CourseEditor', ['ngRoute', 'ngSanitize'],
   })
   .config(courseEditorConfig)
   .run(function($rootScope, $sce) {
-    // TODO: make this a global function
+
     $rootScope.to_trusted = function(textData)  {
       return $sce.trustAsHtml(textData);
     }
   });
+
+var CM = new cloudmine.WebService({
+  appid: '2f4c31f6e49949af914f3cafb631c8ad',
+  apikey: '607934529e644200ae5668dd78bf3a7d'
+});
 
 CourseEditor.directive('richTextEditor', function() {
   return {
