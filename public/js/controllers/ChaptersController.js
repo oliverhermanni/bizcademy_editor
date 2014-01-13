@@ -38,7 +38,7 @@ CourseEditor.controller('ChapterAddController',
     }
 
     $scope.createChapter = function () {
-      ChapterModel.addChapter($routeParams.courseId, $scope.chapter, editor.getValue());
+      ChapterModel.addChapter($routeParams.courseId, $scope.chapter,  $('.note-editable').html());
       $location.path('/course/' + $routeParams.courseId);
     }
   }

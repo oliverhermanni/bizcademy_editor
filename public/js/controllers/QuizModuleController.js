@@ -55,7 +55,7 @@ CourseEditor.controller('QuizModuleAddController',
         }
       }
 
-      QuizModuleModel.addQuizModule($routeParams.chapterId, $scope.quizmodule, editor.getValue(), answers, hints);
+      QuizModuleModel.addQuizModule($routeParams.chapterId, $scope.quizmodule,  $('.note-editable').html(), answers, hints);
       $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
     }
   }

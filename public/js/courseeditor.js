@@ -101,28 +101,19 @@ var CourseEditor = angular.module('CourseEditor', ['ngRoute', 'ngSanitize'],
     }
   });
 
-CourseEditor.directive('richTextEditor', function( $log, $location ) {
-  var directive = {
-    restrict : "A",
-    replace : true,
-    transclude : true,
-    scope : {
+CourseEditor.directive('richTextEditor', function() {
+  return {
+    restrict: 'A',
+    replace: true,
+    link: function ($scope, elem, attrs) {
 
-    },
-    template : '<div><textarea id="richtexteditor-content" style="height:300px;width:100%" ng-model="texteditor"></textarea></div>',
-
-    link : function( $scope, $element, $attrs ) {
-      $scope.editor = $('#richtexteditor-content').wysihtml5();
-      $scope.$parent.$watch( $attrs.content, function( newValue, oldValue ) {
-
-        $scope.editor.innerHTML = newValue;
-        $scope.editor.composer.setValue( newValue );
+      $scope.editor = $(elem).summernote({
+        height: 300
       });
 
-      $scope.isClean = function() {
-        $scope.$parent.isClean();
-      }
+      $scope.$parent.$watch( $attrs.content, function( newValue, oldValue ) {
+        $scope.editor.code(newValue);
+      });
     }
   }
-  return directive;
 });
