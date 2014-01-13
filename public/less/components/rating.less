@@ -1,0 +1,24 @@
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+  &:hover {
+    cursor: default;
+  }
+}
+.rating > .icon {
+  font-size: 2em;
+  color: @basic-grey;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.rating > .icon:hover,
+.rating > .icon:hover ~ .icon {
+  color: transparent;
+}
+.rating > .icon:hover:before,
+.rating > .icon:hover ~ .icon:before {
+  content: "\e301";
+  color: @yellow;
+}

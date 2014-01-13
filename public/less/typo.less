@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
 
 // Typography
 // -------------------------
@@ -26,31 +26,30 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~22px
 
 @headings-font-family:    @font-family-decorative;
-@headings-font-weight:    500;
+@headings-font-weight:    400;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
 body {
   font-family: @font-family-sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .navbar-brand {
   font-family: @font-family-decorative;
 }
 .h1 {
   @font-size-h1;
-  font-weight: 300;
   margin-top: 0;
   margin-bottom: 1em;
 }
 .h2 {
   @font-size-h2;
-  font-weight: 300;
   margin-top: 0;
   margin-bottom: 1em;
 }
 .h3 {
   @font-size-h3;
-  font-weight: 300;
   margin-bottom: 1em;
 }
 

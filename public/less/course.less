@@ -1,10 +1,10 @@
+// f1c40f
 .achievement-summary {
   .as-item {
+    .clearfix();
     position: relative;
-    .clearfix;
     padding: @xl-space;
     font-size: @font-size-base;
-    font-weight: 300;
     margin-left: 4em;
     margin-bottom: 2em;
     line-height: 1.5em;
@@ -22,6 +22,14 @@
       position: absolute;
       z-index: 1;
     }
+    .achievement-medium {
+      float: left;
+      margin: 0 @xl-space @m-space 0;
+    }
+    p {
+      clear: both;
+      margin: 0;
+    }
   }
   .as-value {
     font-size: @font-size-h3;
@@ -30,15 +38,25 @@
     font-family: @font-family-decorative;
     display: block;
     margin-bottom: @m-space;
+    text-align: right;
     .icon, .fa {
       margin-right: @s-space;
       color: @brand-success;
+      float: left;
+    }
+    .label {
+      float: left;
+      color: @silver;
+      font-size: inherit;
+      font-weight: 400;
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 }
 #course-congratulation {
   background: white;
-  padding: 8em 0;
+  padding-top: 8em;
   h1 {
     color: #5b6269;
     text-align: center;
@@ -60,30 +78,30 @@
     }
   }
 }
+.icon-section-divider {
+  background: @emerald;
+  color: white;
+  border-radius: 50%;
+  font-size: 2em;
+  line-height: 1.75em;
+  border: @s-space solid white;
+  display: block;
+  margin: 0 auto;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+}
+
 #course-achievement {
   // .lh-background-image(linear-gradient(to bottom, @emerald, @nephritis));
   // .lh-background-image(linear-gradient(to bottom, @peter-river, @belize-hole));
   background-color: #5b6269;
-  padding-bottom: 8em;
   h2 {
-    margin: 2em 0;
     color: @gray-lightest;
-    text-align: center;
   }
   .icon-section-divider {
-    .box-shadow(0 2px 0 rgba(0,0,0,.3));
     background: @emerald;
     color: white;
-    border-radius: 50%;
-    font-size: 2em;
-    line-height: 1.75em;
-    border: @s-space solid white;
-    display: block;
-    margin: 0 auto;
-    margin-top: -1em;
-    width: 2em;
-    height: 2em;
-    text-align: center;
   }
   .certificate-wrapper {
     text-align: center;
@@ -98,6 +116,100 @@
     }
     &:hover {
       background: #50555b;
+    }
+  }
+}
+#course-feedback {
+  .icon-section-divider {
+    background: @yellow;
+    border-color: @clouds;
+    color: @clouds;
+    line-height: 1.7em;
+  }    
+}
+
+.container-wrapper {
+  padding: 4em 0 8em 0;  
+  h2 {
+    margin: 2em 0;
+    text-align: center;
+  }
+  .icon-section-divider {
+    margin-top: -3em;
+  }
+}
+
+#course-recommendation {
+  background-color: white;
+  .icon-section-divider {
+    background: @brand-primary;
+    border-color: @clouds;
+    color: @clouds;
+    line-height: 1.7em;
+  }    
+}
+
+.course-box {
+  .lh-border-radius(@border-radius-base);
+  position: relative;
+  .course-img {
+    .lh-border-top-left-radius(@border-radius-base);
+    .lh-border-top-right-radius(@border-radius-base);
+    overflow: hidden;
+    height: 200px;
+    width: auto;
+    .lh-background-image(linear-gradient(to bottom, @peter-river, @belize-hole));
+  }
+  .course-infos {
+    border: 2px solid @clouds;
+    border-top: 0;
+    position: relative;
+    padding-top: 40px;
+    .lh-border-bottom-left-radius(@border-radius-base);
+    .lh-border-bottom-right-radius(@border-radius-base);
+    h3 {
+      font-size: @font-size-middle;
+      padding: @l-space;
+      margin: 0;
+      color: @asbestos;
+      height: (3 * 19px) + (2 * @l-space);
+    }
+  }
+  .course-author {
+    .clearfix();
+    position: absolute;
+    top: -40px;
+    right: 0;
+    left: 0;
+    .author-name {
+      color: white;
+      font-weight: 500;
+      text-transform: none;
+      padding: @s-space 0;
+      line-height: 36px;
+      small {
+        font-weight: 400;
+        color: @asbestos;
+      }
+    }
+    .avatar {
+      float: left;
+      margin-left: @l-space;
+      margin-right: @xl-space;
+      border: 3px solid white;
+    }
+  }
+  .course-footer {
+    .clearfix();
+    background: @clouds;
+    // height: @font-size-base * 2.25;
+    // line-height: @font-size-base * 2.5;
+    color: @asbestos;
+    padding: @s-space @l-space;
+    .course-rating, .course-readers {
+      margin-right: @xl-space;
+      font-weight: 500;
+      line-height: @font-size-base * 2.25;
     }
   }
 }
