@@ -1,20 +1,35 @@
 .achievement-summary {
   .as-item {
+    position: relative;
     .clearfix;
-    font-size: @font-size-large;
+    padding: @xl-space;
+    font-size: @font-size-base;
     font-weight: 300;
-    margin-bottom: 1em;
-    line-height: 1.8em;
-    color: @gray-light;
+    margin-left: 4em;
+    margin-bottom: 2em;
+    line-height: 1.5em;
+    color: #9aa0a5;
+    background: #50555b;
+    &:after {
+      left: -30px;
+      top: 20px;
+      border: solid transparent;
+      border-right-color: #50555b;
+      border-width: @l-space;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      z-index: 1;
+    }
   }
   .as-value {
-    text-align: right;
     font-size: @font-size-h3;
     font-weight: 400;
-    position: relative;
-    top: 2px;
-    color: @gray;
+    color: @gray-lightest;
     font-family: @font-family-decorative;
+    display: block;
+    margin-bottom: @m-space;
     .icon, .fa {
       margin-right: @s-space;
       color: @brand-success;
@@ -23,13 +38,13 @@
 }
 #course-congratulation {
   background: white;
-  padding-top: 8em;
+  padding: 8em 0;
   h1 {
     color: #5b6269;
     text-align: center;
   }
   .speech-bubble {
-    margin-bottom: 6em;
+    margin-bottom: 0em;
     .avatar {
       float: none;
       margin: 0 auto @xl-space;
@@ -49,9 +64,11 @@
   // .lh-background-image(linear-gradient(to bottom, @emerald, @nephritis));
   // .lh-background-image(linear-gradient(to bottom, @peter-river, @belize-hole));
   background-color: #5b6269;
+  padding-bottom: 8em;
   h2 {
-    margin-top: 2em;
+    margin: 2em 0;
     color: @gray-lightest;
+    text-align: center;
   }
   .icon-section-divider {
     .box-shadow(0 2px 0 rgba(0,0,0,.3));
@@ -67,5 +84,20 @@
     width: 2em;
     height: 2em;
     text-align: center;
+  }
+  .certificate-wrapper {
+    text-align: center;
+  }
+  a.btn-link {
+    clear: both;
+    color: @gray-lightest;
+    margin: 0 auto;
+    display: inline-block;
+    i.icon {
+      color: @alizarin;
+    }
+    &:hover {
+      background: #50555b;
+    }
   }
 }
