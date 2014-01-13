@@ -4,7 +4,7 @@
   margin-bottom: @xl-space * 3;
   .bubble {
     .box-shadow(0 2px 0 @polar-sky);
-    .pull-left;
+    float: left;
     border-radius: @border-radius-base;
     position: relative;
     background: @polar-ice;
@@ -16,6 +16,7 @@
     z-index: 2;
     font-style: italic;
     font-weight: 300;
+    line-height: 1.5em;
     &:before {
       font-family: 'FontAwesome';
       content: @fa-var-quote-left;
@@ -39,7 +40,7 @@
     }
   }
   .avatar {
-    .pull-left;
+    float: left;
   }
   &.right-handed {
     .avatar, .bubble {
