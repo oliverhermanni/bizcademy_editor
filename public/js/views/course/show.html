@@ -64,15 +64,15 @@
               <h4 class="chapter-title"><a href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a></h4>
               <div class="description">
                 <p ng-bind-html="to_trusted(chapter.summary)">{{chapter.summary}}</p>
-                <span class="label pull-left">Gesamt-Fortschritt:</span>
-                <div class="progress">
+                <span class="label pull-left" ng-show="player">Gesamt-Fortschritt:</span>
+                <div class="progress" ng-show="player">
                   <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
                     <span>1/{{chapter.modules.length}}</span>
                   </div>
                 </div>
               </div>
               <div class="chapter-insights">
-                <button class="btn btn-link btn-toggle-steps collapsed" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps"><i class="fa fa-bars"></i></button>
+                <button class="btn btn-link btn-toggle-steps" ng-class="{collapsed: $index+1 > 1}" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps"><i class="fa fa-bars"></i></button>
                 <div class="insight-wrapper pull-left">
                   <i class="fa fa-rocket pull-left"></i>
                   <span class="count pull-left">3600</span>
@@ -88,12 +88,12 @@
                   <span class="count pull-left">43</span>
                   <span class="type pull-left">Leser</span>
                 </div>
-                <a href="#/course/{{course.id}}/chapter/{{chapter.id}}" class="btn btn-success pull-right" ng-hide="player"><i class="icon icon-lamp2"></i> Kapitel starten</a>
+                <a href="#/course/{{course.id}}/chapter/{{chapter.id}}" class="btn btn-default pull-right" ng-hide="player"><i class="icon icon-quill"></i> Kapitel bearbeiten</a>
                 <a href="#/player/chapter/{{course.id}}/{{chapter.id}}" class="btn btn-success pull-right" ng-show="player"><i class="icon icon-lamp2"></i> Kapitel starten</a>
               </div>
             </div>
           </div>
-          <ul id="chapter-{{chapter.id}}-steps" class="list-group chapter-steps collapse">
+          <ul id="chapter-{{chapter.id}}-steps" class="list-group chapter-steps collapse" ng-class="{in: $index+1 == 1}">
             <li class="list-group-item chapter-step {{module.moduletype}}" ng-repeat="module in chapter.modules">
               <i class="step-status pull-left"></i>
               <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
@@ -102,11 +102,11 @@
             </li>
           </ul>
         </div>
-        <a class="btn btn-default btn-block" ng-controller="CoursesController" href="#/course/{{course.id}}/chapter/add"><i class="icon icon-quill"></i> Neues Kapitel erstellen</a>
+        <a class="btn btn-default btn-block" ng-controller="CoursesController" ng-show="chapters.length" href="#/course/{{course.id}}/chapter/add"><i class="icon icon-quill"></i> Neues Kapitel erstellen</a>
       </div>
       <p class="course-overview-preview" ng-controller="ChaptersController" ng-hide="chapters.length">
         <a href="#/course/{{course.id}}/chapter/add" class="btn btn-primary btn-lg">
-          <i class="fa fa-lg fa-book"></i>
+          <i class="icon icon-book"></i>
           Das erste Kapitel erstellen
         </a>
       </p>
