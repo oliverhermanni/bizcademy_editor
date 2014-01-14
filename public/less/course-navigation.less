@@ -76,7 +76,53 @@
       .one-line-text;
       width: 75%;
       line-height: @font-size-base * 2;
-      font-weight: 300;
+    }
+  }
+  .chapter-substeps {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    .chapter-substep {
+      .clearfix();
+      background: transparent;
+      list-style: none;
+      i.substep-status {
+        .icon;
+        float: left;
+        font-size: @font-size-small;
+        text-align: center;
+        position: relative;
+        color: @wet-asphalt;
+        margin-right: @s-space;
+        line-height: 2em;
+        width: @font-size-base;
+        &:before {
+          content: "\e2ab";
+        }
+      }
+
+      .substep-title {
+        .one-line-text;
+        font-size: @font-size-small;
+        color: @wet-asphalt;
+        padding: 0;
+      }
+      &.done > i.substep-status {
+        color: @emerald;
+        &:before {
+          content: "\e370";
+        }
+      }
+      &.current {
+        > .substep-title {
+        }
+        > i.substep-status {
+          color: white;
+          &:before {
+            content: "\e2ab";
+          }
+        }
+      }
     }
   }
 }

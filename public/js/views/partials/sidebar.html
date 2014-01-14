@@ -4,6 +4,20 @@
         <i class="chapter-status pull-left"></i>        
         <a class="chapter-title pull-left" href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a>
         <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
+        <ul class="chapter-substeps">
+          <li class="chapter-substep done">
+            <i class="substep-status"></i>
+            <a class="substep-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+          </li>
+          <li class="chapter-substep current">
+            <i class="substep-status"></i>
+            <a class="substep-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+          </li>
+          <li class="chapter-substep">
+            <i class="substep-status"></i>
+            <a class="substep-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+          </li>
+        </ul>
     </li>
 </ul>
 <a class="btn btn-link" href="#/course/{{course.id}}/chapter/add" ng-hide="player">
