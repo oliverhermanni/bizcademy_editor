@@ -49,7 +49,10 @@
   </div>
   <div class="row">
     <div class="col-md-9">
-      <h3 ng-controller="ChaptersController">Kapitelübersicht <small>({{chapters.length}} Kapitel insgesamt)</small></h3>
+      <h3 ng-controller="ChaptersController">
+        Kapitelübersicht <small>({{chapters.length}} Kapitel insgesamt)</small>
+        <a class="btn btn-primary pull-right" ng-controller="CoursesController" href="#/course/{{course.id}}/chapter/add"><i class="icon icon-quill"></i> Neues Kapitel erstellen</a>
+      </h3>
       <div class="chapters" ng-controller="ChaptersController">
         <div class="chapter" ng-repeat="chapter in chapters">
           <div class="well chapter-header">
@@ -69,7 +72,7 @@
                 </div>
               </div>
               <div class="chapter-insights">
-                <button class="btn btn-default btn-link btn-toggle-steps collapsed" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps"><i class="fa fa-bars"></i></button>
+                <button class="btn btn-link btn-toggle-steps collapsed" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps"><i class="fa fa-bars"></i></button>
                 <div class="insight-wrapper pull-left">
                   <i class="fa fa-rocket pull-left"></i>
                   <span class="count pull-left">3600</span>
