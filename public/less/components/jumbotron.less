@@ -1,15 +1,18 @@
 .jumbotron {
   text-align: center;
   margin-top: 52px;
-  margin-bottom: 52px;
+  margin-bottom: @font-size-base * 6;
   .lh-background-image(linear-gradient(to bottom, @peter-river, @belize-hole));
   h1 {
     color: #fff;
+    font-weight: 200;
+    margin-bottom: @font-size-base;
     b {
       font-weight: 400;
     }
   }
   .lead {
-    color: rgba(255,255,255,.3);
+    color: rgba(255,255,255,.45);
+    margin-bottom: @font-size-base * 6;
   }
 }

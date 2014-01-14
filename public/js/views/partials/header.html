@@ -10,7 +10,7 @@
   </div>
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li>
+      <li ng-controller="ChaptersController" ng-show="chapters.length">
         <!-- add "progress-striped active" classes if points earned -->
         <div class="progress">
           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
@@ -19,7 +19,7 @@
           </div>
         </div>
       </li>
-      <li>
+      <li ng-controller="ChaptersController" ng-show="chapters.length">
         <a href="/" class="total-point-count">
           <i class="fa fa-rocket"></i>
           <span class="current-points">1337</span>
