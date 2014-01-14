@@ -108,7 +108,18 @@ CourseEditor.directive('richTextEditor', function() {
     link: function ($scope, elem, attrs) {
 
       $scope.editor = $(elem).summernote({
-        height: 300
+        // height: 300
+        toolbar: [
+            //['style', ['style']], // no style button , 'clear'
+            ['style', ['bold', 'italic', 'underline']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['picture']], // no insert buttons , 'link'
+            //['table', ['table']], // no table button
+            //['help', ['help']] //no help button
+          ]
       });
 
       $scope.$parent.$watch( $attrs.content, function( newValue, oldValue ) {

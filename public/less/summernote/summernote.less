@@ -1,4 +1,3 @@
-@import "elements.less";
 
 /* Theme Variables
  ------------------------------------------*/
@@ -8,11 +7,23 @@
 /* Layout
  ------------------------------------------*/
 .note-editor {
-  border: 1px solid @border-color;
+  border: 0px solid @border-color;
 
   /* dropzone */
   @dropzone-color: lightskyblue;
   @dropzone-active-color: darken(@dropzone-color, 30);
+  
+  .open>.dropdown-menu {
+    margin-top: @m-space !important;
+    background: @asbestos;
+    li>a {
+      color: @clouds;      
+      &:hover, &:active, &:focus {
+        background: rgba(0,0,0,.1);
+        outline: 0;
+      }
+    }
+  }
   .note-dropzone {
     position: absolute;
     display: none;
@@ -68,16 +79,37 @@
   
   /* toolbar */
   .note-toolbar {
-    padding-left: 5px;
-    padding-bottom: 5px;
-    margin: 0;
-    background-color: @background-color;
-    border-bottom: 1px solid @border-color;
+    // padding-left: 5px;
+    // padding-bottom: 5px;
+    margin: 0 0 @m-space;
+    // background-color: @background-color;
+    // border-bottom: 1px solid @border-color;
 
     &>.btn-group {
-      margin-top: 5px;
+      // margin-top: 5px;
       margin-left: 0;
       margin-right: 5px;
+      
+      .btn-default:hover, 
+      .btn-default:focus, 
+      .btn-default:active, 
+      .btn-default.active, 
+      .open .dropdown-toggle.btn-default {
+        
+      }
+    }
+    .open .dropdown-toggle.btn-default,
+    .btn.active {
+      background: @asbestos;
+      color: white;
+      box-shadow: 0 2px 0 @asbestos;
+      z-index: 0;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    .btn-group .btn+.btn, .btn-group .btn+.btn-group, .btn-group .btn-group+.btn, .btn-group .btn-group+.btn-group {
+      margin-left: 0;
     }
 
     .note-table {
@@ -142,7 +174,7 @@
             margin: 5px;
             padding: 0 3px;
             cursor: pointer;
-            .rounded(5px);
+            // .rounded(5px);
           }
 
           .note-color-reset:hover {
@@ -154,8 +186,16 @@
     
     .note-para {
       .dropdown-menu {
-        min-width: 153px;
+        min-width: 220px;
         padding: 5px;
+        background: none;
+        > li {
+          float: left;
+          margin: 0 @s-space 0 0 !important;
+          &:last-child {
+            margin-right: 0 !important;
+          }
+        }
       }
       
       li:first-child {
@@ -268,8 +308,8 @@
         color: white;
         background-color: black;
         font-size: 12px;
-        .rounded(5px);
-        .opacity(0.7);
+        // .rounded(5px);
+        // .opacity(0.7);
       }
     }
   }
@@ -299,8 +339,8 @@
       .modal-content {
         background: transparent;
         border: 1px solid white;
-        .box-shadow(none);
-        .rounded(5px);
+        // .box-shadow(none);
+        // .rounded(5px);
       }
 
       /* BS2's background pacth. */
@@ -353,6 +393,8 @@
     padding: 10px;
     overflow: auto;
     outline: none;
+    min-height: 100px;
+    .form-control;
   }
 
   /* codeable */
@@ -369,15 +411,15 @@
     resize: none;
 
     /* override BS2 default style */
-    .box-sizing(border-box);
-    .rounded(0);
+    // .box-sizing(border-box);
+    // .rounded(0);
     margin-bottom: 0;
   }
   
   /* dropdown-menu for toolbar and popover */
   .dropdown-menu {
     min-width: 90px;
-
+    
     /* dropdown-menu right position */
     /* http://forrst.com/posts/Bootstrap_right_positioned_dropdown-2KB */
     &.right {
@@ -392,8 +434,13 @@
       color: deepskyblue;
       visibility: hidden;
     }
-    li a.checked i {
-      visibility: visible;
+    li a.checked {
+      color: white;
+      font-weight: 600;
+      i {
+        visibility: visible;
+        color: @emerald;
+      }
     }
   }
 
