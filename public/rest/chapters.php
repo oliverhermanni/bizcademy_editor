@@ -32,13 +32,13 @@ $f3->route('GET /getchapters/@course_id', function($f3, $params) {
     }
 });
 
-$f3->route('GET /getchapter/@chapterid', function($f3, $params) {
+$f3->route('GET /getchapter/@chapter_id', function($f3, $params) {
 
     $sql = "SELECT * FROM `chapters` WHERE `id` = :id";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(':id' => $params['chapterid']));
+        $stmt->execute(array(':id' => $params['chapter_id']));
         $chapter = $stmt->fetch();
         echo json_encode($chapter);
     } catch (PDOException $e) {
