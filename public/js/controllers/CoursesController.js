@@ -1,18 +1,30 @@
 CourseEditor.controller('CoursesController',
-  function ($scope, $location, $routeParams, CourseModel, ChapterModel, $sce) {
+  function ($scope, $http, $location, $routeParams, CourseModel, ChapterModel, $sce) {
 
-    $scope.courses = CourseModel.getCourses();
+    $http.get('/rest/getcourses')
+      .success(function(data) {
+        $scope.courses = data;
+      })
+      .error(function(data) {
+        alert(data);
+      });
 
     if ($routeParams.courseId) {
-      $scope.course = CourseModel.getCourseById($routeParams.courseId);
+      $http.get('/rest/getcourse/' + $routeParams.courseId)
+        .success(function(data) {
+          $scope.course = data;
+        })
+        .error(function(data) {
+          alert(data);
+        });
     }
 
   }
 );
 
 CourseEditor.controller('CourseAddController',
-  function ($scope, $location, $routeParams, CourseModel) {
-
+  function ($scope, $http, $location, $routeParams, CourseModel) {
+   /*
     $scope.$on('$viewContentLoaded', function(){
       // detach navbar on scrollling downnnn
       $(window).on("resize scroll",function(e) {
@@ -31,7 +43,7 @@ CourseEditor.controller('CourseAddController',
       });
     });
 
-
+*/
     $scope.currentTask = "hinzufügen";
 
     $scope.cancel = function () {
@@ -39,8 +51,24 @@ CourseEditor.controller('CourseAddController',
     }
 
     $scope.createCourse = function () {
-      var course_id = CourseModel.addCourse($scope.course,  $('.note-editable').html());
-      $location.path('/course/' + course_id);
+
+      var course = {
+        title: $scope.course.title,
+        summary: $('.note-editable').html(),
+        advice: $scope.course.advice
+      }
+
+      $http.post('/rest/addcourse', course)
+        .success(function($data){
+          $location.path('/course/' + $data['id']);
+        })
+        .error(function($data){
+          alert($data);
+        }
+      );
+
+      // var course_id = CourseModel.addCourse($scope.course,  $('.note-editable').html());
+
     }
   }
 );
