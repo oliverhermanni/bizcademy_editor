@@ -53,8 +53,6 @@ CourseEditor.controller('ChapterAddController',
 
     $scope.createChapter = function () {
 
-      alert($routeParams);
-
       var chapter = {
         course_id: $routeParams.courseId,
         title: $scope.chapter.title,
