@@ -1,19 +1,28 @@
 CourseEditor.controller('ModuleController',
-  function ($scope, $location, $routeParams, ModuleModel) {
+  function ($scope, $http, $location, $routeParams, ModuleModel) {
 
-    var moduleData = ModuleModel.getModuleById($routeParams.courseId, $routeParams.chapterId, $routeParams.moduleId);
-
-    $scope.courseId = $routeParams.courseId;
-    $scope.moduleData = moduleData;
-    $scope.moduleView = moduleData.moduletype;
+    $http.get('/rest/getmodule/'+$routeParams['moduleId'])
+      .success(function(moduleData) {
+        $scope.courseId = $routeParams.courseId;
+        $scope.moduleData = moduleData;
+        $scope.moduleView = moduleData.module_type;
+      })
+      .error(function(moduleData){
+        alert(moduleData);
+      })
 
   }
 );
 
 CourseEditor.controller('ModuleDeleteController',
-  function ($scope, $location, $routeParams, ModuleModel) {
-    ModuleModel.deleteModule($routeParams.chapterId, $routeParams.moduleId);
-    $location.path('/course/' + $routeParams.courseId);
+  function ($scope, $http, $location, $routeParams, ModuleModel) {
+    $http.delete('/rest/deletemodule/' + $routeParams.chapterId)
+      .success(function (data) {
+        $location.path('/course/' + $routeParams.courseId);
+      })
+      .error(function (data) {
+        alert(data);
+      });
   }
 );
 

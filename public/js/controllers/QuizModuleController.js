@@ -4,7 +4,7 @@ CourseEditor.controller('QuizModuleController',
 );
 
 CourseEditor.controller('QuizModuleAddController',
-  function ($scope, $location, $routeParams, QuizModuleModel) {
+  function ($scope, $http, $location, $routeParams, QuizModuleModel) {
 
     $('body').removeClass('modal-open');
 
@@ -14,7 +14,6 @@ CourseEditor.controller('QuizModuleAddController',
         checkbox.attr("checked", checkbox.is(":checked"));
       });
     });
-
 
     $scope.currentTask = "hinzufügen";
 
@@ -55,8 +54,25 @@ CourseEditor.controller('QuizModuleAddController',
         }
       }
 
-      QuizModuleModel.addQuizModule($routeParams.chapterId, $scope.quizmodule,  $('.note-editable').html(), answers, hints);
-      $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
+      var quizModule = {
+        chapter_id: $routeParams['courseId'],
+        module_type: 'quiz',
+        title: $scope.quizmodule.title,
+        summary:  $('.note-editable').html(),
+        advice: $scope.quizmodule.advice,
+        theme: $scope.quizmodule.theme,
+        answers: answers,
+        hints: hints
+      }
+
+      $http.post('/rest/addmodule', quizModule)
+        .success(function ($data) {
+          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
+        })
+        .error(function ($data) {
+          alert($data);
+        }
+      );
     }
   }
 );

@@ -5,7 +5,7 @@ CourseEditor.controller('TextModuleController',
 );
 
 CourseEditor.controller('TextModuleAddController',
-  function ($scope, $location, $routeParams, TextModuleModel) {
+  function ($scope, $http, $location, $routeParams, TextModuleModel) {
     $scope.currentTask = "hinzufügen";
 
     $('body').removeClass('modal-open');
@@ -15,8 +15,22 @@ CourseEditor.controller('TextModuleAddController',
     }
 
     $scope.createTextModule = function () {
-      TextModuleModel.addTextModule($routeParams.chapterId, $scope.textmodule, $('.note-editable').html());
-      $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
+
+      var textModule = {
+        chapter_id: $routeParams['courseId'],
+        module_type: 'text',
+        title: $scope.textmodule.title,
+        summary:  $('.note-editable').html()
+      };
+
+      $http.post('/rest/addmodule', textModule)
+        .success(function ($data) {
+          $location.path('/course/' + $routeParams.courseId + '/chapter/' + $routeParams.chapterId);
+        })
+        .error(function ($data) {
+          alert($data);
+        }
+      );
     }
   }
 );

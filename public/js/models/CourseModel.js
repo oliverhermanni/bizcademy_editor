@@ -2,7 +2,7 @@ CourseEditor.service('CourseModel', function () {
 
   this.getCourses = function () {
 
-    var courses = JSON.parse(window.localStorage.getItem("courses"));
+    var courses = CM.get('courses');
 
     if (!courses) {
       return []
@@ -11,6 +11,7 @@ CourseEditor.service('CourseModel', function () {
     return courses.myCourses;
   };
 
+  /*
   this.getCourseById = function (courseId) {
     var courses = JSON.parse(window.localStorage.getItem("courses"));
 
@@ -19,17 +20,17 @@ CourseEditor.service('CourseModel', function () {
         return courses.myCourses[i];
       }
     }
-  }
+  })
+  */
 
   this.addCourse = function (courseData, editorData) {
 
-    var courses = JSON.parse(window.localStorage.getItem("courses"));
-
-    if(!courses) {
+    var courses = CM.get('courses').on('notfound', function(data, response) {
       courses = {
         myCourses: []
       }
-    }
+    });
+
 
     var course = {
       id: Math.random().toString(36).substring(7),
@@ -39,10 +40,15 @@ CourseEditor.service('CourseModel', function () {
     }
 
     courses.myCourses.push(course);
+    alert(JSON.stringify(courses));
 
-    window.localStorage.setItem("courses", JSON.stringify(courses));
+    CM.set(courses).on('error', function(data, response) {
+        alert(repsonse);
+      });
 
-    return course['id'];
+    alert('test');
+
+
   };
 
   this.saveCourse = function (courseId, courseData) {
@@ -61,5 +67,6 @@ CourseEditor.service('CourseModel', function () {
       }
     }
   }
+
 
 });
