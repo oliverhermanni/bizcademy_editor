@@ -13,6 +13,10 @@
         controller: 'CourseAddController',
         templateUrl: 'js/views/course/edit.html'
       })
+      .when('/course/edit/:courseId', {
+        controller: 'CourseEditController',
+        templateUrl: 'js/views/course/edit.html'
+      })
       .when('/course/completed', {
         controller: 'CoursesController',
         templateUrl: 'js/views/course/completed.html'
