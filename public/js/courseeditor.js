@@ -29,6 +29,10 @@
         controller: 'ChapterAddController',
         templateUrl: 'js/views/chapter/edit.html'
       })
+      .when('/chapter/edit/:chapterId', {
+        controller: 'ChapterEditController',
+        templateUrl: 'js/views/chapter/edit.html'
+      })
       .when('/course/:courseId/chapter/:chapterId/module/:moduleId', {
         controller: 'ModuleController',
         templateUrl: '/js/views/modules/show.html'
