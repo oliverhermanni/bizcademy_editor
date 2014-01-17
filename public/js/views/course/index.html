@@ -9,6 +9,7 @@
           <p ng-bind-html="to_trusted(course.summary)">
             {{course.summary}}
           </p>
+            <a href="#/course/edit/{{course.id}}" class="btn btn-primary pull-right" ng-hide="player">Bearbeite Kurs</a>
           <a href="#/player/course/{{course.id}}/{{chapters.0.id}}" class="btn btn-primary pull-right" ng-show="player">Starte den Kurs</a>
         </div>
       </div>
