@@ -71,7 +71,7 @@ CourseEditor.controller('CourseAddController',
 
 CourseEditor.controller('CourseEditController',
   function ($scope, $http, $location, $routeParams, CourseModel) {
-    $scope.currentTask = "hinzufügen";
+    $scope.currentTask = "bearbeiten";
 
     if ($routeParams.courseId) {
       $http.get('/rest/getcourse/' + $routeParams.courseId)
@@ -105,8 +105,6 @@ CourseEditor.controller('CourseEditController',
           alert($data);
         }
       );
-
-      // var course_id = CourseModel.addCourse($scope.course,  $('.note-editable').html());
 
     }
   }
