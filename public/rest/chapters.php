@@ -62,6 +62,25 @@ $f3->route('DELETE /deletechapter/@chapter_id', function($f3, $params) {
     }
 });
 
+$f3->route('POST /updatechapter/@courseid', function($f3, $params) {
+    $request = $f3->get('BODY');
+    $chapter = json_decode($request);
+    $sql = "UPDATE chapters SET `title` = :title, `summary` = :summary, `advice`= :advice WHERE id = :id;";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $params['courseid']);
+        $stmt->bindParam("title", $chapter->title);
+        $stmt->bindParam("summary", $chapter->summary);
+        $stmt->bindParam("advice", $chapter->advice);
+        $stmt->execute();
+        $db = null;
+        echo json_encode($chapter);
+    } catch (PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+});
+
 function getModulesOfChapter($chapterId) {
     $sql = "SELECT * FROM `modules` WHERE `chapter_id` = :chapter_id ";
     try {
