@@ -7,6 +7,10 @@
             <p class="description" ng-model="description" ng-bind-html="to_trusted(chapter.summary)">
               {{ chapter.summary }}
             </p>
+          <div ng-hide="player">
+              <a class="btn btn-primary" href="#/chapter/edit/{{chapter.id}}">Kapitel bearbeiten</a>
+          </div>
+
           </div>
           <div class="speech-bubble right-handed">
             <img src="img/dirtydieter.jpg" class="avatar avatar-md">
@@ -34,7 +38,8 @@
           </div>
 
           <div class="chapter-actions">
-            <div ng-hide="player">
+
+              <div ng-hide="player">
 	            <a ng-controller="CoursesController" href="#/course/{{course.id}}/chapter/add">Neues Kapitel erstellen</a> oder <a class="btn btn-primary" data-toggle="modal" data-target="#type-chooser">Weiteren Schritt hinzufügen<i class="fa fa-angle-right"></i></a>
 	          </div>
 	          <div ng-show="player">
