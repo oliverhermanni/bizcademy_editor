@@ -24,7 +24,7 @@ CourseEditor.controller('CoursesController',
 
 CourseEditor.controller('CourseAddController',
   function ($scope, $http, $location, $routeParams, CourseModel) {
-   /*
+
     $scope.$on('$viewContentLoaded', function(){
       // detach navbar on scrollling downnnn
       $(window).on("resize scroll",function(e) {
@@ -43,7 +43,6 @@ CourseEditor.controller('CourseAddController',
       });
     });
 
-*/
     $scope.currentTask = "hinzufügen";
 
     $scope.cancel = function () {
@@ -61,6 +60,46 @@ CourseEditor.controller('CourseAddController',
       $http.post('/rest/addcourse', course)
         .success(function($data){
           $location.path('/course/' + $data['id']);
+        })
+        .error(function($data){
+          alert($data);
+        }
+      );
+    }
+  }
+);
+
+CourseEditor.controller('CourseEditController',
+  function ($scope, $http, $location, $routeParams, CourseModel) {
+    $scope.currentTask = "hinzufügen";
+
+    if ($routeParams.courseId) {
+      $http.get('/rest/getcourse/' + $routeParams.courseId)
+        .success(function(data) {
+          $('.note-editable').html(data.summary)
+          $scope.course = data;
+
+        })
+        .error(function(data) {
+          alert(data);
+        });
+    }
+
+    $scope.cancel = function () {
+      $location.path('/');
+    }
+
+    $scope.createCourse = function () {
+
+      var course = {
+        title: $scope.course.title,
+        summary: $('.note-editable').html(),
+        advice: $scope.course.advice
+      }
+
+      $http.post('/rest/updatecourse/' + $routeParams.courseId, course)
+        .success(function($data){
+          $location.path('/course/' + $routeParams.courseId);
         })
         .error(function($data){
           alert($data);
