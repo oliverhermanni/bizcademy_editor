@@ -88,3 +88,43 @@ CourseEditor.controller('ChapterDeleteController',
       });
   }
 );
+
+CourseEditor.controller('ChapterEditController',
+  function ($scope, $http, $location, $routeParams) {
+    $scope.currentTask = "bearbeiten";
+
+    if ($routeParams.chapterId) {
+      $http.get('/rest/getchapter/' + $routeParams.chapterId)
+        .success(function(data) {
+          $('.note-editable').html(data.summary)
+          $scope.chapter = data;
+
+        })
+        .error(function(data) {
+          alert(data);
+        });
+    }
+
+    $scope.cancel = function () {
+      $location.path('/');
+    }
+
+    $scope.createChapter = function () {
+
+      var chapter = {
+        title: $scope.chapter.title,
+        summary: $('.note-editable').html(),
+        advice: $scope.chapter.advice
+      }
+
+      $http.post('/rest/updatechapter/' + $routeParams.chapterId, chapter)
+        .success(function($data){
+          $location.path('/course/' + $routeParams.courseId + "/chapter/" + $routeParams.chapterId);
+        })
+        .error(function($data){
+          alert($data);
+        }
+      );
+    }
+  }
+);
