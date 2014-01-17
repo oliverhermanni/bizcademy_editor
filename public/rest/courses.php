@@ -44,3 +44,22 @@ $f3->route('GET /getcourse/@courseid', function($f3, $params) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
 });
+
+$f3->route('POST /updatecourse/@courseid', function($f3, $params) {
+    $request = $f3->get('BODY');
+    $course = json_decode($request);
+    $sql = "UPDATE courses SET `title` = :title, `summary` = :summary, `advice`= :advice WHERE id = :id;";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $params['courseid']);
+        $stmt->bindParam("title", $course->title);
+        $stmt->bindParam("summary", $course->summary);
+        $stmt->bindParam("advice", $course->advice);
+        $stmt->execute();
+        $db = null;
+        echo json_encode($course);
+    } catch (PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+});
