@@ -4,6 +4,11 @@
   <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
     {{moduleData.summary}}
   </p>
+
+    <div ng-hide="player">
+        <a class="btn btn-primary" href="#/chapter/{{moduleData.chapter_id}}/module/text/edit/{{moduleData.id}}">Textmodul bearbeiten</a>
+    </div>
+
 </div>
 <div class="chapter-actions">
   <a class="btn btn-default btn-link pull-left" href="#/course/{{courseId}}" ng-hide="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs </a>
