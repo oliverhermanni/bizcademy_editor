@@ -45,8 +45,16 @@
         controller: 'TextModuleAddController',
         templateUrl: '/js/views/modules/text/edit.html'
       })
+      .when('/chapter/:chapterId/module/text/edit/:moduleId', {
+        controller: 'TextModuleEditController',
+        templateUrl: '/js/views/modules/text/edit.html'
+      })
       .when('/course/:courseId/chapter/:chapterId/module/quiz/add', {
         controller: 'QuizModuleAddController',
+        templateUrl: '/js/views/modules/quiz/edit.html'
+      })
+      .when('/chapter/:chapterId/module/quiz/edit/:moduleId', {
+        controller: 'QuizModuleEditController',
         templateUrl: '/js/views/modules/quiz/edit.html'
       })
       .when('/course/:courseId/chapter/delete/:chapterId', {
