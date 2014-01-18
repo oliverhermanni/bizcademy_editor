@@ -55,7 +55,7 @@ CourseEditor.controller('QuizModuleAddController',
       }
 
       var quizModule = {
-        chapter_id: $routeParams['courseId'],
+        chapter_id: $routeParams['chapterId'],
         module_type: 'quiz',
         title: $scope.quizmodule.title,
         summary:  $('.note-editable').html(),
