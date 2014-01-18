@@ -59,8 +59,10 @@ $f3->route('GET /getmodule/@moduleid', function($f3, $params) {
         $db = getConnection();
         $stmt = $db->prepare($sql);
         $stmt->execute(array(':id' => $params['moduleid']));
-        $chapter = $stmt->fetch();
-        echo json_encode($chapter);
+        $module = $stmt->fetch();
+        $module['answers'] = unserialize($module['answers']);
+        $module['hints'] = unserialize($module['hints']);
+        echo json_encode($module);
     } catch (PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
