@@ -4,6 +4,11 @@
   <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
     {{ moduleData.summary }}
   </p>
+
+  <div ng-hide="player">
+    <a class="btn btn-primary" href="#/chapter/{{moduleData.chapter_id}}/module/quiz/edit/{{moduleData.id}}">Quiz bearbeiten</a>
+  </div>
+
 </div>
 
 <div class="speech-bubble right-handed">
