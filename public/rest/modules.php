@@ -4,7 +4,7 @@ $f3->route('POST /addmodule', function($f3) {
     $module = json_decode($request);
     $sql = "INSERT INTO modules (chapter_id, module_type, title, summary, advice, theme, answers, hints ) VALUES (:chapter_id, :module_type, :title, :summary, :advice, :theme, :answers, :hints)";
     $empty_string = '';
-    $empty_data = serialize( array() );
+    $empty_data = serialize(array());
     try {
 
         $db = getConnection();
@@ -85,7 +85,7 @@ $f3->route('POST /updatemodule/@moduleId', function($f3, $params) {
     $module = json_decode($request);
     $sql = "UPDATE modules SET `chapter_id` = :chapter_id, `module_type` = :module_type, `title` = :title, `summary` = :summary, `advice` = :advice, `theme` = :theme, `answers` = :answers, `hints` = :hints  WHERE `id` = :id ";
     $empty_string = '';
-    $empty_data = serialize( array() );
+    $empty_data = serialize(array());
     try {
 
         $db = getConnection();
