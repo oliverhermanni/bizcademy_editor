@@ -1,0 +1,80 @@
+.profiling-step {
+  h2 {
+    text-align: center;
+    margin: 1em 0 2em;
+  }
+  .progress {
+    background: white;
+    height: 18px;
+    .progress-bar span {
+      font-size: 16px;
+    }
+  }
+  .profiling-answers, .profiling-actions {
+    .clearfix;
+    margin-bottom: 3em;
+    text-align: center;
+  }
+  .profiling-answer {
+    .box-shadow(0 2px 0 @gray-lighter);
+    .transition(all 0.2s);
+    background: white;
+    border-radius: @border-radius-base;
+    border: none;
+    padding: @xl-space;
+    position: relative;
+    text-align: center;
+    color: @gray;
+    font-size: @font-size-middle;
+    display: block;
+    overflow: hidden;
+    &:after {
+      width: 48px;
+      height: 48px;
+      background: @emerald;
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      content: "\e370";
+      font-family: 'bizcademy-icons';
+      color: white;
+      border-radius: @border-radius-base;
+      font-size: @font-size-middle;
+      text-indent: -@m-space;
+      padding-top: 3px;
+      display: none;
+    }
+    &:hover {
+      outline: @m-space solid @emerald;
+      outline-offset: -10px;
+      color: @gray-dark;
+      &::after {
+        display: block;
+      }
+      i.icon { color: @emerald; }
+    }
+    i.icon {
+      font-size: 6em;
+      width: 100%;
+      line-height: 1em;
+      display: block;
+      margin-top: @l-space * 2;
+      margin-bottom: @l-space * 2;
+      color: @gray-lighter;
+    }
+    &:first-child {
+      border-right: 1px solid @gray-lightest;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &:last-child {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;      
+    }
+    .answer-text {
+      display: block;
+      margin-bottom: @l-space;
+      min-height: (@line-height-base * @font-size-middle) * 2;
+    }
+  }
+}
