@@ -8,9 +8,7 @@ CourseEditor.controller('SidebarController',
         .error(function(data) {
           alert(data);
         });
-    }
 
-    if ($routeParams.chapterId) {
       $http.get('/rest/getchapters/' + $routeParams.courseId)
         .success(function(data) {
           $scope.chapters = data;
@@ -19,7 +17,5 @@ CourseEditor.controller('SidebarController',
           alert(data);
         });
     }
-
-
   }
 );
