@@ -5,6 +5,10 @@
         controller: 'HomeController',
         templateUrl: 'js/views/home/index.html'
       })
+      .when('/profiling', {
+        controller: 'ProfilingController',
+        templateUrl: 'js/views/profiling/index.html'
+      })
       .when('/courses', {
         controller: 'CoursesController',
         templateUrl: 'js/views/course/index.html'

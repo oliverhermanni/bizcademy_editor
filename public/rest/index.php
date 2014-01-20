@@ -1,4 +1,5 @@
 <?php
+
 $f3 = require('lib/base.php');
 include_once('courses.php');
 include_once('chapters.php');
@@ -13,6 +14,7 @@ function getConnection() {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbh;
 }
+
 
 $f3->run();
 
