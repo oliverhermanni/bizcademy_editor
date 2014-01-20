@@ -147,7 +147,7 @@ CourseEditor.controller('PlayerController',
 							$scope.nextLink = 'player/chapter/' + $routeParams.courseId + '/' + $scope.nextChapter.id;
 						}	
 					} else {
-						$scope.nextLink = 'player/' + $scope.nextObj.type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.nextObj.id;
+						$scope.nextLink = 'player/' + $scope.nextObj.module_type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.nextObj.id;
 					}		
 					/* Create Prev Link */
 					if(typeof $scope.prevObj === 'undefined') { 
@@ -161,7 +161,7 @@ CourseEditor.controller('PlayerController',
 							$scope.prevLink = 'B';
 						}	
 					} else {
-						// $scope.prevLink = 'player/' + $scope.prevObj.type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.prevObj.id;
+						// $scope.prevLink = 'player/' + $scope.prevObj.module_type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.prevObj.id;
 						// $scope.prevLink = 'player/chapter/' + $routeParams.courseId + '/' + $scope.prevChapter.id;
 						$scope.prevLink = 'player/chapter/' + $routeParams.courseId + '/' + $routeParams.chapterId;
 					}
