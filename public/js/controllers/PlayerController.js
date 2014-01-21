@@ -133,19 +133,27 @@ CourseEditor.controller('PlayerController',
 					$scope.modules = data;
 					
 					/* Current and Next Object */
-					$scope.moduleData 	= getObjects($scope.modules, 'id', $routeParams.modulId)[0];
-					$scope.nextObj 	= $scope.modules[++$scope.moduleData.index];
-					$scope.prevObj	= $scope.modules[--$scope.moduleData.index];
-				
+					$scope.module 	= getObjects($scope.modules, 'id', $routeParams.modulId)[0];
+					$scope.nextObj 	= $scope.modules[++$scope.module.index];
+					$scope.prevObj	= $scope.modules[--$scope.module.index];
+
+          $http.get('/rest/getmodule/'+$routeParams.modulId)
+            .success(function(md) {
+              $scope.moduleData = md;
+            })
+              .error(function(md) {
+                alert('e');
+              })
+
 					/* Create Next Link */
-					if(typeof $scope.nextObj === 'undefined') { /* if Next Object isn't set then */	
+					if(typeof $scope.nextObj === 'undefined') { /* if Next Object isn't set then */
 						$scope.currentChapter = getObjects($scope.chapters, 'id', $routeParams.chapterId)[0];
 						$scope.nextChapter = $scope.chapters[++$scope.currentChapter.index];
 						if(typeof $scope.nextChapter === 'undefined') { /* if Next Chapter isn't set then */
 							$scope.nextLink = 'player/course/' + $scope.courseId;
 						} else {
 							$scope.nextLink = 'player/chapter/' + $routeParams.courseId + '/' + $scope.nextChapter.id;
-						}	
+						}
 					} else {
 						$scope.nextLink = 'player/' + $scope.nextObj.module_type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.nextObj.id;
 					}		
