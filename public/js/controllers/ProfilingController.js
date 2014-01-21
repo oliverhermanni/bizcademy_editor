@@ -15,12 +15,12 @@ CourseEditor.controller('ProfilingController',
     
     $scope.nextStep = function(step, e) {
       var elem = e.currentTarget,
-          thisStep = $(elem).closest('.step');
+          thisStep = $(elem).closest('.step'),
           nextStep = "." + step,
-          thisStepClass = thisStep.attr('class').replace('step','').trim();
+          thisStepClass = thisStep.attr('class').replace('step','').trim() + "-step";
           
           
-      $('.profiling-steps').removeClass(thisStepClass).addClass(step);
+      $('.profiling-steps').removeClass(thisStepClass).addClass(step + "-step");
       
       $(nextStep).css('left',thisStep.outerWidth());
       
