@@ -1,4 +1,17 @@
-.profiling-step {
+
+.profiling-steps .newidea,
+.profiling-steps .optimized,
+.profiling-steps .finished {
+  opacity: 0;
+  left: 1140px;
+}
+.profiling-steps {
+  position: relative;
+  min-height: 1100px;
+  .step {
+    position: absolute;
+    width: 100%;
+  }
   h2 {
     text-align: center;
     margin: 1em 0 2em;
@@ -45,13 +58,21 @@
       display: none;
     }
     &:hover {
+      outline: @m-space solid rgba(46,204,113,.5);
+      outline-offset: -10px;
+      i.icon, .answer-text { color: rgba(46,204,113,.5); }
+    }
+    &.selected,
+    &.selected:hover {
       outline: @m-space solid @emerald;
       outline-offset: -10px;
       color: @gray-dark;
+      cursor: default;
       &::after {
         display: block;
       }
       i.icon { color: @emerald; }
+      .answer-text { color: @gray-dark; }
     }
     i.icon {
       font-size: 6em;

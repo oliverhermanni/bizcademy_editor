@@ -152,16 +152,18 @@
 .course-box {
   .lh-border-radius(@border-radius-base);
   position: relative;
+  margin-bottom: 2em;
   .course-img {
     .lh-border-top-left-radius(@border-radius-base);
     .lh-border-top-right-radius(@border-radius-base);
     overflow: hidden;
     height: 200px;
-    width: auto;
+    max-width: 100%;
     .lh-background-image(linear-gradient(to bottom, @peter-river, @belize-hole));
   }
   .course-infos {
-    border: 2px solid @clouds;
+    background: white;
+    border: 2px solid @gray-lighter;
     border-top: 0;
     position: relative;
     padding-top: 40px;
@@ -201,7 +203,7 @@
   }
   .course-footer {
     .clearfix();
-    background: @clouds;
+    background: @gray-lighter;
     // height: @font-size-base * 2.25;
     // line-height: @font-size-base * 2.5;
     color: @asbestos;
