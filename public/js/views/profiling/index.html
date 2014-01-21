@@ -1,6 +1,6 @@
 
 <div class="container" id="content">
-  <section class="profiling-steps">
+  <section class="profiling-steps selfemployed">
     <div class="step selfemployed">
       <div class="row">
         <div class="col-md-10 col-md-push-1">
@@ -21,7 +21,7 @@
       </div>
       <div class="row profiling-actions">
         <div class="col-md-8 col-md-push-2">
-          <button class="btn btn-inverse btn-lg" ng-click="nextStep('newidea',$event)">Weiter</button>
+          <button class="btn btn-inverse btn-lg disabled" ng-click="nextStep('newidea',$event)">Weiter</button>
         </div>
       </div>
       <div class="row">
@@ -56,7 +56,7 @@
       </div>
       <div class="row profiling-actions">
         <div class="col-md-8 col-md-push-2">
-          <button class="btn btn-inverse btn-lg" ng-click="nextStep('optimized',$event)">Weiter</button>
+          <button class="btn btn-inverse btn-lg disabled" ng-click="nextStep('optimized',$event)">Weiter</button>
         </div>
       </div>
       <div class="row">
@@ -91,7 +91,7 @@
       </div>
       <div class="row profiling-actions">
         <div class="col-md-8 col-md-push-2">
-          <button class="btn btn-inverse btn-lg" ng-click="nextStep('finished',$event)">Weiter</button>
+          <button class="btn btn-inverse btn-lg disabled" ng-click="nextStep('finished',$event)">Weiter</button>
         </div>
       </div>
       <div class="row">
@@ -120,6 +120,11 @@
       <div class="row profiling-actions">
         <div class="col-md-8 col-md-push-2">
           <a href="#/courses" class="btn btn-success btn-lg">Mit dem ersten Kurs beginnen</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Weitere Kurse zu diesem Themengebiet:</h3>
         </div>
       </div>
       <div class="row" ng-include src="'js/views/partials/course-recommendations.html'"></div>

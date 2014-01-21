@@ -9,12 +9,18 @@ CourseEditor.controller('ProfilingController',
   
       $(elem).parent().find('button').removeClass('selected');
       $(elem).toggleClass('selected');
+      
+      $(elem).closest('.step').find('.profiling-actions button.btn').removeClass('disabled');
     }    
     
-    $scope.nextStep = function(nextStep, e) {
+    $scope.nextStep = function(step, e) {
       var elem = e.currentTarget,
           thisStep = $(elem).closest('.step');
-          nextStep = "." + nextStep;
+          nextStep = "." + step,
+          thisStepClass = thisStep.attr('class').replace('step','').trim();
+          
+          
+      $('.profiling-steps').removeClass(thisStepClass).addClass(step);
       
       $(nextStep).css('left',thisStep.outerWidth());
       
