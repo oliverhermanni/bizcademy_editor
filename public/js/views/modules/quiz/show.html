@@ -1,56 +1,50 @@
-<div id="content" class="container">
-    <div class="row">
-        <div class="well">
-            <h2>{{ moduleData.title }}</h2>
+<div class="well">
+  <h2>{{ moduleData.title }}</h2>
 
-            <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
-                {{ moduleData.summary }}
-            </p>
+  <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
+    {{ moduleData.summary }}
+  </p>
 
-            <div ng-hide="player">
-                <a class="btn btn-primary"
-                   href="#/chapter/{{moduleData.chapter_id}}/module/quiz/edit/{{moduleData.id}}">Quiz bearbeiten</a>
-            </div>
+  <div ng-hide="player">
+    <a class="btn btn-primary" href="#/chapter/{{moduleData.chapter_id}}/module/quiz/edit/{{moduleData.id}}">Quiz bearbeiten</a>
+  </div>
 
-        </div>
+</div>
 
-        <div class="speech-bubble right-handed">
-            <img src="img/dirtydieter.jpg" class="avatar avatar-md">
+<div class="speech-bubble right-handed">
+  <img src="img/dirtydieter.jpg" class="avatar avatar-md">
 
-            <div class="bubble col-md-6">
-                {{ moduleData.advice }}
-            </div>
-        </div>
-        <h3 class="headline-with-dropdown">
-            <span class="pull-left">Quiz-Module <small>{{moduleData.theme}}</small></span>
-        </h3>
-        <div>
-            <div class="answer custom-checkbox-control" ng-repeat="answer in moduleData.answers">
+  <div class="bubble col-md-6">
+    {{ moduleData.advice }}
+  </div>
+</div>
+<h3 class="headline-with-dropdown">
+  <span class="pull-left">Quiz-Module <small>{{moduleData.theme}}</small></span>
+</h3>
+  <div>
+    <div class="answer custom-checkbox-control" ng-repeat="answer in moduleData.answers">
 
-                <input id="checkbox" class="hidden" type="checkbox" value="" ng-model="answer.checked"></input>
-                <label class="custom-checkbox" for="checkbox"></label>
-
-                <div class="checkbox-label">{{answer.answer}}</div>
-                <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-            </div>
-        </div>
-
-        <h3> Tipps <span class="hint">(wir empfehlen alle 3 Tipps anzugeben)</span></h3>
-
-        <div ng-repeat="hint in moduleData.hints">
-            <div class="hint-wrapper filled">
-                <div class="hint-counter">{{$index+1}}</div>
-                <div class="hint-text">{{hint.hint}}</div>
-            </div>
-        </div>
-
-        <div class="chapter-actions">
-            <a class="btn btn-default btn-link pull-left" href="#/course/{{courseId}}"><i class="fa fa-angle-left"></i>
-                Zurück zum Kurs</a>
-
-            <a class="btn btn-primary pull-right" href="#/course/{{courseId}}">Nächster Schritt <i
-                    class="fa fa-angle-right"></i></a>
-            <a class="btn btn-link pull-right" href="javascript:;" data-toggle="modal" data-target="#chapter-completed">Beenden</a>
-        </div>
+      <input id="checkbox" class="hidden" type="checkbox" value="" ng-model="answer.checked"></input>
+      <label class="custom-checkbox" for="checkbox"></label>
+      <div class="checkbox-label">{{answer.answer}}</div>
+      <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
     </div>
+  </div>
+
+<h3> Tipps <span class="hint">(wir empfehlen alle 3 Tipps anzugeben)</span></h3>
+<div ng-repeat="hint in moduleData.hints">
+  <div class="hint-wrapper filled">
+    <div class="hint-counter">{{$index+1}}</div>
+    <div class="hint-text">{{hint.hint}}</div>
+  </div>
+</div>
+
+<div class="chapter-actions">
+    <a class="btn btn-default btn-link pull-left" href="#/course/{{courseId}}" ng-hide="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs </a>
+    <a class="btn btn-default btn-link pull-left" href="#/player/course/{{courseId}}" ng-show="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
+
+    <a class="btn btn-primary pull-right" href="#/course/{{courseId}}" ng-hide="player">Nächster Schritt <i class="fa fa-angle-right"></i></a>
+    <a class="btn btn-primary" href="#/{{nextLink}}" ng-show="player">Weiter <i class="fa fa-angle-right"></i></a>
+
+    <a class="btn btn-link pull-right" href="javascript:;" data-toggle="modal" data-target="#chapter-completed">Beenden</a>
 </div>
