@@ -3,15 +3,6 @@ CourseEditor.controller('ProfilingController',
     $scope.$on('$viewContentLoaded', function(){
       
     });
-
-    $scope.selectAnswer = function(e) {
-      var elem = e.currentTarget;
-  
-      $(elem).parent().find('button').removeClass('selected');
-      $(elem).toggleClass('selected');
-      
-      $(elem).closest('.step').find('.profiling-actions button.btn').removeClass('disabled');
-    }    
     
     $scope.nextStep = function(step, e) {
       var elem = e.currentTarget,

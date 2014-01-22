@@ -9,19 +9,14 @@
       </div>
       <div class="row profiling-answers">
         <div class="col-md-8 col-md-offset-2">
-          <button ng-click="selectAnswer($event)" class="col-md-6 profiling-answer">
+          <button ng-click="nextStep('newidea',$event)" class="col-md-6 profiling-answer">
             <i class="icon icon-reading"></i>
             <span class="answer-text">Ich möchte mich selbständig machen</span>
           </button>
-          <button ng-click="selectAnswer($event)" class="col-md-6 profiling-answer">
+          <button ng-click="nextStep('newidea',$event)" class="col-md-6 profiling-answer">
             <i class="icon icon-user7"></i>
             <span class="answer-text">Ich bin bereits selbständig tätig</span>
           </button>
-        </div>
-      </div>
-      <div class="row profiling-actions">
-        <div class="col-md-8 col-md-push-2">
-          <button class="btn btn-inverse btn-lg disabled" ng-click="nextStep('newidea',$event)">Weiter</button>
         </div>
       </div>
       <div class="row">
@@ -44,19 +39,14 @@
       </div>
       <div class="row profiling-answers">
         <div class="col-md-8 col-md-offset-2">
-          <button ng-click="selectAnswer($event)" class="col-md-6 profiling-answer">
+          <button ng-click="nextStep('optimized',$event)" class="col-md-6 profiling-answer">
             <i class="icon icon-lamp4"></i>
             <span class="answer-text">Ich habe eine neue Idee</span>
           </button>
-          <button ng-click="selectAnswer($event)" class="col-md-6 profiling-answer">
+          <button ng-click="nextStep('optimized',$event)" class="col-md-6 profiling-answer">
             <i class="icon icon-stats-up"></i>
             <span class="answer-text">Ich möchte mein laufendes Geschäft verbessern</span>
           </button>
-        </div>
-      </div>
-      <div class="row profiling-actions">
-        <div class="col-md-8 col-md-push-2">
-          <button class="btn btn-inverse btn-lg disabled" ng-click="nextStep('optimized',$event)">Weiter</button>
         </div>
       </div>
       <div class="row">
@@ -79,19 +69,14 @@
       </div>
       <div class="row profiling-answers">
         <div class="col-md-8 col-md-offset-2">
-          <button ng-click="selectAnswer($event)" class="col-md-6 profiling-answer">
+          <button ng-click="nextStep('finished',$event)" class="col-md-6 profiling-answer">
             <i class="icon icon-user-plus2"></i>
             <span class="answer-text">Ich möchte mein Neukundengeschäft optimieren</span>
           </button>
-          <button ng-click="selectAnswer($event)" class="col-md-6 profiling-answer">
+          <button ng-click="nextStep('finished',$event)" class="col-md-6 profiling-answer">
             <i class="icon icon-direction"></i>
             <span class="answer-text">Ich möchte meine Prozesse optimieren</span>
           </button>
-        </div>
-      </div>
-      <div class="row profiling-actions">
-        <div class="col-md-8 col-md-push-2">
-          <button class="btn btn-inverse btn-lg disabled" ng-click="nextStep('finished',$event)">Weiter</button>
         </div>
       </div>
       <div class="row">
@@ -128,7 +113,8 @@
               Author: <a href="#">Hendric Rüsch</a>
             </p>
             <div class="profiling-actions">
-              <a href="#/player" class="btn btn-success btn-lg">Jetzt mit diesem Kurs beginnen</a>
+              <a href="#/player" class="btn btn-success btn-lg pull-left">Jetzt mit diesem Kurs beginnen</a>
+              <a href="#/player" class="btn btn-link btn-lg pull-left">Alle unsere Kurse ansehen</a>
             </div>
           </div>
         </div>
