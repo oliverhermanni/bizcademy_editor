@@ -96,7 +96,7 @@
 							return 'js/views/modules/show.html';
 							break;
 						case 'quiz':
-							return 'js/views/modules/quiz/show.html';
+							return 'js/views/modules/show.html';
 							break;
 						default: 
 							return 'js/views/course/index.html';

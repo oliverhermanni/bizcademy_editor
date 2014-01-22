@@ -102,7 +102,9 @@
             </li>
           </ul>
         </div>
-        <a class="btn btn-info btn-block" ng-controller="CoursesController" ng-show="chapters.length" href="#/course/{{course.id}}/chapter/add"><i class="icon icon-quill"></i> Neues Kapitel erstellen</a>
+      <div  ng-hide="player">
+            <a class="btn btn-default btn-block" ng-controller="CoursesController" ng-show="chapters.length" href="#/course/{{course.id}}/chapter/add"><i class="icon icon-quill"></i> Neues Kapitel erstellen</a>
+      </div>
       </div>
       <p class="course-overview-preview" ng-controller="ChaptersController" ng-hide="chapters.length">
         <a href="#/course/{{course.id}}/chapter/add" class="btn btn-primary btn-lg">

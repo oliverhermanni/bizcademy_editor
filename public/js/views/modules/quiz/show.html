@@ -24,7 +24,7 @@
   <div>
     <div class="answer custom-checkbox-control" ng-repeat="answer in moduleData.answers">
 
-      <input id="checkbox" class="hidden" type="checkbox" value="" ng-model="answer.checked" ></input>
+      <input id="checkbox" class="hidden" type="checkbox" value="" ng-model="answer.checked"></input>
       <label class="custom-checkbox" for="checkbox"></label>
       <div class="checkbox-label">{{answer.answer}}</div>
       <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
@@ -40,8 +40,11 @@
 </div>
 
 <div class="chapter-actions">
-  <a class="btn btn-default btn-link pull-left" href="#/course/{{courseId}}"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
+    <a class="btn btn-default btn-link pull-left" href="#/course/{{courseId}}" ng-hide="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs </a>
+    <a class="btn btn-default btn-link pull-left" href="#/player/course/{{courseId}}" ng-show="player"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
 
-  <a class="btn btn-primary pull-right" href="#/course/{{courseId}}">Nächster Schritt <i class="fa fa-angle-right"></i></a>
-  <a class="btn btn-link pull-right" href="javascript:;" data-toggle="modal" data-target="#chapter-completed">Beenden</a>  
+    <a class="btn btn-primary pull-right" href="#/course/{{courseId}}" ng-hide="player">Nächster Schritt <i class="fa fa-angle-right"></i></a>
+    <a class="btn btn-primary" href="#/{{nextLink}}" ng-show="player">Weiter <i class="fa fa-angle-right"></i></a>
+
+    <a class="btn btn-link pull-right" href="javascript:;" data-toggle="modal" data-target="#chapter-completed">Beenden</a>
 </div>
