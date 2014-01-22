@@ -2,7 +2,7 @@
 $f3->route('POST /addmodule', function($f3) {
     $request = $f3->get('BODY');
     $module = json_decode($request);
-    $sql = "INSERT INTO modules (chapter_id, module_type, title, summary, advice, theme, answers, hints ) VALUES (:chapter_id, :module_type, :title, :summary, :advice, :theme, :answers, :hints)";
+    $sql = "INSERT INTO modules (chapter_id, module_type, title, question, summary, advice, theme, answers, hints ) VALUES (:chapter_id, :module_type, :title, :question, :summary, :advice, :theme, :answers, :hints)";
     $empty_string = '';
     $empty_data = serialize(array());
     try {
@@ -17,12 +17,14 @@ $f3->route('POST /addmodule', function($f3) {
 
         switch ($module->module_type) {
             case "text":
+                $stmt->bindParam("question", $empty_string);
                 $stmt->bindParam("advice", $empty_string);
                 $stmt->bindParam("theme", $empty_string);
                 $stmt->bindParam("answers", $empty_data);
                 $stmt->bindParam("hints", $empty_data);
                 break;
             case "quiz":
+                $stmt->bindParam("question", $module->question);
                 $stmt->bindParam("advice", $module->advice);
                 $stmt->bindParam("theme", $module->theme);
                 $answers = serialize($module->answers);
@@ -83,7 +85,7 @@ $f3->route('DELETE /deletemodule/@module_id', function($f3, $params) {
 $f3->route('POST /updatemodule/@moduleId', function($f3, $params) {
     $request = $f3->get('BODY');
     $module = json_decode($request);
-    $sql = "UPDATE modules SET `chapter_id` = :chapter_id, `module_type` = :module_type, `title` = :title, `summary` = :summary, `advice` = :advice, `theme` = :theme, `answers` = :answers, `hints` = :hints  WHERE `id` = :id ";
+    $sql = "UPDATE modules SET `chapter_id` = :chapter_id, `module_type` = :module_type, `title` = :title, `question` = :question, `summary` = :summary, `advice` = :advice, `theme` = :theme, `answers` = :answers, `hints` = :hints  WHERE `id` = :id ";
     $empty_string = '';
     $empty_data = serialize(array());
     try {
@@ -99,12 +101,14 @@ $f3->route('POST /updatemodule/@moduleId', function($f3, $params) {
 
         switch ($module->module_type) {
             case "text":
+                $stmt->bindParam("question", $empty_string);
                 $stmt->bindParam("advice", $empty_string);
                 $stmt->bindParam("theme", $empty_string);
                 $stmt->bindParam("answers", $empty_data);
                 $stmt->bindParam("hints", $empty_data);
                 break;
             case "quiz":
+                $stmt->bindParam("question", $module->question);
                 $stmt->bindParam("advice", $module->advice);
                 $stmt->bindParam("theme", $module->theme);
                 $answers = serialize($module->answers);
