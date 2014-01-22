@@ -1,6 +1,10 @@
 <div class="well">
   <h2>{{ moduleData.title }}</h2>
 
+  <h3>{{moduleData.question}}</h3>
+
+
+
   <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
     {{ moduleData.summary }}
   </p>
@@ -21,15 +25,6 @@
 <h3 class="headline-with-dropdown">
   <span class="pull-left">Quiz-Module <small>{{moduleData.theme}}</small></span>
 </h3>
-  <div>
-    <div class="answer custom-checkbox-control" ng-repeat="answer in moduleData.answers">
-
-      <input id="checkbox" class="hidden" type="checkbox" value="" ng-model="answer.checked"></input>
-      <label class="custom-checkbox" for="checkbox"></label>
-      <div class="checkbox-label">{{answer.answer}}</div>
-      <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-    </div>
-  </div>
 
 <h3> Tipps <span class="hint">(wir empfehlen alle 3 Tipps anzugeben)</span></h3>
 <div ng-repeat="hint in moduleData.hints">
