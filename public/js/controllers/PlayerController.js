@@ -140,6 +140,9 @@ CourseEditor.controller('PlayerController',
           $http.get('/rest/getmodule/'+$routeParams.modulId)
             .success(function(md) {
               $scope.moduleData = md;
+              if ($scope.moduleData.module_type !== 'text') {
+                $scope.test_complete = false;
+              }
             })
               .error(function(md) {
                 alert('e');

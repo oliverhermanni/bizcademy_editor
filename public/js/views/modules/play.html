@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row" id="content">
+
+    <div class="col-md-9">
+      <ol class="breadcrumb">
+        <li><a href="#">Start</a></li>
+        <li><a href="#">Bibliothek</a></li>
+        <li class="active">Data</li>
+      </ol>
+
+      <div ng-include="'js/views/modules/' + moduleView + '/play.html'"></div>
+
+    </div>
+    <div class="col-md-3 course-nav-container">
+      <div class="row">
+        <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+      </div>
+    </div>
+
+
+
+    <div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true" ng-include src="'js/views/partials/type-chooser.html'">
+    </div>
+
+    <div class="modal fade" id="chapter-completed" tabindex="-1" role="dialog" aria-labelledby="chapterCompletedLabel" aria-hidden="true" ng-include src="'js/views/partials/chapter-completed.html'">
+    </div>
+
+  </div>
+</div>

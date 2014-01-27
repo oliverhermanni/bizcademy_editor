@@ -1,23 +1,27 @@
 <div class="well">
   <h2>{{ moduleData.title }}</h2>
 
-  <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
-    {{ moduleData.summary }}
-  </p>
+  <h3>{{moduleData.question}}</h3>
+    <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
+        {{ moduleData.summary }}
+    </p>
 
-  <div ng-hide="player">
-    <a class="btn btn-primary" href="#/chapter/{{moduleData.chapter_id}}/module/quiz/edit/{{moduleData.id}}">Quiz bearbeiten</a>
-  </div>
+    <div ng-hide="player">
+        <a class="btn btn-primary" href="#/chapter/{{moduleData.chapter_id}}/module/quiz/edit/{{moduleData.id}}">Quiz bearbeiten</a>
+    </div>
+
 
 </div>
 
 <div class="speech-bubble right-handed">
-  <img src="img/dirtydieter.jpg" class="avatar avatar-md">
+    <img src="img/dirtydieter.jpg" class="avatar avatar-md">
 
-  <div class="bubble col-md-6">
-    {{ moduleData.advice }}
-  </div>
+    <div class="bubble col-md-6">
+        {{ moduleData.advice }}
+    </div>
 </div>
+
+
 <h3 class="headline-with-dropdown">
   <span class="pull-left">Quiz-Module <small>{{moduleData.theme}}</small></span>
 </h3>

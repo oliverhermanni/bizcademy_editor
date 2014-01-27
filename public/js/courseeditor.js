@@ -93,10 +93,10 @@
 							return 'js/views/chapter/show.html';
 							break;
 						case 'text':
-							return 'js/views/modules/show.html';
+							return 'js/views/modules/play.html';
 							break;
 						case 'quiz':
-							return 'js/views/modules/show.html';
+							return 'js/views/modules/play.html';
 							break;
 						default: 
 							return 'js/views/course/index.html';
@@ -137,10 +137,10 @@ CourseEditor.directive('richTextEditor', function() {
         toolbar: [
             //['style', ['style']], // no style button , 'clear'
             ['style', ['bold', 'italic', 'underline']],
-            ['fontsize', ['fontsize']],
-            ['color', ['color']],
+            // ['fontsize', ['fontsize']],
+            // ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
+            // ['height', ['height']],
             ['insert', ['picture']], // no insert buttons , 'link'
             //['table', ['table']], // no table button
             //['help', ['help']] //no help button

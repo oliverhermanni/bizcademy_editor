@@ -19,3 +19,4 @@ node_modules
 public/css
 public/less/bootstrap/*.css
 public/less/components/*.css
+public/rest/index.php
