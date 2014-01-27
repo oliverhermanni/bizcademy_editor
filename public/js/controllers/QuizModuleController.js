@@ -177,3 +177,47 @@ CourseEditor.controller('QuizModuleEditController',
     }
   }
 );
+
+CourseEditor.controller('QuizModulePlayController',
+  function ($scope, $http, $location, $routeParams, QuizModuleModel) {
+    var $wrongAnswer = 0;
+
+    $scope.$on('$viewContentLoaded', function(){
+      $(".custom-checkbox-control").click(function() {
+        var checkbox = $(this).children('input:checkbox');
+        checkbox.attr("checked", checkbox.is(":checked"));
+      });
+    });
+
+    $scope.testInput = function() {
+
+      var curr_answer;
+      var right_answers = new Array();
+      for (var i = 0; i < 4; i++) {
+        curr_answer = JSON.stringify($scope.moduleData.answers[i]["checked"])
+        if (!curr_answer) {
+          curr_answer = "false";
+        }
+        right_answers.push(curr_answer);
+      }
+
+      var chosen_answers = new Array();
+
+      $(".custom-checkbox-control :checkbox").each(function() {
+        chosen_answers.push(this.checked.toString());
+      });
+
+      var a = JSON.stringify(chosen_answers);
+      var b = JSON.stringify(right_answers);
+
+      if (a == b) {
+        $scope.test_complete = true;
+        $('#continue_btn').removeClass('hidden');
+      } else {
+        $("#hint"+$wrongAnswer).removeClass('hidden');
+        $wrongAnswer++;
+      }
+
+    }
+  }
+);
