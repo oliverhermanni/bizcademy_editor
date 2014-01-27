@@ -93,10 +93,10 @@
 							return 'js/views/chapter/show.html';
 							break;
 						case 'text':
-							return 'js/views/modules/show.html';
+							return 'js/views/modules/play.html';
 							break;
 						case 'quiz':
-							return 'js/views/modules/show.html';
+							return 'js/views/modules/play.html';
 							break;
 						default: 
 							return 'js/views/course/index.html';
