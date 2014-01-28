@@ -21,7 +21,7 @@ CourseEditor.controller('ChaptersController',
 
 
     $scope.deleteChapter = function (chapterId) {
-      var confirmDelete = confirm('Are you sure, you want to delete this chapter?');
+      var confirmDelete = confirm('Möchten Sie dieses Kapitel wirklich löschen?');
 
       if (confirmDelete) {
         $location.path('/course/' + $routeParams.courseId + '/chapter/delete/' + chapterId)
