@@ -17,6 +17,10 @@
         controller: 'CourseAddController',
         templateUrl: 'js/views/course/edit.html'
       })
+      .when('/course/delete/:courseId', {
+        controller: 'CourseDeleteController',
+        templateUrl: 'js/views/course/index.html'
+      })
       .when('/course/edit/:courseId', {
         controller: 'CourseEditController',
         templateUrl: 'js/views/course/edit.html'
