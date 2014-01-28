@@ -31,6 +31,19 @@ $f3->route('GET /getcourses', function() {
     }
 });
 
+$f3->route('DELETE /deletecourse/@course_id', function($f3, $params) {
+    $sql = "DELETE FROM `courses` WHERE `id` = :id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $count = $stmt->execute(array(':id' => $params['course_id']));
+        echo json_encode($count);
+    } catch (PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+});
+
+
 $f3->route('GET /getcourse/@courseid', function($f3, $params) {
 
     $sql = "SELECT * FROM `courses` WHERE `id` = :id";
