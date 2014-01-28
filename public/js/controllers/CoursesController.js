@@ -19,6 +19,15 @@ CourseEditor.controller('CoursesController',
         });
     }
 
+    $scope.deleteCourse = function (courseId) {
+      var confirmDelete = confirm('Möchten Sie diesen Kurs wirklich löschen?');
+
+      if (confirmDelete) {
+        $location.path('/course/delete/' + courseId);
+      }
+    }
+
+
   }
 );
 
@@ -107,5 +116,17 @@ CourseEditor.controller('CourseEditController',
       );
 
     }
+  }
+);
+
+CourseEditor.controller('CourseDeleteController',
+  function ($scope, $http, $location, $routeParams) {
+    $http.delete('/rest/deletecourse/' + $routeParams.courseId)
+      .success(function (data) {
+        $location.path('/courses/');
+      })
+      .error(function (data) {
+        alert(data);
+      });
   }
 );
