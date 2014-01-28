@@ -5,7 +5,10 @@
       <h2>Meine Kurse</h2>
       <div ng-repeat="course in courses" >
         <div class="well well-sm clearfix">
-          <h4><a href="#/course/{{course.id}}">{{course.title}}</a></h4>
+            <h4>
+                <a href="#/course/{{course.id}}">{{course.title}}</a>
+                <a href  ng-click="deleteCourse(course.id)" class="chapter-remove pull-right" title="remove this course and all steps in it" ng-hide="player"><i class="icon icon-remove"></i></a>
+            </h4>
           <p ng-bind-html="to_trusted(course.summary)">
             {{course.summary}}
           </p>
