@@ -16,10 +16,13 @@ CourseEditor.controller('TextModuleAddController',
 
     $scope.createTextModule = function () {
 
+      var moduleTitle = $scope.textmodule.title;
+      if (!moduleTitle) moduleTitle = '';
+
       var textModule = {
         chapter_id: $routeParams['chapterId'],
         module_type: 'text',
-        title: $scope.textmodule.title,
+        title: moduleTitle,
         summary:  $('.note-editable').html()
       };
 
