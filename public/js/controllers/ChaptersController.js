@@ -53,11 +53,21 @@ CourseEditor.controller('ChapterAddController',
 
     $scope.createChapter = function () {
 
+      var chapterTitle = $scope.chapter.title;
+      if (!chapterTitle) {
+        chapterTitle = '';
+      }
+
+      var advice = $scope.chapter.advice;
+      if (!advice) {
+        advice = '';
+      }
+
       var chapter = {
         course_id: $routeParams.courseId,
-        title: $scope.chapter.title,
+        title: chapterTitle,
         summary: $('.note-editable').html(),
-        advice: $scope.chapter.advice
+        advice: advice
       }
 
 
@@ -109,10 +119,20 @@ CourseEditor.controller('ChapterEditController',
 
     $scope.createChapter = function () {
 
+      var chapterTitle = $scope.chapter.title;
+      if (!chapterTitle) {
+        chapterTitle = '';
+      }
+
+      var advice = $scope.chapter.advice;
+      if (!advice) {
+        advice = '';
+      }
+
       var chapter = {
-        title: $scope.chapter.title,
+        title: chapterTitle,
         summary: $('.note-editable').html(),
-        advice: $scope.chapter.advice
+        advice: advice
       }
 
       $http.post('/rest/updatechapter/' + $routeParams.chapterId, chapter)
