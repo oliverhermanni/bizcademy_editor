@@ -23,44 +23,83 @@ CourseEditor.controller('QuizModuleAddController',
 
     $scope.addQuizModule = function () {
 
+      var answer1 = $scope.quizmodule.answer1;
+      var checked1 = $scope.quizmodule.checked1;
+      if (!answer1) answer1 = '';
+      if (!checked1) checked1 = false;
+
+      var answer2 = $scope.quizmodule.answer2;
+      var checked2 = $scope.quizmodule.checked2;
+      if (!answer2) answer2 = '';
+      if (!checked2) checked2 = false;
+
+      var answer3 = $scope.quizmodule.answer3;
+      var checked3 = $scope.quizmodule.checked3;
+      if (!answer3) answer3 = '';
+      if (!checked3) checked3 = false;
+
+      var answer4 = $scope.quizmodule.answer4;
+      var checked4 = $scope.quizmodule.checked4;
+      if (!answer4) answer4 = '';
+      if (!checked4) checked4 = false;
+
+      var hint1 = $scope.quizmodule.hint1;
+      var hint2 = $scope.quizmodule.hint2;
+      var hint3 = $scope.quizmodule.hint3;
+
+      if (!hint1) hint1 = '';
+      if (!hint2) hint2 = '';
+      if (!hint3) hint3 = '';
+
+
       var answers = {
         0: {
-          answer: $scope.quizmodule.answer1,
-          checked: $scope.quizmodule.checked1
+          answer: answer1,
+          checked: checked1
         },
         1: {
-          answer: $scope.quizmodule.answer2,
-          checked: $scope.quizmodule.checked2
+          answer: answer2,
+          checked: checked2
         },
         2: {
-          answer: $scope.quizmodule.answer3,
-          checked: $scope.quizmodule.checked3
+          answer: answer3,
+          checked: checked3
         },
         3: {
-          answer: $scope.quizmodule.answer4,
-          checked: $scope.quizmodule.checked4
+          answer: answer4,
+          checked: checked4
         }
       };
 
       var hints = {
         0: {
-          hint: $scope.quizmodule.hint1
+          hint: hint1
         },
         1: {
-          hint: $scope.quizmodule.hint2
+          hint: hint2
         },
         2: {
-          hint: $scope.quizmodule.hint3
+          hint: hint3
         }
       }
+
+
+      var moduleTitle = $scope.quizmodule.title;
+      if (!moduleTitle) moduleTitle = '';
+
+      var moduleQuestion = $scope.quizmodule.question;
+      if (!moduleQuestion) moduleQuestion = '';
+
+      var advice = $scope.quizmodule.advice;
+      if (!advice) advice = '';
 
       var quizModule = {
         chapter_id: $routeParams['chapterId'],
         module_type: 'quiz',
-        title: $scope.quizmodule.title,
-        question: $scope.quizmodule.question,
+        title: moduleTitle,
+        question: moduleQuestion,
         summary:  $('.note-editable').html(),
-        advice: $scope.quizmodule.advice,
+        advice: advice,
         theme: $scope.quizmodule.theme,
         answers: answers,
         hints: hints
