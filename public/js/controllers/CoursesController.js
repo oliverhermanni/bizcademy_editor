@@ -62,15 +62,10 @@ CourseEditor.controller('CourseAddController',
 
       var editorContent = $('.note-editable').html() ;
 
-      if (!$scope.course.advice) {
-        $scope.course.advice = '';
-      }
-
-
       var course = {
-        title: $scope.course.title,
+        title: $scope.course.title ,
         summary: editorContent,
-        advice: $scope.course.advice
+        advice: $scope.course.advice || ''
       }
 
       $http.post('/rest/addcourse', course)
@@ -107,14 +102,10 @@ CourseEditor.controller('CourseEditController',
 
     $scope.createCourse = function () {
 
-      if (!$scope.course.advice) {
-        $scope.course.advice = '';
-      }
-
       var course = {
         title: $scope.course.title,
         summary: $('.note-editable').html(),
-        advice: $scope.course.advice
+        advice: $scope.course.advice || ''
       }
 
       $http.post('/rest/updatecourse/' + $routeParams.courseId, course)
