@@ -15,7 +15,7 @@
               <div rich-text-editor></div>
             </div>
             <div class="form-actions">
-              <button ng-click="createTextModule()" class="btn btn-primary pull-right">Speichern
+              <button ng-click="createTextModule()" class="btn btn-primary pull-right" ng-disabled="!textmodule.title">Speichern
               </button>
               <button ng-click="cancel()" class="btn btn-link pull-right">Abbrechen</button>
             </div>
