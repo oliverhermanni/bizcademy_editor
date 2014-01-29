@@ -60,9 +60,16 @@ CourseEditor.controller('CourseAddController',
 
     $scope.createCourse = function () {
 
+      var editorContent = $('.note-editable').html() ;
+
+      if (!$scope.course.advice) {
+        $scope.course.advice = '';
+      }
+
+
       var course = {
         title: $scope.course.title,
-        summary: $('.note-editable').html(),
+        summary: editorContent,
         advice: $scope.course.advice
       }
 
@@ -99,6 +106,10 @@ CourseEditor.controller('CourseEditController',
     }
 
     $scope.createCourse = function () {
+
+      if (!$scope.course.advice) {
+        $scope.course.advice = '';
+      }
 
       var course = {
         title: $scope.course.title,
