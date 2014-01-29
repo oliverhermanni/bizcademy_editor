@@ -55,7 +55,7 @@ CourseEditor.controller('ChapterAddController',
 
       var chapter = {
         course_id: $routeParams.courseId,
-        title: $scope.chapter.title || '',
+        title: $scope.chapter.title,
         summary: $('.note-editable').html(),
         advice: $scope.chapter.advice || ''
       }
@@ -110,7 +110,7 @@ CourseEditor.controller('ChapterEditController',
     $scope.createChapter = function () {
 
       var chapter = {
-        title: $scope.chapter.title || '',
+        title: $scope.chapter.title,
         summary: $('.note-editable').html(),
         advice: $scope.chapter.advice || ''
       }
