@@ -32,7 +32,7 @@ $f3->route('GET /getcourses', function() {
 });
 
 $f3->route('DELETE /deletecourse/@course_id', function($f3, $params) {
-    $sql = "DELETE FROM `courses` WHERE `id` = :id";
+    $sql = "DELETE FROM `courses` WHERE `id` = :id AND `protected` = FALSE";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
