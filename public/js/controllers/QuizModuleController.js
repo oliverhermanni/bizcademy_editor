@@ -25,32 +25,32 @@ CourseEditor.controller('QuizModuleAddController',
 
       var answers = {
         0: {
-          answer: answer1 || '',
-          checked: checked1 || false
+          answer: $scope.quizmodule.answer1 || '',
+          checked: $scope.quizmodule.checked1 || false
         },
         1: {
-          answer: answer2 || '',
-          checked: checked2 || false
+          answer: $scope.quizmodule.answer2 || '',
+          checked: $scope.quizmodule.checked2 || false
         },
         2: {
-          answer: answer3 || '',
-          checked: checked3 || false
+          answer: $scope.quizmodule.answer3 || '',
+          checked: $scope.quizmodule.checked3 || false
         },
         3: {
-          answer: answer4 || '',
-          checked: checked4 || false
+          answer: $scope.quizmodule.answer4 || '',
+          checked: $scope.quizmodule.checked4 || false
         }
       };
 
       var hints = {
         0: {
-          hint: hint1 || ''
+          hint: $scope.quizmodule.hint1 || ''
         },
         1: {
-          hint: hint2 || ''
+          hint: $scope.quizmodule.hint2 || ''
         },
         2: {
-          hint: hint3 || ''
+          hint: $scope.quizmodule.hint3 || ''
         }
       }
 
