@@ -7,83 +7,102 @@
         <div class="col-md-12">
           <h2>Quizmodul {{currentTask}}</h2>
           <form name="addQuiz" role="form">
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="quizTitle">Überschrift</label>
               <input type="text" class="form-control" id="quizTitle" placeholder="Überschrift" ng-model="quizmodule.title">
-            </div>
-
-              <div class="form-group">
-                  <label for="quizTitle">Stelle hier deine Frage an die Teilnehmer</label>
-                  <input type="text" class="form-control" id="quizQuestion" placeholder="Warum ist es so wie es ist?" ng-model="quizmodule.question">
-              </div>
-
-              <div class="form-group">
-                  <h4>
-                      Gib hier die möglichen Antworten ein
-                      <small class="hint">(Markiere jeweils die richtigen)</small>
-                  </h4>
-                  <div class="answer custom-checkbox-control">
-                      <input id="checkbox1" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked1"></input>
-                      <label class="custom-checkbox" for="checkbox1"></label>
-                      <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer1" placeholder="Antwort #1" ng-model="quizmodule.answer1"></div>
-                      <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-                  </div>
-                  <div class="answer custom-checkbox-control">
-                      <input id="checkbox2" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked2"></input>
-                      <label class="custom-checkbox" for="checkbox2"></label>
-                      <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer2" placeholder="Antwort #2" ng-model="quizmodule.answer2"></div>
-                      <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-                  </div>
-                  <div class="answer custom-checkbox-control">
-                      <input id="checkbox3" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked3"></input>
-                      <label class="custom-checkbox" for="checkbox3"></label>
-                      <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer3" placeholder="Antwort #3" ng-model="quizmodule.answer3"></div>
-                      <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-                  </div>
-                  <div class="answer custom-checkbox-control">
-                      <input id="checkbox4" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked4"></input>
-                      <label class="custom-checkbox" for="checkbox4"></label>
-                      <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer4" placeholder="Antwort #4" ng-model="quizmodule.answer4"></div>
-                      <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
-                  </div>
-              </div>
-
-              <div class="form-group">
-                  <label>Quiz-Theme wählen</label>
-                  <select class="form-control" ng-model="quizmodule.theme">
-                      <option value="classic" selected>Klassisch</option>
-                      <option value="jackattack">Jack-Attack</option>
-                  </select>
-              </div>
-
-
-              <div class="form-group">
-                  <h4>
-                      Gebe deinen Teilnehmern Tipps zum weiterkommen
-                      <small class="hint">(wir empfehlen alle 3 Tipps anzugeben)</small>
-                  </h4>
-                  <div class="hint-wrapper">
-                      <div class="hint-counter">1</div>
-                      <div class="hint-text"><input type="text" class="form-control" id="quizHint1" placeholder="Tipp #1" ng-model="quizmodule.hint1"></div>
-                  </div>
-                  <div class="hint-wrapper">
-                      <div class="hint-counter">2</div>
-                      <div class="hint-text"><input type="text" class="form-control" id="quizHint2" placeholder="Tipp #2" ng-model="quizmodule.hint2"></div>
-                  </div>
-                  <div class="hint-wrapper">
-                      <div class="hint-counter">3</div>
-                      <div class="hint-text"><input type="text" class="form-control" id="quizHint3" placeholder="Tipp #3" ng-model="quizmodule.hint3"></div>
-                  </div>
-              </div>
+            </div> -->
 
             <div class="form-group">
-              <label for="quizSummary">Erkläre oder Beschreibe dein Spiel<small class="hint">(optional)</small></label>
-              <div rich-text-editor></div>
+              <label for="quizTitle">Stelle hier deine Frage an die Teilnehmer</label>
+              <input type="text" class="form-control" id="quizQuestion" placeholder="Warum ist es so wie es ist?" ng-model="quizmodule.question">
             </div>
+
             <div class="form-group">
-              <label for="quizAdvice">Ergänze hier einen persönlichen Hinweis für die Kursteilnehmer</label>
-              <textarea id="quizAdvice" class="form-control" placeholder="Rat"
-                        ng-model="quizmodule.advice"></textarea>
+              <h4 class="headline-with-dropdown">
+                Gib hier die möglichen Antworten ein
+                <small class="hint">(Markiere jeweils die richtigen)</small>
+                <div class="btn-group select select-block pull-right">
+                  <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                    <i class="icon icon-brush"></i>
+                    Quiz-Theme wählen
+                    <span class="caret"></span>
+                  </button>
+
+                  <span class="dropdown-arrow"></span>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="#">
+                        <i class="icon icon-list2"></i>
+                        Klassisch
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="icon icon-grid2"></i>
+                        Memory
+                      </a>
+                    </li>
+                    <li class="selected">
+                      <a href="#">
+                        <i class="icon icon-stopwatch"></i>
+                        Jack-Attack
+                      </a>
+                    </li>
+                  </ul>
+                </div>  
+              </h4>
+              <div class="answer custom-checkbox-control">
+                  <input id="checkbox1" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked1"></input>
+                  <label class="custom-checkbox" for="checkbox1"></label>
+                  <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer1" placeholder="Antwort #1" ng-model="quizmodule.answer1"></div>
+                  <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
+              </div>
+              <div class="answer custom-checkbox-control">
+                  <input id="checkbox2" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked2"></input>
+                  <label class="custom-checkbox" for="checkbox2"></label>
+                  <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer2" placeholder="Antwort #2" ng-model="quizmodule.answer2"></div>
+                  <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
+              </div>
+              <div class="answer custom-checkbox-control">
+                  <input id="checkbox3" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked3"></input>
+                  <label class="custom-checkbox" for="checkbox3"></label>
+                  <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer3" placeholder="Antwort #3" ng-model="quizmodule.answer3"></div>
+                  <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
+              </div>
+              <div class="answer custom-checkbox-control">
+                  <input id="checkbox4" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked4"></input>
+                  <label class="custom-checkbox" for="checkbox4"></label>
+                  <div class="checkbox-label"><input type="text" class="form-control" id="quizAnswer4" placeholder="Antwort #4" ng-model="quizmodule.answer4"></div>
+                  <a href="#" class="answer-remove"><i class="icon icon-remove"></i></a>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Quiz-Theme wählen</label>
+              <select class="form-control" ng-model="quizmodule.theme">
+                <option value="classic" selected>Klassisch</option>
+                <option value="jackattack">Jack-Attack</option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <h4>
+                Gebe deinen Teilnehmern Tipps zum weiterkommen
+                <small class="hint">(wir empfehlen alle 3 Tipps anzugeben)</small>
+              </h4>
+              <div class="hint-wrapper">
+                <div class="hint-counter">1</div>
+                <div class="hint-text"><input type="text" class="form-control" id="quizHint1" placeholder="Tipp #1" ng-model="quizmodule.hint1"></div>
+              </div>
+              <div class="hint-wrapper">
+                <div class="hint-counter">2</div>
+                <div class="hint-text"><input type="text" class="form-control" id="quizHint2" placeholder="Tipp #2" ng-model="quizmodule.hint2"></div>
+              </div>
+              <div class="hint-wrapper">
+                <div class="hint-counter">3</div>
+                <div class="hint-text"><input type="text" class="form-control" id="quizHint3" placeholder="Tipp #3" ng-model="quizmodule.hint3"></div>
+              </div>
             </div>
 
             <div class="form-group form-actions">

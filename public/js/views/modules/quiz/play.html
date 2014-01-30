@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<h3> Tipps</h3>
+<h3 class="hints-title hidden"> Tipps</h3>
 <div ng-repeat="hint in moduleData.hints" >
     <div class="hint-wrapper filled hidden" id="hint{{$index}}">
         <div class="hint-counter">{{$index+1}}</div>
@@ -46,8 +46,8 @@
     <a class="btn btn-default btn-link pull-left" href="#/player/course/{{courseId}}"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
 
 
-    <a class="btn btn-primary" ng-controller="QuizModulePlayController" ng-click="testInput()" ng-show="!test_complete">Eingabe prüfen<i class="fa fa-angle-right"></i></a>
-    <a class="btn btn-primary hidden" id="continue_btn" href="#/{{nextLink}}">Weiter <i class="fa fa-angle-right"></i></a>
+    <a class="btn btn-primary pull-right" ng-controller="QuizModulePlayController" ng-click="testInput()" ng-show="!test_complete">Eingabe prüfen<i class="fa fa-angle-right"></i></a>
+    <a class="btn btn-primary hidden pull-right" id="continue_btn" href="#/{{nextLink}}">Weiter <i class="fa fa-angle-right"></i></a>
 
     <a class="btn btn-link pull-right" href="javascript:;" data-toggle="modal" data-target="#chapter-completed">Beenden</a>
 </div>

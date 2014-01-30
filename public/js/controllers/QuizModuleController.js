@@ -214,6 +214,7 @@ CourseEditor.controller('QuizModulePlayController',
         $scope.test_complete = true;
         $('#continue_btn').removeClass('hidden');
       } else {
+        $(".hints-title").removeClass('hidden');
         $("#hint"+$wrongAnswer).removeClass('hidden');
         $wrongAnswer++;
       }
