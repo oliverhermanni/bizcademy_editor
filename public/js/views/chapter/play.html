@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row" id="content">
+    <div class="col-md-9">
+      <div class="well">
+        <h2>{{ chapter.title }}</h2>
+            <p class="description" ng-model="description" ng-bind-html="to_trusted(chapter.summary)">
+              {{ chapter.summary }}
+            </p>
+          </div>
+          <div class="speech-bubble right-handed">
+            <img src="img/dirtydieter.jpg" class="avatar avatar-md">
+            <div class="bubble col-md-6">
+              {{chapter.advice}}
+            </div>
+          </div>
+          
+          <div ng-hide="player">
+						<h3>Kapitel-Einstellungen</h3>
+						<div class="settings-control">
+							<div class="onoffswitch pull-left">
+								<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+								<label class="onoffswitch-label" for="myonoffswitch">
+									<div class="onoffswitch-inner"></div>
+									<div class="onoffswitch-switch"></div>
+								</label>
+							</div>
+						</div>
+          </div>
+
+          <div class="chapter-actions">
+            <a class="btn btn-primary" href="#/player/{{modules.0.module_type}}/{{course.id}}/{{chapter.id}}/{{modules.0.id}}">Kapitel starten<i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3 course-nav-container">
+          <div class="row">
+            <div class="course-navigation" ng-include src="'js/views/partials/sidebar.html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="type-chooser" tabindex="-1" role="dialog" aria-labelledby="typeChooserLabel" aria-hidden="true" ng-include src="'js/views/partials/type-chooser.html'">
+</div>
