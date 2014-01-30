@@ -1,8 +1,4 @@
-.chapter-step,
-.list-group-item.chapter-step:first-child {
-  border-radius: 0;  
-}
-.chapter-step {
+.chapter-steps-item {
   .clearfix;
   .transition(.2s);
   position: relative;
@@ -11,7 +7,33 @@
   border-bottom: 1px solid @gray-lighter;
   margin-bottom: 0;
   padding-right: 0;
-  padding-left: @xl-space;
+  padding-left: @xl-space;  
+}
+
+.chapter-step,
+.list-group-item.chapter-step:first-child {
+  border-radius: 0;  
+}
+.new-chapter-step {
+  .chapter-steps-item;
+  border-bottom: none;
+  i.icon {
+    line-height: 2em;
+    width: 2em;
+    text-align: center;
+    position: relative;
+    color: @brand-info;
+    margin: 0 31px 0 11px;
+    line-height: @font-size-base * 2;    
+  }
+  a.btn {
+    padding-left: 0;
+    padding-right: 0;
+    color: @brand-info;
+  }
+}
+.chapter-step {
+  .chapter-steps-item;
   &:hover {
     background: #f6f6f6;
     .step-remove {
