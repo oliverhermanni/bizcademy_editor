@@ -91,10 +91,10 @@
 					*/
 					switch (params.view) {
 						case 'course': 
-							return 'js/views/course/show.html';
+							return 'js/views/course/play.html';
 							break;
 						case 'chapter':
-							return 'js/views/chapter/show.html';
+							return 'js/views/chapter/play.html';
 							break;
 						case 'text':
 							return 'js/views/modules/play.html';
@@ -103,7 +103,7 @@
 							return 'js/views/modules/play.html';
 							break;
 						default: 
-							return 'js/views/course/index.html';
+							return 'js/views/course/play_index.html';
 					}
         }
       })
