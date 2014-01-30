@@ -32,10 +32,13 @@
       width: 49%;
       float: left;
       .type-hint {
-        color: @belize-hole;
+        color: darken(@belize-hole,10%);
       }
       &:hover {
         background: @belize-hole;
+        .type-hint {
+          color: white;
+        }
       }
     }
     &.game-type {
@@ -43,10 +46,13 @@
       width: 49%;
       float: right;
       .type-hint {
-        color: @nephritis;
+        color: darken(@nephritis,10%);
       }
       &:hover {
         background: @nephritis;
+        .type-hint {
+          color: white;
+        }
       }
     }
     .type-hint {
