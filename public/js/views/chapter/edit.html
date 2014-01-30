@@ -7,15 +7,15 @@
           <h2>Kapitel {{ currentTask }} </h2>
           <form name="addChapter" role="form">
             <div class="form-group">
-              <label for="chapterTitle">Überschrift</label>
+              <label for="chapterTitle">Wie lautet der Name für dieses Kapitel?</label>
               <input type="text" class="form-control" id="chapterTitle" placeholder="Überschrift" ng-model="chapter.title">
             </div>
             <div class="form-group">
-              <label for="chapterSummary">Zusammenfassung</label>
+              <label for="chapterSummary">Was werden die Teilnehmer in diesem Kapitel lernen können?</label>
               <div rich-text-editor></div>
             </div>
             <div class="form-group">
-              <label for="chapterAdvice">Zusätzlicher Rat für den Benutzer</label>
+              <label for="chapterAdvice">Ergänze hier einen persönlichen Hinweis für die Teilnehmer</label>
               <textarea id="chapterAdvice" class="form-control" placeholder="Rat"
                         ng-model="chapter.advice"></textarea>
             </div>

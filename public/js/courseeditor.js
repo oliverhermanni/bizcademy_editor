@@ -139,7 +139,7 @@ CourseEditor.directive('richTextEditor', function() {
       $scope.editor = $(elem).summernote({
         height: 300,
         toolbar: [
-            //['style', ['style']], // no style button , 'clear'
+            ['style', ['clear']], // no style button , 'clear'
             ['style', ['bold', 'italic', 'underline']],
             // ['fontsize', ['fontsize']],
             // ['color', ['color']],
