@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row" id="content">
+    <div class="activity-barometer" ng-include src="'js/views/partials/activity-barometer.html'"></div>
 
     <div class="col-md-9">
       <div class="row">
@@ -12,14 +13,14 @@
             </div>
 
               <div class="form-group">
-                  <label for="quizTitle">Frage</label>
-                  <input type="text" class="form-control" id="quizQuestion" placeholder="Frage" ng-model="quizmodule.question">
+                  <label for="quizTitle">Stelle hier deine Frage an die Teilnehmer</label>
+                  <input type="text" class="form-control" id="quizQuestion" placeholder="Warum ist es so wie es ist?" ng-model="quizmodule.question">
               </div>
 
               <div class="form-group">
                   <h4>
-                      Antworten
-                      <small class="hint">(Gib hier die möglichen Antworten ein und markiere jeweils die richtigen)</small>
+                      Gib hier die möglichen Antworten ein
+                      <small class="hint">(Markiere jeweils die richtigen)</small>
                   </h4>
                   <div class="answer custom-checkbox-control">
                       <input id="checkbox1" class="hidden" type="checkbox" value="" ng-model="quizmodule.checked1"></input>
@@ -58,7 +59,7 @@
 
               <div class="form-group">
                   <h4>
-                      Tipps
+                      Gebe deinen Teilnehmern Tipps zum weiterkommen
                       <small class="hint">(wir empfehlen alle 3 Tipps anzugeben)</small>
                   </h4>
                   <div class="hint-wrapper">
@@ -76,11 +77,11 @@
               </div>
 
             <div class="form-group">
-              <label for="quizSummary">Text <small>(optional)</small></label>
+              <label for="quizSummary">Erkläre oder Beschreibe dein Spiel<small class="hint">(optional)</small></label>
               <div rich-text-editor></div>
             </div>
             <div class="form-group">
-              <label for="quizAdvice">Zusätzlicher Rat für den Benutzer</label>
+              <label for="quizAdvice">Ergänze hier einen persönlichen Hinweis für die Kursteilnehmer</label>
               <textarea id="quizAdvice" class="form-control" placeholder="Rat"
                         ng-model="quizmodule.advice"></textarea>
             </div>

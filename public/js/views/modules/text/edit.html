@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row" id="content">
+    <div class="activity-barometer" ng-include src="'js/views/partials/activity-barometer.html'"></div>
 
     <div class="col-md-9">
       <div class="row">
@@ -7,11 +8,11 @@
           <h2>Textmodul</h2>
           <form name="addChapter" role="form">
             <div class="form-group">
-              <label for="chapterTitle">Überschrift</label>
+              <label for="chapterTitle">Wie lautet die Überschrift für diesen Schritt?</label>
               <input type="text" class="form-control" id="chapterTitle" placeholder="Überschrift" ng-model="textmodule.title">
             </div>
             <div class="form-group">
-              <label for="chapterSummary">Text</label>
+              <label for="chapterSummary">Beschreibe oder erkläre hier die Aufgabe</label>
               <div rich-text-editor></div>
             </div>
             <div class="form-actions">
