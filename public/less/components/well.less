@@ -3,10 +3,10 @@
   background: white;
   border-radius: @border-radius-base;
   border: none;
-  padding: @l-space @xl-space;
+  padding: @xl-space @xl-space @xl-space + @s-space;
   position: relative;
   > h2 {
-    margin: @l-space 0 @l-space;
+    margin: 0 0 @l-space;
   }
   &.inverse {
     background: @belize-hole;
@@ -14,6 +14,27 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+  .btn-group-controls {
+    .transition(.3s);
+    position: absolute;
+    top: @xl-space;
+    right: 0;
+    width: @font-size-middle * 2;
+    height: @font-size-middle * 2;
+    opacity: 0;
+    font-size: @font-size-middle;
+    .btn {
+      color: @basic-grey;
+      &:hover {
+        color: @gray;
+      }
+    }
+  }
+  &:hover .btn-group-controls {
+    right: @xl-space;
+    opacity: 1;
+  }
+  
 }
 
 .description {
