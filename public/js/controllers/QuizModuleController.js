@@ -212,8 +212,10 @@ CourseEditor.controller('QuizModulePlayController',
 
       if (a == b) {
         $scope.test_complete = true;
+        $('.answer-validation').removeClass('wrong').addClass('correct');
         $('#continue_btn').removeClass('hidden');
       } else {
+        $('.answer-validation').addClass('wrong');
         $(".hints-title").removeClass('hidden');
         $("#hint"+$wrongAnswer).removeClass('hidden');
         $wrongAnswer++;

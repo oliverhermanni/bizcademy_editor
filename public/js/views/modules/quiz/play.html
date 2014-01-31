@@ -1,7 +1,7 @@
 <div class="well">
-    <h2>{{ moduleData.title }}</h2>
+    <!-- <h2>{{ moduleData.title }}</h2> -->
 
-    <h3>{{moduleData.question}}</h3>
+    <h2>{{moduleData.question}}</h2>
     <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
         {{ moduleData.summary }}
     </p>
@@ -23,15 +23,19 @@
 
 
 <h3 class="headline-with-dropdown">
-    <span class="pull-left">Quiz-Module</span>
+    <span class="pull-left">Quiz-Modul</span>
 </h3>
-<div>
-    <div class="answer custom-checkbox-control" ng-repeat="answer in moduleData.answers">
+<div class="answer custom-checkbox-control" ng-repeat="answer in moduleData.answers">
 
-        <input id="checkbox{{$index}}" class="hidden" type="checkbox" value="" ng-model="my_answer.checked"></input>
-        <label class="custom-checkbox" for="checkbox{{$index}}"></label>
-        <div class="checkbox-label">{{answer.answer}}</div>
-    </div>
+    <input id="checkbox{{$index}}" class="hidden" type="checkbox" value="" ng-model="my_answer.checked"></input>
+    <label class="custom-checkbox" for="checkbox{{$index}}"></label>
+    <div class="checkbox-label">{{answer.answer}}</div>
+</div>
+
+<div class="answer-validation">
+  <i class="icon icon-valid-answer"></i>
+  <span class="answer-correct-text">Sehr gut! Du hast richtig geantwortet.</span>
+  <span class="answer-wrong-text">Schade! Versuch es bitte noch einmal.</span>
 </div>
 
 <h3 class="hints-title hidden"> Tipps</h3>

@@ -34,3 +34,39 @@
     margin-bottom: @xl-space;
   }
 }
+
+.answer-validation {
+  font-size: @font-size-middle;
+  font-family: @font-family-decorative;
+  padding: @l-space;
+  color: white;
+  width: 100%;
+  display: none;
+  position: relative;
+  margin-top: @xl-space + @m-space;
+  i.icon { margin-right: @m-space; }
+  &:after {
+    left: 14px;
+    top: -@xl-space;
+    border: solid transparent;
+    border-width: @m-space;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  &.correct, &.wrong { display: block; }
+  &.correct {
+    background: @emerald;
+    &:after { border-bottom-color: @emerald; }
+    i.icon-valid-answer:before { content: "\e370"; }
+    .answer-wrong-text { display: none; }
+  }
+  &.wrong {
+    background: @alizarin;
+    &:after { border-bottom-color: @alizarin; }
+    i.icon-valid-answer:before { content: "\e36d"; }
+    .answer-correct-text { display: none; }
+  }
+}
