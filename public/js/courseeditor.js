@@ -113,7 +113,7 @@
 };
 
 
-var CourseEditor = angular.module('CourseEditor', ['ngRoute', 'ngSanitize'],
+var CourseEditor = angular.module('CourseEditor', ['ngRoute', 'ngSanitize','ngTruncate','ngPlaintext'],
   function($locationProvider) {
     $locationProvider.hashPrefix('');
   })

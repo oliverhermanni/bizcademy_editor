@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row" id="content">
 
-    <div class="col-md-12">
+    <div class="col-md-10 col-xs-12">
       <h2>Meine Kurse</h2>
-      <div ng-repeat="course in courses" >
-        <div class="well well-sm clearfix">
-            <h4>
-                {{course.title}}
 
-            </h4>
-          <p ng-bind-html="to_trusted(course.summary)">
-            {{course.summary}}
-          </p>
-          <a href="#/player/course/{{course.id}}/{{chapters.0.id}}" class="btn btn-primary pull-right">Starte den Kurs</a>
+      <div class="my_courses" ng-repeat="course in courses">
+        <div class="well course">
+          <div class="course-header col-md-4 pull-left">123</div>
+          <div class="pull-left col-md-8">
+            <h3>{{course.title}}</h3>
+            <p>{{ course.summary | htmlToPlaintext | truncate:true:250:' ...'}}</p>
+            <a href="#/player/course/{{course.id}}/{{chapters.0.id}}" class="btn btn-primary pull-right">Starte den Kurs</a>              
+          </div>
         </div>
       </div>
     </div>
