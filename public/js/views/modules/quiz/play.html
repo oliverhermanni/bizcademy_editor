@@ -33,9 +33,21 @@
 </div>
 
 <div class="answer-validation">
-  <i class="icon icon-valid-answer"></i>
-  <span class="answer-correct-text">Sehr gut! Du hast richtig geantwortet.</span>
-  <span class="answer-wrong-text">Schade! Versuch es bitte noch einmal.</span>
+  <div class="answer-correct-text">
+    <span class="pull-left">
+      <i class="icon icon-checkmark"></i>
+      Sehr gut! Du hast richtig geantwortet.
+    </span>
+    <a class="btn btn-inverse hidden pull-right" id="continue_btn" href="#/{{nextLink}}">Weiter <i class="fa fa-angle-right"></i></a>
+  </div>
+  <div class="answer-wrong-text">
+    <span class="pull-left">
+      <i class="icon icon-close"></i>
+      Schade! Versuch es bitte noch einmal.
+    </span>
+    <a href="javascript:;" class="btn btn-inverse pull-right" ng-controller="QuizModulePlayController" ng-click="testInput()" ng-show="!test_complete">Eingabe prüfen</a>
+    <a href="javascript:;" class="btn btn-link pull-right">Tipp anzeigen</a>
+  </div>
 </div>
 
 <h3 class="hints-title hidden"> Tipps</h3>

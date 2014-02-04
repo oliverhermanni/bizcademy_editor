@@ -56,17 +56,27 @@
     position: absolute;
     z-index: 1;
   }
-  &.correct, &.wrong { display: block; }
+  a.btn-link { 
+    color: white; 
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.correct, &.wrong { 
+    display: block; 
+  }
+  .answer-wrong-text, .answer-correct-text {
+    .clearfix;
+    > span { line-height: 34px; }
+  }
   &.correct {
     background: @emerald;
     &:after { border-bottom-color: @emerald; }
-    i.icon-valid-answer:before { content: "\e370"; }
     .answer-wrong-text { display: none; }
   }
   &.wrong {
     background: @alizarin;
     &:after { border-bottom-color: @alizarin; }
-    i.icon-valid-answer:before { content: "\e36d"; }
     .answer-correct-text { display: none; }
   }
 }
