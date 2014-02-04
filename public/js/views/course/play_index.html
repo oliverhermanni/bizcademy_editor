@@ -5,12 +5,49 @@
       <h2>Meine Kurse</h2>
 
       <div class="my_courses" ng-repeat="course in courses">
-        <div class="well course">
-          <div class="course-header col-md-4 pull-left">123</div>
+        <div class="well course" id="course-{{course.id}}">
+          <div class="course-header col-md-4 pull-left">
+            <div class="course-header-icon">
+              <i class="icon icon-numbered-list"></i>
+            </div>
+            <div class="course-category">
+              Online-Marketing
+            </div>
+          </div>
           <div class="pull-left col-md-8">
             <h3>{{course.title}}</h3>
-            <p>{{ course.summary | htmlToPlaintext | truncate:true:250:' ...'}}</p>
-            <a href="#/player/course/{{course.id}}/{{chapters.0.id}}" class="btn btn-primary pull-right">Starte den Kurs</a>              
+            <p class="course-summary">{{ course.summary | htmlToPlaintext | truncate:true:250:' ...'}}</p>
+            <div class="row course-progress">
+              <div class="col-md-8">
+                <span class="label progress-label pull-left" ng-show="player">Fortschritt:</span>
+                <div class="progress" ng-show="player">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+                    <span>25%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <a href="#/player/course/{{course.id}}/{{chapters.0.id}}" class="btn btn-success pull-right">Starte den Kurs</a>
+              </div>
+            </div>
+            <div class="course-metadata">
+              <div class="course-autor pull-left">
+                <img src="img/hendric.png" class="avatar avatar-sm">
+                Hendric Rüsch
+              </div>
+              <div class="course-data pull-left">
+                <i class="icon icon-calendar4"></i>
+                21.10.2013
+              </div>
+              <div class="course-data pull-right">
+                <i class="icon icon-reading"></i>
+                66
+              </div>
+              <div class="course-data pull-right">
+                <i class="icon icon-star6"></i>
+                4.5
+              </div>
+            </div>
           </div>
         </div>
       </div>

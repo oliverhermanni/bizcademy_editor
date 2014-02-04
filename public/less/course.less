@@ -216,12 +216,79 @@
   }
 }
 
+#course-1 .course-header { background-color: @peter-river; }
+#course-2 .course-header { 
+  background-color: @emerald; 
+}
+#course-3 .course-header { background-color: @amethyst; }
+#course-4 .course-header { background-color: @wet-asphalt; }
+#course-5 .course-header { background-color: @sun-flower; }
+#course-6 .course-header { 
+  background-color: @alizarin; 
+  .course-header-icon i.icon.icon-numbered-list:before {
+  	content: "\e1ff";
+  }
+}
+
 .my_courses {
-  .well.course {
+  .course {
     .clearfix;
     padding: 0;
     .course-header {
-      background:red;height:100px;margin:0px;
+      min-height: 43px; 
+      margin:0px;
+      text-align: center;
+      .course-header-icon {
+        height: 218px;
+        margin: 0 auto;
+        color: white;
+        line-height: 218px;
+        padding-top: @l-space * 2;
+        i.icon {
+          line-height: 2em;
+          font-size: 4em;
+          border-radius: 50%;
+          border: 2px solid white;
+          width: 2em;
+          display: block;
+          margin: 0px auto;
+        }
+      }
+      .course-category {
+        line-height: 33px;
+        margin: 0 @l-space * -1;
+        padding: @s-space;
+        background-color: rgba(0,0,0,.2);
+        color: white;
+      }
+    }
+    .progress, .progress-label {
+      margin-top: @m-space;
+      margin-bottom: @m-space;
+    }
+    .course-summary {
+      margin-bottom: @xl-space;
+    }
+    .course-progress {
+      margin-bottom: @l-space;
+    }
+    .course-metadata {
+      .clearfix;
+      background-color: @gray-lightest;
+      margin-left: -15px;
+      margin-right: -16px;
+      padding: 5px 15px;
+      .course-data {
+        .icon { font-size: 1.25em; color: @basic-grey; position: relative; top: 2px; margin-right: @s-space; }
+        line-height: 2em;
+        margin-right: @xl-space;
+        &.pull-right { margin-right: 0; margin-left: @xl-space; }
+      }
+      .course-autor {
+        img { display: inline-block; margin-right: @m-space; }
+        margin-right: @xl-space;
+        line-height: 2em;
+      }
     }
   }
 }
