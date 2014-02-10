@@ -112,3 +112,40 @@
     margin-top: 120px;
   }
 }
+
+a.user-type-chooser {
+  .clearfix;
+  color: white;
+  margin-bottom: @xl-space;
+  display: inline-block;
+  > .icon {
+    .transition(all .2s ease-in);
+    color: white;
+    border-radius: 50%;
+    border: 2px solid white;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-size: 1.5em;
+    display: block;
+    float: left;
+    margin-right: @l-space;
+  }
+  > span {
+    float: left;
+    display: block;
+    text-align: left;
+    font-size: 0.875em;
+    width: 65%;
+    padding: 7px 0;
+  }
+  &.lerner:hover > .icon {
+    color: @emerald;
+    border-color: @emerald;
+  }
+  &.expert:hover > .icon {
+    color: @gray-dark;
+    border-color: @gray-dark;
+  }
+}
