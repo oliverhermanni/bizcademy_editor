@@ -253,12 +253,14 @@
       min-height: 43px; 
       margin:0px;
       text-align: center;
+      position: relative;
+      top: 0;
+      bottom: 0;
       .course-header-icon {
-        height: 218px;
-        margin: 0 auto;
+        margin: @l-space * 2 auto;
         color: white;
         line-height: 218px;
-        padding-top: @l-space * 2;
+        display: none;
         i.icon {
           line-height: 2em;
           font-size: 4em;
@@ -270,8 +272,11 @@
         }
       }
       .course-category {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         line-height: 33px;
-        margin: 0 @l-space * -1;
         padding: @s-space;
         background-color: rgba(0,0,0,.2);
         color: white;
@@ -293,16 +298,33 @@
       margin-left: -15px;
       margin-right: -16px;
       padding: 5px 15px;
-      .course-data {
-        .icon { font-size: 1.25em; color: @basic-grey; position: relative; top: 2px; margin-right: @s-space; }
+      .course-data, .course-autor {
         line-height: 2em;
         margin-right: @xl-space;
-        &.pull-right { margin-right: 0; margin-left: @xl-space; }
+      }
+      .course-data {
+        .icon { 
+          font-size: 1.25em; 
+          color: @basic-grey; 
+          position: relative; 
+          top: 2px; 
+          margin-right: @s-space; 
+        }
+        &.pull-right { 
+          margin-right: 0; 
+          margin-left: @xl-space; 
+        }
       }
       .course-autor {
-        img { display: inline-block; margin-right: @m-space; }
-        margin-right: @xl-space;
-        line-height: 2em;
+        .one-line-text;
+        width: 100%;
+        border-bottom: 1px solid @gray-lighter;
+        margin-bottom: @s-space;
+        padding-bottom: @s-space;
+        img { 
+          display: inline-block; 
+          margin-right: @m-space; 
+        }
       }
     }
   }
