@@ -7,7 +7,7 @@
 }
 .profiling-steps {
   position: relative;
-  min-height: 1100px;
+  min-height: 1900px;
   &.finished {
     min-height: 1880px;    
   }
@@ -17,7 +17,8 @@
   }
   .profiling-title {
     text-align: center;
-    margin: 1em 0 2em;
+    margin: 0 0 2em;
+    font-size: 1.75em;
   }
   .progress {
     background: white;
@@ -37,16 +38,17 @@
     background: white;
     border-radius: @border-radius-base;
     border: none;
-    padding: @xl-space;
+    padding: @xl-space @m-space;
     position: relative;
     text-align: center;
     color: @gray;
     font-size: @font-size-middle;
     display: block;
     overflow: hidden;
+    min-height: 177px;
     &:after {
-      width: 48px;
-      height: 48px;
+      width: 36px;
+      height: 36px;
       background: @emerald;
       position: absolute;
       bottom: -10px;
@@ -55,7 +57,7 @@
       font-family: 'bizcademy-icons';
       color: white;
       border-radius: @border-radius-base;
-      font-size: @font-size-middle;
+      font-size: 0.75em;
       text-indent: -@m-space;
       padding-top: 3px;
       display: none;
@@ -71,12 +73,11 @@
       .answer-text { color: @gray-dark; }
     }
     i.icon {
-      font-size: 6em;
+      font-size: 4em;
       width: 100%;
       line-height: 1em;
       display: block;
-      margin-top: @l-space * 2;
-      margin-bottom: @l-space * 2;
+      margin-bottom: @xl-space;
       color: @gray-lighter;
     }
     &:first-child {
@@ -90,8 +91,8 @@
     }
     .answer-text {
       display: block;
-      margin-bottom: @l-space;
       min-height: (@line-height-base * @font-size-middle) * 2;
+      font-size: 0.75em;
     }
   }
   .step .well {
@@ -108,11 +109,8 @@
       border-top: 1px solid @gray-lightest;
       margin-bottom: 0;
       margin-top: @l-space * 2;
-      a.btn-link {
-        color: @gray-light;
-        &:hover {
-          color: @gray-dark;
-        }
+      a.btn-lg {
+        font-size: 1.125em;
       }
     }
   }

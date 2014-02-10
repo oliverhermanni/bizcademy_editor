@@ -142,7 +142,7 @@
       </h2>
       <div class="row">
         <div class="col-md-8 col-md-push-2">
-          <form class="form-rating" role="form">
+          <form class="form-rating col-md-12" role="form">
             <div class="form-group">
               <label for="exampleInputPassword1">1. Dein Feedback</label>
               <textarea class="form-control" rows="6"></textarea>
@@ -156,7 +156,9 @@
                 <i class="icon icon-star3"></i>
                 <i class="icon icon-star3"></i>
               </div>
-              <button type="submit" class="btn btn-lg btn-primary pull-right">Feedback absenden</button>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-lg btn-primary">Feedback absenden</button>              
             </div>
           </form>
         </div>
@@ -167,14 +169,12 @@
 
 <div id="course-recommendation" class="container-wrapper">
   <div class="container">
-    <div class="row">
-      <i class="icon icon-library icon-section-divider"></i>
-      <h2>
-        Wie geht's weiter?
-        <br />
-        <small class="muted">Wir empfehlen Dir zur weiteren Fortbildung diese 3 beispielhaften Kurse</small>
-      </h2>
-      <div class="row" ng-include src="'js/views/partials/course-recommendations.html'"></div>
-    </div>
+    <i class="icon icon-library icon-section-divider"></i>
+    <h2>
+      Wie geht's weiter?
+      <br />
+      <small class="muted">Wir empfehlen Dir zur weiteren Fortbildung diese 3 beispielhaften Kurse</small>
+    </h2>
+    <div class="row" ng-include src="'js/views/partials/course-recommendations.html'"></div>
   </div>
 </div>

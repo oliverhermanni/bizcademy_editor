@@ -47,8 +47,38 @@
 
 
 @media (min-width: @screen-sm-min) {
+  body {
+    font-size: @font-size-base;
+  }
+  .navbar-default .navbar-brand {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .author-name {
+    width: 60%;
+  }
   .profiling-steps {
     min-height: 944px;
+    .profiling-title {
+      margin: 1em 0 2em;
+    }
+    .profiling-answer {
+      padding: @xl-space;
+      &:after {
+        width: 48px;
+        height: 48px;
+        font-size: 1em;
+      }
+      i.icon {
+        font-size: 6em;
+        margin-top: @l-space * 2;
+        margin-bottom: @l-space * 2;
+      }
+      .answer-text {
+        margin-bottom: @l-space;
+        font-size: 1em;
+      }    
+    }
   }
   .course-stats .stat-item {
     width: 16.666666666666664%;
