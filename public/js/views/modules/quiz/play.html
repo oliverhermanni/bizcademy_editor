@@ -32,7 +32,14 @@
     <div class="checkbox-label">{{answer.answer}}</div>
 </div>
 
-<div class="answer-validation">
+<div class="answer-validation first">
+  <div class="answer-first-text">
+    <span class="pull-left">
+      <i class="icon icon-question5"></i>
+     Bitte wähle die richtigen Antworten aus.
+    </span>
+      <a class="btn btn-inverse pull-right" ng-controller="QuizModulePlayController" ng-click="testInput()" ng-show="!test_complete">Eingabe prüfen</a>
+  </div>
   <div class="answer-correct-text">
     <span class="pull-left">
       <i class="icon icon-checkmark"></i>
@@ -45,8 +52,8 @@
       <i class="icon icon-close"></i>
       Schade! Versuch es bitte noch einmal.
     </span>
-    <a href="javascript:;" class="btn btn-inverse pull-right" ng-controller="QuizModulePlayController" ng-click="testInput()" ng-show="!test_complete">Eingabe prüfen</a>
-    <a href="javascript:;" class="btn btn-link pull-right">Tipp anzeigen</a>
+    <a class="btn btn-inverse pull-right" ng-controller="QuizModulePlayController" ng-click="testInput()" ng-show="!test_complete">Eingabe prüfen</a>
+    <a ng-controller="QuizModulePlayController" ng-click="showHint()" class="btn btn-link pull-right">Tipp anzeigen</a>
   </div>
 </div>
 
@@ -60,10 +67,5 @@
 
 <div class="chapter-actions">
     <a class="btn btn-default btn-link pull-left" href="#/player/course/{{courseId}}"><i class="fa fa-angle-left"></i> Zurück zum Kurs</a>
-
-
-    <a class="btn btn-primary pull-right" ng-controller="QuizModulePlayController" ng-click="testInput()" ng-show="!test_complete">Eingabe prüfen<i class="fa fa-angle-right"></i></a>
-    <a class="btn btn-primary hidden pull-right" id="continue_btn" href="#/{{nextLink}}">Weiter <i class="fa fa-angle-right"></i></a>
-
     <a class="btn btn-link pull-right" href="javascript:;" data-toggle="modal" data-target="#chapter-completed">Beenden</a>
 </div>
