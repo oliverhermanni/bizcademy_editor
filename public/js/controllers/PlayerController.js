@@ -14,6 +14,9 @@ CourseEditor.controller('PlayerController',
 		var courseId, course, courses,
 				chapter, chapters,
 				modules;
+
+    /* Course is not completed in the beginning */
+    $scope.chapter_completed = false;
 		
 		/* Default Scope Variables */ 
 		$scope.player 	= true;		
@@ -157,7 +160,7 @@ CourseEditor.controller('PlayerController',
 							$scope.nextLink = null;
 						} else {
               $scope.chapter_completed = true;
-							$scope.nextLink = '/player/course/' + $routeParams.courseId;
+							$scope.nextLink = 'player/course/' + $routeParams.courseId;
 						}
 					} else {
 						$scope.nextLink = 'player/' + $scope.nextObj.module_type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.nextObj.id;
