@@ -1,16 +1,14 @@
 <div class="well">
+  <div class="btn-group btn-group-controls" ng-hide="player">    
+    <a class="btn btn-link btn-edit" href="#/chapter/{{moduleData.chapter_id}}/module/quiz/edit/{{moduleData.id}}" title="Quiz bearbeiten"><i class="icon icon-pencil3"></i></a>
+  </div>
+  
   <h2>{{ moduleData.title }}</h2>
 
   <h3>{{moduleData.question}}</h3>
     <p class="description" ng-bind-html="to_trusted(moduleData.summary)">
         {{ moduleData.summary }}
     </p>
-
-    <div ng-hide="player">
-        <a class="btn btn-primary" href="#/chapter/{{moduleData.chapter_id}}/module/quiz/edit/{{moduleData.id}}">Quiz bearbeiten</a>
-    </div>
-
-
 </div>
 
 <div class="speech-bubble right-handed">

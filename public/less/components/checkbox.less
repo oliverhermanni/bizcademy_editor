@@ -20,8 +20,8 @@
   .checkbox-label {
     .one-line-text;
     float: left;
-    padding: 13px @xl-space;
-    width: 90%;
+    padding: 11px @xl-space;
+    width: 80%;
     color: @gray;
   }
   label:after {
@@ -43,4 +43,10 @@
   input[type=checkbox]:checked + label:hover::after {
     color: @nephritis;
   } 
+}
+
+@media (min-width: @screen-sm-min) {
+  .custom-checkbox-control .checkbox-label {
+    width: 90%;
+  }
 }
