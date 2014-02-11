@@ -153,12 +153,11 @@ CourseEditor.controller('PlayerController',
 						$scope.currentChapter = getObjects($scope.chapters, 'id', $routeParams.chapterId)[0];
 						$scope.nextChapter = $scope.chapters[++$scope.currentChapter.index];
 						if(typeof $scope.nextChapter === 'undefined') { /* if Next Chapter isn't set then */
-							//$scope.nextLink = 'player/course/' + $scope.courseId;
               $scope.chapter_completed = true;
-              $scope.nextLink = null;
+							$scope.nextLink = null;
 						} else {
               $scope.chapter_completed = true;
-							$scope.nextLink = 'player/chapter/' + $routeParams.courseId + '/' + $scope.nextChapter.id;
+							$scope.nextLink = '/player/course/' + $routeParams.courseId;
 						}
 					} else {
 						$scope.nextLink = 'player/' + $scope.nextObj.module_type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.nextObj.id;
@@ -209,10 +208,10 @@ CourseEditor.controller('PlayerController',
     $scope.chapterFinished = function(courseId) {
       $('#chapter-completed').on('hide.bs.modal', function (e) {
         $('body').removeClass('modal-open');
-        if ($scope.nextLink === null) {
+        if ($scope.nextLink == null) {
           $location.path('/course/completed/');
         } else {
-          $location.path($scope.nextLink);
+          $location.path('/player/course/'+ $scope.courseId);
         }
       }).modal('hide');
     }
