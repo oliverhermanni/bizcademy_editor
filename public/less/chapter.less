@@ -6,6 +6,7 @@
   margin-bottom: 3em;
 }
 .chapter-actions {
+  .clearfix;
   text-align: right;
   margin-top: 3em;
   margin-bottom: 3em;
@@ -64,6 +65,12 @@
       padding-left: 0;
       padding-right: 0;
     }
+    .btn.btn-success,
+    .btn.btn-default {
+      margin-top: 6px;
+      display: block;
+      width: 100%;
+    }
   }
 }
 .chapter-insights {
@@ -75,12 +82,6 @@
   margin-bottom: (@m-space + @l-space) * -1;
   margin-left: @xl-space * -1;
   margin-right: @xl-space * -1;
-  .btn.btn-success,
-  .btn.btn-default {
-    margin-top: 6px;
-    display: block;
-    width: 100%;
-  }
   .btn-toggle-steps {
     .transition(.3s);
     font-size: 0.75em;

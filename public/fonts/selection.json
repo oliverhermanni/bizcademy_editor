@@ -1099,6 +1099,55 @@
 			},
 			"setIdx": 0,
 			"iconIdx": 648
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 0v1024h1024v-1024h-1024zM960 960h-896v-896h896v896zM768 224l-320 320-192-192-128 128 320 320 448-448-128-128z"
+				],
+				"tags": [
+					"checkbox-checked",
+					"tick",
+					"checked",
+					"selected"
+				],
+				"defaultCode": 58414,
+				"grid": 16
+			},
+			"properties": {
+				"id": 1070,
+				"order": 45,
+				"prevSize": 32,
+				"code": 58414,
+				"name": "checkbox-checked",
+				"ligatures": ""
+			},
+			"setIdx": 0,
+			"iconIdx": 1071
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 0v1024h1024v-1024h-1024zM960 960h-896v-896h896v896z"
+				],
+				"tags": [
+					"checkbox-unchecked",
+					"unchecked",
+					"square"
+				],
+				"defaultCode": 58415,
+				"grid": 16
+			},
+			"properties": {
+				"id": 1071,
+				"order": 46,
+				"prevSize": 32,
+				"code": 58415,
+				"name": "checkbox-unchecked",
+				"ligatures": ""
+			},
+			"setIdx": 0,
+			"iconIdx": 1072
 		}
 	],
 	"height": 1024,
