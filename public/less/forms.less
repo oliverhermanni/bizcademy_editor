@@ -42,7 +42,6 @@
   padding: @l-space;
   color: white;
   width: 100%;
-  display: none;
   position: relative;
   margin-top: @xl-space + @m-space;
   i.icon { margin-right: @m-space; }
@@ -63,21 +62,39 @@
       text-decoration: underline;
     }
   }
-  &.correct, &.wrong { 
+  &.correct, &.wrong, &.first {
     display: block; 
   }
   .answer-wrong-text, .answer-correct-text {
     .clearfix;
+    display: none;
     > span { line-height: 34px; }
+  }
+  .answer-first-text {
+    .clearfix;
+    > span { line-height: 34px; }
+  }
+  &.first {
+    background: white;
+    color: black;
+    &:after { border-bottom-color: @white; }
+    .answer-wrong-text { display: none; }
+    .answer-correct-text { display: none; }
   }
   &.correct {
     background: @emerald;
+    color: white;
     &:after { border-bottom-color: @emerald; }
+    .answer-correct-text { display: block; }
     .answer-wrong-text { display: none; }
+    .answer-first-text { display: none; }
   }
   &.wrong {
     background: @alizarin;
+    color: white;
     &:after { border-bottom-color: @alizarin; }
+    .answer-wrong-text { display: block; }
     .answer-correct-text { display: none; }
+    .answer-first-text { display: none; }
   }
 }

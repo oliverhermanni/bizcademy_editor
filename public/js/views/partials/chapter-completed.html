@@ -3,7 +3,7 @@
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       <h4 class="modal-title" id="chapterCompletedLabel">
-        Kapitel abgeschloßen!
+        Kapitel abgeschlossen!
       </h4>
     </div>
     <div class="modal-body">
@@ -37,7 +37,8 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-link pull-left btn-restart" data-dismiss="modal"><i class="icon icon-restart"></i> Restart</button>
-      <button type="button" class="btn btn-primary">Nächster Schritt</button>
+      <a class="btn btn-primary" id="continue_btn" ng-controller="PlayerController" ng-click="chapterFinished(courseId)">Nächster Schritt</a>
+
     </div>
   </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->

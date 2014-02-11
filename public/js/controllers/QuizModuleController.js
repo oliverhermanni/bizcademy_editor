@@ -181,6 +181,7 @@ CourseEditor.controller('QuizModuleEditController',
 CourseEditor.controller('QuizModulePlayController',
   function ($scope, $http, $location, $routeParams, QuizModuleModel) {
     var $wrongAnswer = 0;
+    $('.answer-validation').addClass('first');
 
     $scope.$on('$viewContentLoaded', function(){
       $(".custom-checkbox-control").click(function() {
@@ -193,6 +194,7 @@ CourseEditor.controller('QuizModulePlayController',
 
       var curr_answer;
       var right_answers = new Array();
+
       for (var i = 0; i < 4; i++) {
         curr_answer = JSON.stringify($scope.moduleData.answers[i]["checked"])
         if (!curr_answer) {
@@ -216,11 +218,13 @@ CourseEditor.controller('QuizModulePlayController',
         $('#continue_btn').removeClass('hidden');
       } else {
         $('.answer-validation').addClass('wrong');
-        $(".hints-title").removeClass('hidden');
-        $("#hint"+$wrongAnswer).removeClass('hidden');
-        $wrongAnswer++;
       }
+    }
 
+    $scope.showHint = function() {
+      $(".hints-title").removeClass('hidden');
+      $("#hint"+$wrongAnswer).removeClass('hidden');
+      $wrongAnswer++;
     }
   }
 );
