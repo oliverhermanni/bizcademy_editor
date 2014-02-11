@@ -68,7 +68,8 @@
           <ul id="chapter-{{chapter.id}}-steps" class="list-group chapter-steps collapse" ng-class="{in: $index+1 == 1}">
             <li class="list-group-item chapter-step {{module.module_type}}" ng-repeat="module in chapter.modules">
               <i class="step-status pull-left"></i>
-              <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
+              <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}" ng-hide="module.module_type == 'quiz'">{{module.title}}</a>
+                <a class="step-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}" ng-show="module.module_type == 'quiz'">{{module.question}}</a>
               <a href ng-click="deleteModule(chapter.id, module.id)" class="step-remove"><i class="icon icon-remove2"></i></a>
               <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
             </li>
