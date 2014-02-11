@@ -2,7 +2,13 @@
   <div class="row" id="content">
 
     <div class="col-md-12">
-      <h2>Meine Kurse</h2>
+      <h2>
+        Meine Kurse
+        <a href="#/course/add" class="btn btn-info pull-right" ng-hide="player">
+          <i class="icon icon-book2"></i>
+          Neuen Kurs erstellen
+        </a>
+      </h2>
       <div ng-repeat="course in courses" >
         <div class="well well-sm clearfix">
             <h4>
@@ -17,10 +23,6 @@
           <a href="#/player/course/{{course.id}}/{{chapters.0.id}}" class="btn btn-primary pull-right" ng-show="player">Starte den Kurs</a>
         </div>
       </div>
-      <a href="#/course/add" class="btn btn-primary btn-lg" ng-hide="player">
-        <i class="fa fa-lg fa-book"></i>
-        Neuen Kurs erstellen
-      </a>
     </div>
   </div>
 </div>

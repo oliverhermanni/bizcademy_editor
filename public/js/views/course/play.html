@@ -1,54 +1,16 @@
 <div id="content" class="container">
-  <div class="row course-overview">
-    <div class="col-md-9">
-      <div class="well">
-        <i class="icon icon-lamp course-icon hidden-xs"></i>
-        <h2>{{course.title}}</h2>
-        <p class="description" ng-bind-html="to_trusted(course.summary)">
-          {{course.summary}}
-        </p>          
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="course-stats">
-        <div class="category pull-left">
-          <span class="main-cat">Online-Marketing</span>
-          <span class="sub-cat">
-            <i class="icon icon-enter-alt"></i>
-            SEO-Kampagne
-          </span>
-        </div>
-        <hr class="clearfix" />
-        <div class="stat-item col-sm-2">
-          <i class="icon icon-book"></i>
-          <span ng-controller="ChaptersController" class="stat-count">{{chapters.length}}</span>
-          <span class="stat-label">Kapitel</span>
-        </div>
-        <div class="stat-item col-sm-3">
-          <i class="icon icon-medal"></i>
-          <span class="stat-count">4</span>
-          <span class="stat-label">Achievements</span>
-        </div>
-        <div class="stat-item col-sm-2">
-          <i class="fa fa-rocket"></i>
-          <span class="stat-count">2600</span>
-          <span class="stat-label">Punkte</span>
-        </div>
-        <div class="stat-item col-sm-3">
-          <i class="icon icon-meter-medium"></i>
-          <span class="stat-count">65%</span>
-          <span class="stat-label">Interaktion</span>
-        </div>
-        <div class="stat-item col-sm-2">
-          <i class="icon icon-alarm"></i>
-          <span class="stat-count">2:30</span>
-          <span class="stat-label">Dauer</span>
-        </div>        
-      </div>
-    </div>
-  </div>
   <div class="row">
     <div class="col-md-9">
+      <div class="course-overview">
+        <div class="well">
+          <i class="icon icon-lamp course-icon hidden-xs"></i>
+          <h2>{{course.title}}</h2>
+          <p class="description" ng-bind-html="to_trusted(course.summary)">
+            {{course.summary}}
+          </p>          
+        </div>
+      </div>
+
       <h3 ng-controller="ChaptersController">
         Kapitelübersicht <small ng-hide="!chapters.length">({{chapters.length}} Kapitel insgesamt)</small>
         <!-- <a class="btn btn-primary pull-right" ng-controller="CoursesController" href="#/course/{{course.id}}/chapter/add"><i class="icon icon-quill"></i> Neues Kapitel erstellen</a> -->
@@ -71,7 +33,10 @@
                 </div>
               </div>
               <div class="chapter-insights">
-                <button class="btn btn-link btn-toggle-steps" ng-class="{collapsed: $index+1 > 1}" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps"><i class="fa fa-bars"></i></button>
+                <button class="btn btn-link btn-toggle-steps" ng-class="{collapsed: $index+1 > 1}" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps">
+                  <i class="fa fa-bars"></i>
+                  Kapitel
+                </button>
                 <div class="insight-wrapper pull-left">
                   <i class="fa fa-rocket pull-left"></i>
                   <span class="count pull-left">3600</span>
@@ -109,6 +74,38 @@
     </div>
     <aside class="col-md-3">
       <div class="row">
+        <div class="course-stats">
+          <div class="category pull-left">
+            <span class="main-cat">Online-Marketing</span>
+          </div>
+          <hr class="clearfix" />
+          <div class="stat-item col-sm-2">
+            <i class="icon icon-book"></i>
+            <span ng-controller="ChaptersController" class="stat-count">{{chapters.length}}</span>
+            <span class="stat-label">Kapitel</span>
+          </div>
+          <div class="stat-item col-sm-3">
+            <i class="icon icon-medal"></i>
+            <span class="stat-count">4</span>
+            <span class="stat-label">Achievements</span>
+          </div>
+          <div class="stat-item col-sm-2">
+            <i class="fa fa-rocket"></i>
+            <span class="stat-count">2600</span>
+            <span class="stat-label">Punkte</span>
+          </div>
+          <div class="stat-item col-sm-3">
+            <i class="icon icon-meter-medium"></i>
+            <span class="stat-count">65%</span>
+            <span class="stat-label">Interaktion</span>
+          </div>
+          <div class="stat-item col-sm-2">
+            <i class="icon icon-alarm"></i>
+            <span class="stat-count">2:30</span>
+            <span class="stat-label">Dauer</span>
+          </div>        
+        </div>
+        
         <div class="col-md-12">
           <h3>Author</h3>
           <div class="author-vita speech-bubble top">

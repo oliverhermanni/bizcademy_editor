@@ -39,18 +39,18 @@
     border-radius: 50%;
     border: 2px solid @gray;
     color: @gray;
-    width: @font-size-middle * 3;
-    height: @font-size-middle * 3;
+    width: 60px;
+    height: 60px;
     position: absolute;
     left: @xl-space;
     top: @xl-space;
     text-align: center;
-    line-height: @font-size-middle * 2.5;
+    line-height: 1.5em;
     font-size: @font-size-middle * 2;
     font-weight: 300;
   }
   .chapter-details {
-    padding-left: @font-size-middle * 4;
+    padding-left: 84px;
     .description {
       margin-bottom: 2em;
     }
@@ -67,10 +67,10 @@
   .clearfix;
   position: relative;
   border-top: 1px solid @gray-lightest;
-  padding: 10px 20px 10px @font-size-middle * 4 + @l-space;
+  padding: 10px 20px 10px 104px;
   background: #f9f9f9;
   margin-bottom: (@m-space + @l-space) * -1;
-  margin-left: -92px;
+  margin-left: -104px;
   margin-right: @xl-space * -1;
   .btn.btn-success,
   .btn.btn-default {
@@ -81,10 +81,26 @@
     position: absolute;
     left: 25px;
     top: initial;
-    font-size: 21px;
-    color: @brand-primary;
+    font-size: 0.75em;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: @font-family-decorative;
+    color: @gray;
+    font-weight: 300;
+    text-transform: uppercase;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+    .fa, .icon {
+      color: @brand-primary;
+      display: block;
+      font-size: 21px;
+    }
     &.collapsed {
-      color: @gray-light;
+      color: @basic-grey;
+      .fa, .icon {
+        color: @gray;
+      }
       &:hover {
         color: @gray;
       }
