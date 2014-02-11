@@ -100,8 +100,10 @@
   }
   .item-drag-handle {
     color: @silver;
-    position: relative;
-    top: 2px;
+    position: absolute;
+    top: @m-space;
+    right: 0;
+    line-height: @font-size-base * 2;
     width: @font-size-base * 2;
     text-align: center;
     &:hover {
