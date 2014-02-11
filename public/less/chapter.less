@@ -50,9 +50,12 @@
     font-weight: 300;
   }
   .chapter-details {
-    padding-left: 84px;
     .description {
       margin-bottom: 2em;
+      .label {
+        display: block;
+        text-align: left;
+      }
     }
     span.label {
       color: @gray;
@@ -67,23 +70,22 @@
   .clearfix;
   position: relative;
   border-top: 1px solid @gray-lightest;
-  padding: 10px 20px 10px 104px;
+  padding: 10px 20px;
   background: #f9f9f9;
   margin-bottom: (@m-space + @l-space) * -1;
-  margin-left: -104px;
+  margin-left: @xl-space * -1;
   margin-right: @xl-space * -1;
   .btn.btn-success,
   .btn.btn-default {
     margin-top: 6px;
+    display: block;
+    width: 100%;
   }
   .btn-toggle-steps {
     .transition(.3s);
-    position: absolute;
-    left: 25px;
-    top: initial;
     font-size: 0.75em;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
+    margin-right: @l-space;
     font-family: @font-family-decorative;
     color: @gray;
     font-weight: 300;
@@ -108,29 +110,14 @@
   }
   .insight-wrapper {
     .clearfix;
-    padding-right: @xl-space;
-    margin-right: @l-space;
-    border-right: 1px solid @gray-lightest;
+    margin-right: @m-space;
     .fa, .icon, .count {
       margin-right: @m-space;
       color: @gray;
-    }
-    .fa, .icon {
-      font-size: 2.25em;
-      line-height: 1.3em;
-      &.icon-rocket {
-        // color: @brand-primary;
-      }
-      &.icon-medal {
-        // color: @turquoise;
-      }
-      &.icon-readers {
-        // color: @brand-secondary;
-      }
+      font-size: 1.125em;
+      line-height: 2.25em;
     }
     .count {
-      font-size: 1.25em;
-      line-height: 2.25em;
       font-weight: 300;
     }
     .type {

@@ -18,14 +18,14 @@
       <div class="chapters" ng-controller="ChaptersController">
         <div class="chapter" ng-repeat="chapter in chapters">
           <div class="well chapter-header">
-            <div class="chapter-count">
+            <div class="chapter-count hidden-xs">
               {{$index+1}}
             </div>
             <div class="chapter-details">
               <h4 class="chapter-title">{{chapter.title}}</h4>
               <div class="description">
                 <p ng-bind-html="to_trusted(chapter.summary)">{{chapter.summary}}</p>
-                <span class="label pull-left" ng-show="player">Gesamt-Fortschritt:</span>
+                <span class="label" ng-show="player">Gesamt-Fortschritt:</span>
                 <div class="progress" ng-show="player">
                   <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
                     <span>1/{{chapter.modules.length}}</span>
@@ -33,24 +33,24 @@
                 </div>
               </div>
               <div class="chapter-insights">
-                <button class="btn btn-link btn-toggle-steps" ng-class="{collapsed: $index+1 > 1}" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps">
+                <button class="btn btn-link btn-toggle-steps pull-left" ng-class="{collapsed: $index+1 > 1}" type="button" data-toggle="collapse" data-target="#chapter-{{chapter.id}}-steps">
                   <i class="fa fa-bars"></i>
-                  Kapitel
+                  Seiten
                 </button>
                 <div class="insight-wrapper pull-left">
                   <i class="fa fa-rocket pull-left"></i>
                   <span class="count pull-left">3600</span>
-                  <span class="type pull-left">Punkte</span>
+                  <span class="type hidden-xs pull-left">Punkte</span>
                 </div>
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-medal pull-left"></i>
                   <span class="count pull-left">4</span>
-                  <span class="type pull-left">Achievements</span>
+                  <span class="type hidden-xs pull-left">Achievements</span>
                 </div>
                 <div class="insight-wrapper pull-left">
                   <i class="icon icon-reading pull-left"></i>
                   <span class="count pull-left">43</span>
-                  <span class="type pull-left">Leser</span>
+                  <span class="type hidden-xs pull-left">Leser</span>
                 </div>
                 <a href="#/player/chapter/{{course.id}}/{{chapter.id}}" class="btn btn-success pull-right"><i class="icon icon-lamp2"></i> Kapitel starten</a>
               </div>
@@ -74,38 +74,41 @@
     </div>
     <aside class="col-md-3">
       <div class="row">
-        <div class="course-stats">
-          <div class="category pull-left">
-            <span class="main-cat">Online-Marketing</span>
+        <div class="col-md-12">
+          <div class="course-stats">
+            <div class="category pull-left">
+              <span class="main-cat">Online-Marketing</span>
+            </div>
+            <hr class="clearfix" />
+            <div class="stat-item col-sm-2">
+              <i class="icon icon-book"></i>
+              <span ng-controller="ChaptersController" class="stat-count">{{chapters.length}}</span>
+              <span class="stat-label">Kapitel</span>
+            </div>
+            <div class="stat-item col-sm-3">
+              <i class="icon icon-medal"></i>
+              <span class="stat-count">4</span>
+              <span class="stat-label">Achievements</span>
+            </div>
+            <div class="stat-item col-sm-2">
+              <i class="fa fa-rocket"></i>
+              <span class="stat-count">2600</span>
+              <span class="stat-label">Punkte</span>
+            </div>
+            <div class="stat-item col-sm-3">
+              <i class="icon icon-meter-medium"></i>
+              <span class="stat-count">65%</span>
+              <span class="stat-label">Interaktion</span>
+            </div>
+            <div class="stat-item col-sm-2">
+              <i class="icon icon-alarm"></i>
+              <span class="stat-count">2:30</span>
+              <span class="stat-label">Dauer</span>
+            </div>        
           </div>
-          <hr class="clearfix" />
-          <div class="stat-item col-sm-2">
-            <i class="icon icon-book"></i>
-            <span ng-controller="ChaptersController" class="stat-count">{{chapters.length}}</span>
-            <span class="stat-label">Kapitel</span>
-          </div>
-          <div class="stat-item col-sm-3">
-            <i class="icon icon-medal"></i>
-            <span class="stat-count">4</span>
-            <span class="stat-label">Achievements</span>
-          </div>
-          <div class="stat-item col-sm-2">
-            <i class="fa fa-rocket"></i>
-            <span class="stat-count">2600</span>
-            <span class="stat-label">Punkte</span>
-          </div>
-          <div class="stat-item col-sm-3">
-            <i class="icon icon-meter-medium"></i>
-            <span class="stat-count">65%</span>
-            <span class="stat-label">Interaktion</span>
-          </div>
-          <div class="stat-item col-sm-2">
-            <i class="icon icon-alarm"></i>
-            <span class="stat-count">2:30</span>
-            <span class="stat-label">Dauer</span>
-          </div>        
-        </div>
-        
+        </div>          
+      </div>
+      <div class="row">        
         <div class="col-md-12">
           <h3>Author</h3>
           <div class="author-vita speech-bubble top">
