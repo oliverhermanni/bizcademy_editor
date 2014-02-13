@@ -2,16 +2,16 @@
 <ul class="list-group chapters">
     <li class="list-group-item chapter" ng-repeat="chapter in chapters">
         <i class="chapter-status pull-left"></i>        
-        <a class="chapter-title pull-left" href="#/course/{{course.id}}/chapter/{{chapter.id}}">{{chapter.title}}</a>
+        <a class="chapter-title pull-left" href="#/course/{{chapter.course_id}}/chapter/{{chapter.id}}">{{chapter.title}}</a>
         <i class="fa fa-ellipsis-v fa-2x pull-right item-drag-handle"></i>
         <ul class="chapter-substeps" ng-repeat="module in chapter.modules">
           <li class="chapter-substep done">
             <i class="substep-status"></i>
-            <a class="substep-title col-md-10" href="#/course/{{course.id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
+            <a class="substep-title col-md-10" href="#/course/{{chapter.course_id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
           </li>
         </ul>
     </li>
 </ul>
-<a class="btn btn-link" href="#/course/{{course.id}}/chapter/add" ng-hide="player">
+<a class="btn btn-link" ng-controller="SidebarController" href="#/course/{{course.id}}/chapter/add" ng-hide="player">
     <i class="fa fa-plus"></i> Neues Kapitel hinzufügen
 </a>
