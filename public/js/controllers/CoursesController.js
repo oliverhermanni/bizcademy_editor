@@ -27,7 +27,7 @@ CourseEditor.controller('CoursesController',
       }
     }
 
-    $scope.setChapterId = function(chapterId) {
+    $scope.openTypeChooser = function(chapterId) {
       $scope.chapterId = chapterId;
       $('#type-chooser').modal('show');
     }
