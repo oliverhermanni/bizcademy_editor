@@ -1,5 +1,6 @@
 <h1 class="course-title" ng-controller="SidebarController">{{course.title}}</h1>
-<ul class="list-group chapters">
+
+<ul class="list-group chapters" ng-controller="SidebarController">
     <li class="list-group-item chapter" ng-repeat="chapter in chapters">
         <i class="chapter-status pull-left"></i>        
         <a class="chapter-title pull-left" href="#/course/{{chapter.course_id}}/chapter/{{chapter.id}}">{{chapter.title}}</a>
