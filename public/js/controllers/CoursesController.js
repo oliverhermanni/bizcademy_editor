@@ -27,6 +27,14 @@ CourseEditor.controller('CoursesController',
       }
     }
 
+    $scope.setChapterId = function(chapterId) {
+      $scope.chapterId = chapterId;
+      $('#type-chooser').modal('show');
+    }
+
+    $scope.createModule = function (moduleType) {
+      $location.path('/course/' + $routeParams.courseId + '/chapter/' + $scope.chapterId + '/module/' + moduleType + '/add');
+    }
 
   }
 );
