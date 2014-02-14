@@ -12,10 +12,13 @@ CourseEditor.controller('SidebarController',
       $http.get('/rest/getchapters/' + $routeParams.courseId)
         .success(function(data) {
           $scope.chapters = data;
+          $scope.mId = $routeParams.moduleId;
         })
         .error(function(data) {
           alert(data);
         });
+
     }
+
   }
 );
