@@ -6,7 +6,7 @@
           <i class="icon icon-lamp course-icon hidden-xs"></i>
           <h2>{{course.title}}</h2>
           <p class="description" ng-bind-html="to_trusted(course.summary)">
-            {{course.summary}}
+            {{ course.summary | htmlToPlaintext }}            
           </p>          
         </div>
       </div>
@@ -24,7 +24,9 @@
             <div class="chapter-details">
               <h4 class="chapter-title">{{chapter.title}}</h4>
               <div class="description">
-                <p ng-bind-html="to_trusted(chapter.summary)">{{chapter.summary}}</p>
+                <p ng-bind-html="to_trusted(chapter.summary)">
+                  {{ chapter.summary | htmlToPlaintext }}
+                </p>
                 <span class="label" ng-show="player">Gesamt-Fortschritt:</span>
                 <div class="progress" ng-show="player">
                   <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
@@ -110,19 +112,19 @@
       </div>
       <div class="row">        
         <div class="col-md-12">
-          <h3>Author</h3>
+          <h3>Autor</h3>
           <div class="author-vita speech-bubble top">
             <div class="author-head">
-              <img src="img/bbfoto.jpg" class="avatar avatar-lg">
+              <img src="img/hendric.png" class="avatar avatar-lg">
               <div class="author-name pull-left">
-                Boris Becker
-                <small>Autoverkäufer</small>
+                Hendric Rüsch
+                <small>Adwords-Experte</small>
               </div>
             </div>
             
             <div class="bubble col-md-6">
               <!-- {{course.advice}} -->
-              Ich konzipiere und gestalte Mobile- und Web-Anwendungen, dabei lege ich besonderen Wert auf Einfachheit und Flexibilität der Anwendung genauso wie auf eine intuitive und benutzerfreundliche Bedienung.
+              Vom Studium der Sozialwissenschaften zur tiefgehenden Leidenschaft des Social Webs. Seit Februar 2008 kümmert er sich um alles, was mit Kooperationen, dem Jimdo-Partnerprogramm und Social Media zu tun hat und ist mächtig stolz Hamburg nun auch als seine Perle bezeichnen zu können.
             </div>
           </div>
         </div>

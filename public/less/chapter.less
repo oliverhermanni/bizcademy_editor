@@ -31,9 +31,15 @@
       }
     }
   }
-  p {
-    color: @gray-light;
-    margin-bottom: @xl-space;
+  p, p > * {
+    color: @gray-light !important;
+    margin-bottom: @xl-space !important;
+    font-weight: normal !important;
+    font-size: @font-size-base !important;
+    font-style: normal !important;
+    font-family: @font-family-sans-serif !important;
+    text-decoration: none !important;
+    text-transform: none !important;
   }
   .chapter-count {
     font-family: @font-family-decorative;
