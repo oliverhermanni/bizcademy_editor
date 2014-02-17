@@ -17,8 +17,6 @@ CourseEditor.controller('SidebarController',
         .error(function(data) {
           alert(data);
         });
-
     }
-
   }
 );
