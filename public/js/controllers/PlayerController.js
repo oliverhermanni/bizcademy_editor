@@ -170,15 +170,11 @@ CourseEditor.controller('PlayerController',
 						$scope.currentChapter = getObjects($scope.chapters, 'id', $routeParams.chapterId)[0];
 						$scope.prevChapter = $scope.chapters[--$scope.currentChapter.index];
 						if(typeof $scope.prevChapter === 'undefined') {
-							// $scope.prevLink = 'player/course/' + $scope.courseId;
 							$scope.prevLink = 'A';
 						} else {
-							// $scope.prevLink = 'player/chapter/' + $routeParams.courseId + '/' + $scope.prevChapter.id;
 							$scope.prevLink = 'B';
 						}	
 					} else {
-						// $scope.prevLink = 'player/' + $scope.prevObj.module_type+ '/' + $routeParams.courseId + '/' + $routeParams.chapterId + '/' + $scope.prevObj.id;
-						// $scope.prevLink = 'player/chapter/' + $routeParams.courseId + '/' + $scope.prevChapter.id;
 						$scope.prevLink = 'player/chapter/' + $routeParams.courseId + '/' + $routeParams.chapterId;
 					}
 					
