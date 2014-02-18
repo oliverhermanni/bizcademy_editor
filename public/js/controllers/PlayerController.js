@@ -207,7 +207,8 @@ CourseEditor.controller('PlayerController',
     $scope.chapterFinished = function(courseId) {
       $('#chapter-completed').on('hide.bs.modal', function (e) {
         $('body').removeClass('modal-open');
-        if ($scope.nextLink == null) {
+        //alert($scope.nextLink);
+        if (!$scope.nextLink) {
           $location.path('/course/completed/');
         } else {
           $location.path('/player/course/'+ $scope.courseId);
