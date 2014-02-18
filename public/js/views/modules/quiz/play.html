@@ -45,8 +45,8 @@
       <i class="icon icon-checkmark"></i>
       Sehr gut! Du hast richtig geantwortet.
     </span>
-    <a class="btn btn-inverse pull-right" data-toggle="modal" data-target="#chapter-completed" ng-show="!nextLink">Weiter <i class="fa fa-angle-right"></i></a>
-    <a class="btn btn-inverse hidden pull-right" id="continue_btn" href="#/{{nextLink}}" ng-hide="!nextLink">Weiter <i class="fa fa-angle-right"></i></a>
+    <a class="btn btn-inverse pull-right" data-toggle="modal" data-target="#chapter-completed" ng-show="chapter_completed">Weiter <i class="fa fa-angle-right"></i></a>
+    <a class="btn btn-inverse hidden pull-right" id="continue_btn" href="#/{{nextLink}}" ng-show="!chapter_completed">Weiter <i class="fa fa-angle-right"></i></a>
   </div>
   <div class="answer-wrong-text">
     <span class="pull-left">
