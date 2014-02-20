@@ -12,11 +12,10 @@ $f3->route('POST /addmodule', function($f3) {
 
         $stmt->bindParam("chapter_id", $module->chapter_id);
         $stmt->bindParam("module_type", $module->module_type);
-        $stmt->bindParam("title", $module->title);
-        $stmt->bindParam("summary", $module->summary);
 
         switch ($module->module_type) {
             case "text":
+                $stmt->bindParam("title", $module->title);
                 $stmt->bindParam("question", $empty_string);
                 $stmt->bindParam("advice", $empty_string);
                 $stmt->bindParam("theme", $empty_string);
@@ -25,12 +24,14 @@ $f3->route('POST /addmodule', function($f3) {
                 break;
             case "quiz":
                 $stmt->bindParam("question", $module->question);
-                $stmt->bindParam("advice", $module->advice);
                 $stmt->bindParam("theme", $module->theme);
                 $answers = serialize($module->answers);
                 $stmt->bindParam("answers", $answers);
                 $hints = serialize($module->hints);
                 $stmt->bindParam("hints", $hints);
+                $stmt->bindParam("title", $empty_string);
+                $stmt->bindParam("summary", $empty_string);
+                $stmt->bindParam("advice", $empty_string);
                 break;
         }
         $stmt->execute();
@@ -96,11 +97,11 @@ $f3->route('POST /updatemodule/@moduleId', function($f3, $params) {
         $stmt->bindParam("id", $params['moduleId']);
         $stmt->bindParam("chapter_id", $module->chapter_id);
         $stmt->bindParam("module_type", $module->module_type);
-        $stmt->bindParam("title", $module->title);
-        $stmt->bindParam("summary", $module->summary);
 
         switch ($module->module_type) {
             case "text":
+                $stmt->bindParam("summary", $module->summary);
+                $stmt->bindParam("title", $module->title);
                 $stmt->bindParam("question", $empty_string);
                 $stmt->bindParam("advice", $empty_string);
                 $stmt->bindParam("theme", $empty_string);
@@ -109,12 +110,14 @@ $f3->route('POST /updatemodule/@moduleId', function($f3, $params) {
                 break;
             case "quiz":
                 $stmt->bindParam("question", $module->question);
-                $stmt->bindParam("advice", $module->advice);
                 $stmt->bindParam("theme", $module->theme);
                 $answers = serialize($module->answers);
                 $stmt->bindParam("answers", $answers);
                 $hints = serialize($module->hints);
                 $stmt->bindParam("hints", $hints);
+                $stmt->bindParam("title", $empty_string);
+                $stmt->bindParam("summary", $empty_string);
+                $stmt->bindParam("advice", $empty_string);
                 break;
         }
         $stmt->execute();
