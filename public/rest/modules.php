@@ -16,6 +16,7 @@ $f3->route('POST /addmodule', function($f3) {
         switch ($module->module_type) {
             case "text":
                 $stmt->bindParam("title", $module->title);
+                $stmt->bindParam("summary", $module->summary);
                 $stmt->bindParam("question", $empty_string);
                 $stmt->bindParam("advice", $empty_string);
                 $stmt->bindParam("theme", $empty_string);
