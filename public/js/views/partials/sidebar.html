@@ -8,7 +8,8 @@
         <ul class="chapter-substeps" ng-repeat="module in chapter.modules">
           <li class="chapter-substep normal" ng-class="{current: module.id == mId, done: module.id < mId}">
             <i class="substep-status"></i>
-            <a class="substep-title col-md-10" href="#/course/{{chapter.course_id}}/chapter/{{chapter.id}}/module/{{module.id}}">{{module.title}}</a>
+            <a class="substep-title col-md-10" href="#/course/{{chapter.course_id}}/chapter/{{chapter.id}}/module/{{module.id}}" ng-hide="module.module_type == 'quiz'">{{module.title }}</a>
+              <a class="substep-title col-md-10" href="#/course/{{chapter.course_id}}/chapter/{{chapter.id}}/module/{{module.id}}" ng-show="module.module_type == 'quiz'">{{module.question }}</a>
           </li>
         </ul>
     </li>
