@@ -57,14 +57,14 @@ CourseEditor.controller('QuizModuleAddController',
       var quizModule = {
         chapter_id: $routeParams['chapterId'],
         module_type: 'quiz',
-        title: $scope.quizmodule.title,
         question: $scope.quizmodule.question || '',
         summary:  $('.note-editable').html(),
-        advice: $scope.quizmodule.advice || '',
         theme: $scope.quizmodule.theme,
         answers: answers,
         hints: hints
       }
+
+      alert(JSON.stringify(quizModule));
 
       $http.post('/rest/addmodule', quizModule)
         .success(function ($data) {
@@ -157,9 +157,7 @@ CourseEditor.controller('QuizModuleEditController',
       var quizModule = {
         chapter_id: $routeParams['chapterId'],
         module_type: 'quiz',
-        title: $scope.quizmodule.title,
         question: $scope.quizmodule.question,
-        summary:  $('.note-editable').html(),
         advice: $scope.quizmodule.advice,
         theme: $scope.quizmodule.theme,
         answers: answers,
