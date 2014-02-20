@@ -134,7 +134,10 @@ CourseEditor.controller('PlayerController',
 			$http.get('/rest/getmodules/' + $routeParams.chapterId)
 				.success(function (data) {
 					$scope.modules = data;
-					
+
+
+          // TODO: Move logic out of async into new function
+
 					/* Current and Next Object */
 					$scope.module 	= getObjects($scope.modules, 'id', $routeParams.modulId)[0];
 					$scope.nextObj 	= $scope.modules[++$scope.module.index];
