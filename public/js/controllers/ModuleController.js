@@ -16,7 +16,7 @@ CourseEditor.controller('ModuleController',
 
 CourseEditor.controller('ModuleDeleteController',
   function ($scope, $http, $location, $routeParams, ModuleModel) {
-    $http.delete('/rest/deletemodule/' + $routeParams.chapterId)
+    $http.delete('/rest/deletemodule/' + $routeParams.moduleId)
       .success(function (data) {
         $location.path('/course/' + $routeParams.courseId);
       })
