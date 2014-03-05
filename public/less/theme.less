@@ -127,7 +127,7 @@ code {
     right: 0;
     opacity: 1;
   }
-}  
+}
 .add-answer {
   .clearfix;
   .transition(.15s);
@@ -157,18 +157,25 @@ code {
   display: inline-block;
   cursor: pointer;
   margin: 15px 30px;
-  width: 90px;
-  height: 90px;
-  line-height: 90px;
+  width: 96px;
+  height: 96px;
+  // line-height: 96px;
   border-radius: 50%;
   text-align: center;
   position: relative;
   z-index: 1;
   color: @brand-primary;
-  box-shadow: 0 0 0 4px @brand-primary;
+  // box-shadow: 0 0 0 4px @brand-primary;
+  // background-color: rgba(0,0,0,.05);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   transition: color 0.3s;
+  img {
+    max-width: 100%;
+  }
   &:after {
     pointer-events: none;
     position: absolute;
@@ -176,14 +183,15 @@ code {
     height: 100%;
     border-radius: 50%;
     content: '';
-    -webkit-box-sizing: content-box; 
-    -moz-box-sizing: content-box; 
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
     box-sizing: content-box;
-    top: -2px;
-    left: -2px;
-    padding: 2px;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
     z-index: -1;
-    background: @brand-primary;
+    box-shadow: 0 0 0 4px white;
+    // background: @brand-primary;
     -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
     -moz-transition: -moz-transform 0.2s, opacity 0.3s;
     transition: transform 0.2s, opacity 0.3s;
@@ -204,6 +212,13 @@ code {
     }
   }
 }
+// .icon-key-benefit-check {
+//   background-image: url('/img/landingpage/bizcademy_pains_CHECK.png');
+// }
+
+// .icon-key-benefit-fun {
+//   background-image: url('/img/landingpage/bizcademy_pains_FUN.png');
+// }
 .course-stats {
   .clearfix;
   .well;
