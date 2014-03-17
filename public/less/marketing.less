@@ -61,6 +61,12 @@
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+  .text-muted {
+    font-size: floor(@font-size-base * 1.15);
+    @media (min-width: @screen-sm-min) {
+      font-size: (@font-size-base * 2);
+    }
+  }
 }
 
 
@@ -109,7 +115,7 @@
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 120px;
+    margin-top: 60px;
   }
 }
 
